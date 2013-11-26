@@ -33,7 +33,7 @@ class MenuItemToggle extends MenuItem
     # @param [function|String] args[last-1]
     # @param [Node] args[last]
     # @return [Boolean]
-    initWithItems: (args[last-1], args[last]) ->
+    initWithItems: (args_last_1_, args_last_) ->
 
     # menu item is selected (runs callback)
     selected: ->

@@ -8,6 +8,8 @@ fs = require 'fs'
 mkdirp = require 'mkdirp'
 path = require 'path'
 
+reserved = ['case', 'default', 'function', 'var', 'void', 'with', 'const', 'let', 'enum', 'export', 'import', 'native', '__hasProp', '__extends', '__slice', '__bind', '__indexOf', 'true', 'false', 'null', 'this', 'new', 'delete', 'typeof', 'in', 'instanceof', 'return', 'throw', 'break', 'continue', 'debugger', 'if', 'else', 'switch', 'for', 'while', 'do', 'try', 'catch', 'finally', 'class', 'extends', 'super', 'undefined', 'then', 'unless', 'until', 'loop', 'of', 'by', 'when', 'and', 'or', 'is', 'isnt', 'not', 'yes', 'no', 'on', 'off']
+
 # Importer
 # Used to extract documentation data from cocos2d documentation
 class Importer
@@ -32,7 +34,8 @@ class Importer
         # Iterate through each element
         for item, i in $('.menu nav ul.classList li', el)
             # And extract data from each item
-            doc = @extractDocument $(item)
+            if (''+$(item).attr('self')).indexOf('-') is -1
+                @extractDocument $(item)
 
         for doc in @documentsList
             mkdirp.sync @outputPath
@@ -126,7 +129,7 @@ class Importer
 
         # Enrich 'cc' namespace
         if doc.name[0...3] is 'cc.' and doc.methods[0]?.ctor
-            if @documents['cc']
+            if @documents['cc'] and doc.methods[0].name.indexOf('.') is -1
                 @documents['cc'].methods.push
                     # Flags
                     'constant': false
@@ -412,6 +415,15 @@ class Document
                 result += '    # @return ['+type+"]\n"
             else if method.ctor
                 result += '    # @return ['+className+"]\n"
+
+            # Cleanup args
+            if args isnt '()'
+                argsList = args[1...args.length-1].split(',')
+                for i in [0...argsList.length]
+                    if argsList[i].trim() in reserved
+                        argsList[i] = argsList[i].split(argsList[i].trim()).join(argsList[i].trim()+'_')
+                    argsList[i] = argsList[i].split('[').join('_').split(']').join('_').split('-').join('_')
+                args = '('+argsList.join(',')+')'
 
             # method declaration
             if method['static']

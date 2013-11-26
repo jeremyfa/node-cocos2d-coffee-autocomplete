@@ -132,7 +132,7 @@ class Director extends Class
 
     # enables/disables OpenGL alpha blending
     # @param [Boolean] on
-    setAlphaBlending: (on) ->
+    setAlphaBlending: (on_) ->
 
     # The size in pixels of the surface.
     # @param [Number] scaleFactor
@@ -143,7 +143,7 @@ class Director extends Class
 
     # enables/disables OpenGL depth test
     # @param [Boolean] on
-    setDepthTest: (on) ->
+    setDepthTest: (on_) ->
 
     # Display the FPS on the bottom-left corner
     # @param [Boolean] displayStats

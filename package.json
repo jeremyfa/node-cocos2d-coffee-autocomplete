@@ -1,6 +1,6 @@
 {
   "name": "cocos2d-coffee-autocomplete",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Provide autocompletion for cocos2d-x/html5 projects written in CoffeeScript",
   "main": "index.js",
   "dependencies": {

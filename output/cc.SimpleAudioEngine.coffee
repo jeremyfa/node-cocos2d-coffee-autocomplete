@@ -32,12 +32,12 @@ class SimpleAudioEngine extends AudioEngine
     # @param [String] path
     # @param [Boolean] loop
     # @return [Number|null]
-    playEffect: (path, loop) ->
+    playEffect: (path, loop_) ->
 
     # Play music.
     # @param [String] path
     # @param [Boolean] loop
-    playMusic: (path, loop) ->
+    playMusic: (path, loop_) ->
 
     # Preload music resource.
     # @param [String] path
