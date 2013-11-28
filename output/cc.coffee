@@ -1775,3 +1775,1084 @@ class cc
     # Yellow color (255,255,0)
     @yellow: ->
 
+    # the dollar sign, classic like jquery, this selector add extra methods to HTMLElement without touching its prototype it is also chainable like jquery
+    # @param [HTMLElement|String] x
+    # @return [$]
+    @$: (x) ->
+
+    # Base class for cc.Action objects.
+    # @return [Action]
+    @Action: ->
+
+    # Base class for Easing actions
+    # @return [ActionEase]
+    @ActionEase: ->
+
+    # Instant actions are immediate actions.
+    # @return [ActionInstant]
+    @ActionInstant: ->
+
+    # An interval action is an action that takes place within a certain period of time.
+    # @return [ActionInterval]
+    @ActionInterval: ->
+
+    # cc.ActionManager is a singleton that manages all the actions.
+    # @return [ActionManager]
+    @ActionManager: ->
+
+    # Animates a sprite given the name of an Animation
+    # @return [Animate]
+    @Animate: ->
+
+    # A cc.Animation object is used to perform animations on the cc.Sprite objects.
+    # @return [Animation]
+    @Animation: ->
+
+    # Singleton that manages the Animations.
+    # @return [AnimationCache]
+    @AnimationCache: ->
+
+    # cc.AnimationFrame A frame of the animation.
+    # @return [AnimationFrame]
+    @AnimationFrame: ->
+
+    # struct that holds the size in pixels, texture coordinates and delays for animated cc.ParticleSystem
+    # @param [T2F_Quad] texCoords
+    # @param delay
+    # @param size
+    # @return [AnimationFrameData]
+    @AnimationFrameData: (texCoords, delay, size) ->
+
+    # Controller of Game Application
+    # @return [AppController]
+    @AppController: ->
+
+    # Run main loop of game engine
+    # @return [Application]
+    @Application: ->
+
+    # cc.AtlasNode is a subclass of cc.Node that implements the cc.RGBAProtocol and cc.TextureProtocol protocol It knows how to render a TextureAtlas object.
+    # @return [AtlasNode]
+    @AtlasNode: ->
+
+    # A simple Audio Engine engine API.
+    # @return [AudioEngine]
+    @AudioEngine: ->
+
+    # An action that moves the target with a cubic Bezier curve by a certain distance.
+    # @return [BezierBy]
+    @BezierBy: ->
+
+    # An action that moves the target with a cubic Bezier curve to a destination point.
+    # @return [BezierTo]
+    @BezierTo: ->
+
+    # Blend Function used for textures
+    # @param [Number] src1
+    # @param [Number] dst1
+    # @return [BlendFunc]
+    @BlendFunc: (src1, dst1) ->
+
+    # Blinks a cc.Node object by modifying it's visible attribute
+    # @return [Blink]
+    @Blink: ->
+
+    # cc.BMFontConfiguration has parsed _configuration of the the .fnt file
+    # @return [BMFontConfiguration]
+    @BMFontConfiguration: ->
+
+    # helper macro that creates an ccColor4F type
+    # @param [Number] r
+    # @param [Number] g
+    # @param [Number] b
+    # @param [Number] a
+    # @return [c4f]
+    @c4f: (r, g, b, a) ->
+
+    # Calls a 'callback'
+    # @return [CallFunc]
+    @CallFunc: ->
+
+    # A CCCamera is used in every CCNode.
+    # @return [Camera]
+    @Camera: ->
+
+    # Cardinal Spline path.
+    # @return [CardinalSplineBy]
+    @CardinalSplineBy: ->
+
+    # Cardinal Spline path.
+    # @return [CardinalSplineTo]
+    @CardinalSplineTo: ->
+
+    # An action that moves the target with a CatmullRom curve by a certain distance.
+    # @return [CatmullRomBy]
+    @CatmullRomBy: ->
+
+    # An action that moves the target with a CatmullRom curve to a destination point.
+    # @return [CatmullRomTo]
+    @CatmullRomTo: ->
+
+    # The base Class implementation (does nothing)
+    # @return [Class]
+    @Class: ->
+
+    # RGB color composed of bytes 3 bytes
+    # @param [Number | cc.Color3B] r1
+    # @param [Number] g1
+    # @param [Number] b1
+    # @return [Color3B]
+    @Color3B: (r1, g1, b1) ->
+
+    # RGBA color composed of 4 bytes
+    # @param [Number] r1
+    # @param [Number] g1
+    # @param [Number] b1
+    # @param [Number] a1
+    # @return [Color4B]
+    @Color4B: (r1, g1, b1, a1) ->
+
+    # RGBA color composed of 4 floats
+    # @param [Number] r1
+    # @param [Number] g1
+    # @param [Number] b1
+    # @param [Number] a1
+    # @return [Color4F]
+    @Color4F: (r1, g1, b1, a1) ->
+
+    # Delays the action a certain amount of seconds
+    # @return [DelayTime]
+    @DelayTime: ->
+
+    # Class that creates and handle the main Window and manages how and when to execute the Scenes.
+    # @return [Director]
+    @Director: ->
+
+    # OpenGL projection protocol
+    # @return [DirectorDelegate]
+    @DirectorDelegate: ->
+
+    # DisplayLinkDirector is a Director that synchronizes timers with the refresh rate of the display.
+    # @return [DisplayLinkDirector]
+    @DisplayLinkDirector: ->
+
+    # the DOM object
+    # @return [DOM]
+    @DOM: ->
+
+    # Drawing primitives Utility Class.
+    # @return [DrawingPrimitive]
+    @DrawingPrimitive: ->
+
+    # Canvas of DrawingPrimitive implement version
+    # @return [DrawingPrimitiveCanvas]
+    @DrawingPrimitiveCanvas: ->
+
+    # Canvas of DrawingPrimitive implement version
+    # @return [DrawingPrimitiveWebGL]
+    @DrawingPrimitiveWebGL: ->
+
+    # cc.EaseBackIn action.
+    # @return [EaseBackIn]
+    @EaseBackIn: ->
+
+    # cc.EaseBackInOut action.
+    # @return [EaseBackInOut]
+    @EaseBackInOut: ->
+
+    # cc.EaseBackOut action.
+    # @return [EaseBackOut]
+    @EaseBackOut: ->
+
+    # cc.EaseBounce abstract class.
+    # @return [EaseBounce]
+    @EaseBounce: ->
+
+    # cc.EaseBounceIn action.
+    # @return [EaseBounceIn]
+    @EaseBounceIn: ->
+
+    # cc.EaseBounceInOut action.
+    # @return [EaseBounceInOut]
+    @EaseBounceInOut: ->
+
+    # cc.EaseBounceOut action.
+    # @return [EaseBounceOut]
+    @EaseBounceOut: ->
+
+    # Ease Elastic abstract class
+    # @return [EaseElastic]
+    @EaseElastic: ->
+
+    # Ease Elastic In action.
+    # @return [EaseElasticIn]
+    @EaseElasticIn: ->
+
+    # Ease Elastic InOut action.
+    # @return [EaseElasticInOut]
+    @EaseElasticInOut: ->
+
+    # Ease Elastic Out action.
+    # @return [EaseElasticOut]
+    @EaseElasticOut: ->
+
+    # cc.Ease Exponential In
+    # @return [EaseExponentialIn]
+    @EaseExponentialIn: ->
+
+    # Ease Exponential InOut
+    # @return [EaseExponentialInOut]
+    @EaseExponentialInOut: ->
+
+    # Ease Exponential Out
+    # @return [EaseExponentialOut]
+    @EaseExponentialOut: ->
+
+    # cc.EaseIn action with a rate
+    # @return [EaseIn]
+    @EaseIn: ->
+
+    # cc.EaseInOut action with a rate
+    # @return [EaseInOut]
+    @EaseInOut: ->
+
+    # cc.EaseOut action with a rate
+    # @return [EaseOut]
+    @EaseOut: ->
+
+    # Base class for Easing actions with rate parameters
+    # @return [EaseRateAction]
+    @EaseRateAction: ->
+
+    # Ease Sine In
+    # @return [EaseSineIn]
+    @EaseSineIn: ->
+
+    # Ease Sine InOut
+    # @return [EaseSineInOut]
+    @EaseSineInOut: ->
+
+    # Ease Sine Out
+    # @return [EaseSineOut]
+    @EaseSineOut: ->
+
+    # Fades In an object that implements the cc.RGBAProtocol protocol.
+    # @return [FadeIn]
+    @FadeIn: ->
+
+    # Fades Out an object that implements the cc.RGBAProtocol protocol.
+    # @return [FadeOut]
+    @FadeOut: ->
+
+    # cc.FadeOutBLTiles action.
+    # @return [FadeOutBLTiles]
+    @FadeOutBLTiles: ->
+
+    # cc.FadeOutDownTiles action.
+    # @return [FadeOutDownTiles]
+    @FadeOutDownTiles: ->
+
+    # cc.FadeOutTRTiles action.
+    # @return [FadeOutTRTiles]
+    @FadeOutTRTiles: ->
+
+    # cc.FadeOutUpTiles action.
+    # @return [FadeOutUpTiles]
+    @FadeOutUpTiles: ->
+
+    # Fades an object that implements the cc.RGBAProtocol protocol.
+    # @return [FadeTo]
+    @FadeTo: ->
+
+    # Base class actions that do have a finite time duration.
+    # @return [FiniteTimeAction]
+    @FiniteTimeAction: ->
+
+    # Flips the sprite horizontally
+    # @return [FlipX]
+    @FlipX: ->
+
+    # Flips the sprite vertically
+    # @return [FlipY]
+    @FlipY: ->
+
+    # cc.Follow is an action that "follows" a node.
+    # @return [Follow]
+    @Follow: ->
+
+    # Class that implements a glProgram
+    # @return [GLProgram]
+    @GLProgram: ->
+
+    # A 2D grid size
+    # @param [Number] x1
+    # @param [Number] y1
+    # @return [GridSize]
+    @GridSize: (x1, y1) ->
+
+    # @return [HashElement]
+    @HashElement: ->
+
+    # Hash Element used for "selectors with interval"
+    # @param [Array] timers
+    # @param [Class] target
+    # @param [Number] timerIndex
+    # @param [Timer] currentTimer
+    # @param [Boolean] currentTimerSalvaged
+    # @param [Boolean] paused
+    # @param [Array] hh
+    # @return [HashTimerEntry]
+    @HashTimerEntry: (timers, target, timerIndex, currentTimer, currentTimerSalvaged, paused, hh) ->
+
+    # a update entry list
+    # @param [ListEntry] list
+    # @param [ListEntry] entry
+    # @param [Class] target
+    # @param [Array] hh
+    # @return [HashUpdateEntry]
+    @HashUpdateEntry: (list, entry, target, hh) ->
+
+    # Hide the node
+    # @return [Hide]
+    @Hide: ->
+
+    # Image
+    # @return [Image]
+    @Image: ->
+
+    # Input method editor delegate.
+    # @return [IMEDelegate]
+    @IMEDelegate: ->
+
+    # Input Method Edit Message Dispatcher.
+    # @return [IMEDispatcher]
+    @IMEDispatcher: ->
+
+    # Moves a cc.Node object simulating a parabolic jump movement by modifying it's position attribute.
+    # @return [JumpBy]
+    @JumpBy: ->
+
+    # cc.JumpTiles3D action.
+    # @return [JumpTiles3D]
+    @JumpTiles3D: ->
+
+    # Moves a cc.Node object to a parabolic position simulating a jump movement by modifying it's position attribute.
+    # @return [JumpTo]
+    @JumpTo: ->
+
+    # you must extend the keyboardDelegate and implement your own game logic in keydown and keyup functions
+    # @return [KeyboardDelegate]
+    @KeyboardDelegate: ->
+
+    # Dispatch the keyboard message
+    # @return [KeyboardDispatcher]
+    @KeyboardDispatcher: ->
+
+    # KeyboardHandler is an object that contains KeyboardDelegate
+    # @return [KeyboardHandler]
+    @KeyboardHandler: ->
+
+    # using image file to print text label on the screen, might be a bit slower than cc.Label, similar to cc.LabelBMFont
+    # @return [LabelAtlas]
+    @LabelAtlas: ->
+
+    # cc.LabelBMFont is a subclass of cc.SpriteBatchNode.
+    # @return [LabelBMFont]
+    @LabelBMFont: ->
+
+    # cc.LabelTTF is a subclass of cc.TextureNode that knows how to render text labels All features from cc.TextureNode are valid in cc.LabelTTF cc.LabelTTF objects are slow for js-binding on mobile devices.Consider using cc.LabelAtlas or cc.LabelBMFont instead.
+    # @return [LabelTTF]
+    @LabelTTF: ->
+
+    # cc.Layer is a subclass of cc.Node that implements the TouchEventsDelegate protocol.
+    # @return [Layer]
+    @Layer: ->
+
+    # CCLayerColor is a subclass of CCLayer that implements the CCRGBAProtocol protocol.
+    # @return [LayerColor]
+    @LayerColor: ->
+
+    # CCLayerGradient is a subclass of cc.LayerColor that draws gradients across the background.
+    # @return [LayerGradient]
+    @LayerGradient: ->
+
+    # CCMultipleLayer is a CCLayer with the ability to multiplex it's children.
+    # @return [LayerMultiplex]
+    @LayerMultiplex: ->
+
+    # CCLayerRGBA is a subclass of CCLayer that implements the CCRGBAProtocol protocol using a solid color as the background.
+    # @return [LayerRGBA]
+    @LayerRGBA: ->
+
+    # A list double-linked list used for "updates with priority"
+    # @param [ListEntry] prev
+    # @param [ListEntry] next
+    # @param [Class] target
+    # @param [Number] priority
+    # @param [Boolean] paused
+    # @param [Boolean] markedForDeletion
+    # @return [ListEntry]
+    @ListEntry: (prev, next, target, priority, paused, markedForDeletion) ->
+
+    # A class to pre-load resources before engine start game main loop.
+    # @return [Loader]
+    @Loader: ->
+
+    # Used to display the loading screen
+    # @return [LoaderScene]
+    @LoaderScene: ->
+
+    # Features and Limitation: - You can add MenuItem objects in runtime using addChild: - But the only accecpted children are MenuItem objects
+    # @return [Menu]
+    @Menu: ->
+
+    # Subclass cc.MenuItem (or any subclass) to create your custom cc.MenuItem objects.
+    # @return [MenuItem]
+    @MenuItem: ->
+
+    # Helper class that creates a MenuItemLabel class with a LabelAtlas
+    # @return [MenuItemAtlasFont]
+    @MenuItemAtlasFont: ->
+
+    # Helper class that creates a CCMenuItemLabel class with a Label
+    # @return [MenuItemFont]
+    @MenuItemFont: ->
+
+    # cc.MenuItemImage accepts images as items.
+    # @return [MenuItemImage]
+    @MenuItemImage: ->
+
+    # Any cc.Node that supports the cc.LabelProtocol protocol can be added.
+    # @return [MenuItemLabel]
+    @MenuItemLabel: ->
+
+    # CCMenuItemSprite accepts CCNode objects as items.
+    # @return [MenuItemSprite]
+    @MenuItemSprite: ->
+
+    # A simple container class that "toggles" it's inner items The inner items can be any MenuItem
+    # @return [MenuItemToggle]
+    @MenuItemToggle: ->
+
+    # Moves a CCNode object x,y pixels by modifying it's position attribute.
+    # @return [MoveBy]
+    @MoveBy: ->
+
+    # Moves a CCNode object to the position x,y.
+    # @return [MoveTo]
+    @MoveTo: ->
+
+    # cc.Node is the main element.
+    # @return [Node]
+    @Node: ->
+
+    # cc.NodeRGBA is a subclass of cc.Node that implements the CCRGBAProtocol protocol.
+    # @return [NodeRGBA]
+    @NodeRGBA: ->
+
+    # cc.ParallaxNode: A node that simulates a parallax scroller The children will be moved faster / slower than the parent according the the parallax ratio.
+    # @return [ParallaxNode]
+    @ParallaxNode: ->
+
+    # Structure that contains the values of each particle
+    # @param [Point] pos
+    # @param [Point] startPos
+    # @param [Color4F] color
+    # @param [Color4F] deltaColor
+    # @param [Size] size
+    # @param [Size] deltaSize
+    # @param [Number] rotation
+    # @param [Number] deltaRotation
+    # @param [Number] timeToLive
+    # @param [Number] atlasIndex
+    # @param [Particle.ModeA] modeA
+    # @param [Particle.ModeA] modeB
+    # @return [Particle]
+    @Particle: (pos, startPos, color, deltaColor, size, deltaSize, rotation, deltaRotation, timeToLive, atlasIndex, modeA, modeB) ->
+
+    # An explosion particle system
+    # @return [ParticleExplosion]
+    @ParticleExplosion: ->
+
+    # A fire particle system
+    # @return [ParticleFire]
+    @ParticleFire: ->
+
+    # A fireworks particle system
+    # @return [ParticleFireworks]
+    @ParticleFireworks: ->
+
+    # A flower particle system
+    # @return [ParticleFlower]
+    @ParticleFlower: ->
+
+    # A galaxy particle system
+    # @return [ParticleGalaxy]
+    @ParticleGalaxy: ->
+
+    # A meteor particle system
+    # @return [ParticleMeteor]
+    @ParticleMeteor: ->
+
+    # A rain particle system
+    # @return [ParticleRain]
+    @ParticleRain: ->
+
+    # A smoke particle system
+    # @return [ParticleSmoke]
+    @ParticleSmoke: ->
+
+    # A snow particle system
+    # @return [ParticleSnow]
+    @ParticleSnow: ->
+
+    # A spiral particle system
+    # @return [ParticleSpiral]
+    @ParticleSpiral: ->
+
+    # A sun particle system
+    # @return [ParticleSun]
+    @ParticleSun: ->
+
+    # Particle System base class.
+    # @return [ParticleSystem]
+    @ParticleSystem: ->
+
+    # Places the node in a certain position
+    # @return [Place]
+    @Place: ->
+
+    # @param [Number] _x
+    # @param [Number] _y
+    # @return [Point]
+    @Point: (_x, _y) ->
+
+    # @return [PointObject]
+    @PointObject: ->
+
+    # Point Sprite component
+    # @param [Vertex2F] pos1
+    # @param [Color4B] color1
+    # @param [Number] size1
+    # @return [PointSprite]
+    @PointSprite: (pos1, color1, size1) ->
+
+    # Progress from a percentage to another percentage
+    # @return [ProgressFromTo]
+    @ProgressFromTo: ->
+
+    # cc.Progresstimer is a subclass of cc.Node.
+    # @return [ProgressTimer]
+    @ProgressTimer: ->
+
+    # Progress to percentage
+    # @return [ProgressTo]
+    @ProgressTo: ->
+
+    # A 2D Quad.
+    # @param [Vertex2F] tl1
+    # @param [Vertex2F] tr1
+    # @param [Vertex2F] bl1
+    # @param [Vertex2F] br1
+    # @return [Quad2]
+    @Quad2: (tl1, tr1, bl1, br1) ->
+
+    # A 3D Quad.
+    # @param [Vertex3F] bl1
+    # @param [Vertex3F] br1
+    # @param [Vertex3F] tl1
+    # @param [Vertex3F] tr1
+    # @return [Quad3]
+    @Quad3: (bl1, br1, tl1, tr1) ->
+
+    # @param [Number|cc.Point|cc.Rect] x1
+    # @param [Number|cc.Size] y1
+    # @param [Number] width1
+    # @param [Number] height1
+    # @return [Rect]
+    @Rect: (x1, y1, width1, height1) ->
+
+    # cc.RenderTexture is a generic rendering target.
+    # @return [RenderTexture]
+    @RenderTexture: ->
+
+    # Repeats an action a number of times.
+    # @return [Repeat]
+    @Repeat: ->
+
+    # Repeats an action for ever.
+    # @return [RepeatForever]
+    @RepeatForever: ->
+
+    # Executes an action in reverse order, from time=duration to time=0
+    # @return [ReverseTime]
+    @ReverseTime: ->
+
+    # premultiply alpha, or the effect will wrong when want to use other pixel format in CCTexture2D, such as RGB888, RGB5A1
+    # @param [Number] vr
+    # @param [Number] vg
+    # @param [Number] vb
+    # @param [Number] va
+    # @return [RGB_PREMULTIPLY_APLHA]
+    @RGB_PREMULTIPLY_APLHA: (vr, vg, vb, va) ->
+
+    # Rotates a cc.Node object clockwise a number of degrees by modifying it's rotation attribute.
+    # @return [RotateBy]
+    @RotateBy: ->
+
+    # Rotates a cc.Node object to a certain angle by modifying it's rotation attribute.
+    # @return [RotateTo]
+    @RotateTo: ->
+
+    # a SAX Parser
+    # @return [SAXParser]
+    @SAXParser: ->
+
+    # Scales a cc.Node object a zoom factor by modifying it's scale attribute.
+    # @return [ScaleBy]
+    @ScaleBy: ->
+
+    # Scales a cc.Node object to a zoom factor by modifying it's scale attribute.
+    # @return [ScaleTo]
+    @ScaleTo: ->
+
+    # cc.Scene is a subclass of cc.Node that is used only as an abstract concept.
+    # @return [Scene]
+    @Scene: ->
+
+    # Scheduler is responsible of triggering the scheduled callbacks.
+    # @return [Scheduler]
+    @Scheduler: ->
+
+    # Runs actions sequentially, one after another
+    # @return [Sequence]
+    @Sequence: ->
+
+    # Singleton that stores manages GL shaders
+    # @return [ShaderCache]
+    @ShaderCache: ->
+
+    # cc.ShakyTiles3D action
+    # @return [ShakyTiles3D]
+    @ShakyTiles3D: ->
+
+    # cc.ShatteredTiles3D action
+    # @return [ShatteredTiles3D]
+    @ShatteredTiles3D: ->
+
+    # Show the node
+    # @return [Show]
+    @Show: ->
+
+    # cc.ShuffleTiles action, Shuffle the tiles in random order
+    # @return [ShuffleTiles]
+    @ShuffleTiles: ->
+
+    # The Audio Engine implementation via tag in HTML5.
+    # @return [SimpleAudioEngine]
+    @SimpleAudioEngine: ->
+
+    # @param [Number] _width
+    # @param [Number] _height
+    # @return [Size]
+    @Size: (_width, _height) ->
+
+    # Skews a cc.Node object by skewX and skewY degrees
+    # @return [SkewBy]
+    @SkewBy: ->
+
+    # Skews a cc.Node object to given angles by modifying it's skewX and skewY attributes
+    # @return [SkewTo]
+    @SkewTo: ->
+
+    # Spawn a new action immediately
+    # @return [Spawn]
+    @Spawn: ->
+
+    # Changes the speed of an action, making it take longer (speed1) or less (speed
+    # @return [Speed]
+    @Speed: ->
+
+    # cc.SplitCols action
+    # @return [SplitCols]
+    @SplitCols: ->
+
+    # cc.SplitRows action
+    # @return [SplitRows]
+    @SplitRows: ->
+
+    # cc.Sprite is a 2d image ( http://en.wikipedia.org/wiki/Sprite_(computer_graphics) ) cc.Sprite can be created with an image, or with a sub-rectangle of an image.
+    # @return [Sprite]
+    @Sprite: ->
+
+    # In Canvas render mode ,cc.SpriteBatchNodeCanvas is like a normal node: if it contains children.
+    # @return [SpriteBatchNode]
+    @SpriteBatchNode: ->
+
+    # A cc.SpriteFrame has: - texture: A cc.Texture2D that will be used by the cc.Sprite - rectangle: A rectangle of the texture You can modify the frame of a cc.Sprite by doing:
+    # @return [SpriteFrame]
+    @SpriteFrame: ->
+
+    # Singleton that handles the loading of the sprite frames.
+    # @return [SpriteFrameCache]
+    @SpriteFrameCache: ->
+
+    # This type of delegate is the same one used by CocoaTouch.
+    # @return [StandardTouchDelegate]
+    @StandardTouchDelegate: ->
+
+    # cc.StandardTouchHandler It forwardes each event to the delegate.
+    # @return [StandardTouchHandler]
+    @StandardTouchHandler: ->
+
+    # texture coordinates for a quad
+    # @param [Tex2F] bl
+    # @param [Tex2F] br
+    # @param [Tex2F] tl
+    # @param [Tex2F] tr
+    # @return [T2F_Quad]
+    @T2F_Quad: (bl, br, tl, tr) ->
+
+    # Overrides the target of an action so that it always runs on the target specified at action creation rather than the one specified by runAction.
+    # @return [TargetedAction]
+    @TargetedAction: ->
+
+    # Using this type of delegate results in two benefits: - 1.
+    # @return [TargetedTouchDelegate]
+    @TargetedTouchDelegate: ->
+
+    # @return [TargetedTouchHandler]
+    @TargetedTouchHandler: ->
+
+    # A texcoord composed of 2 floats: u, y
+    # @param [Number] u1
+    # @param [Number] v1
+    # @return [Tex2F]
+    @Tex2F: (u1, v1) ->
+
+    # Text field delegate
+    # @return [TextFieldDelegate]
+    @TextFieldDelegate: ->
+
+    # A simple text input field with TTF font.
+    # @return [TextFieldTTF]
+    @TextFieldTTF: ->
+
+    # This class allows to easily create Canvas 2D textures from images, text or raw data.
+    # @return [Texture2DCanvas]
+    @Texture2DCanvas: ->
+
+    # This class allows to easily create OpenGL 2D textures from images, text or raw data.
+    # @return [Texture2DWebGL]
+    @Texture2DWebGL: ->
+
+    # A class that implements a Texture Atlas.
+    # @return [TextureAtlas]
+    @TextureAtlas: ->
+
+    # Implementation TextureCache
+    # @return [TextureCache]
+    @TextureCache: ->
+
+    # A Tile composed of position, startPosition and delta
+    # @param [Point] position
+    # @param [Point] startPosition
+    # @param [Size] delta
+    # @return [Tile]
+    @Tile: (position, startPosition, delta) ->
+
+    # image source
+    # @param [Array||String] data
+    # @param [Number] size
+    # @param [Number] offset
+    # @return [tImageSource]
+    @tImageSource: (data, size, offset) ->
+
+    # Light weight timer
+    # @return [Timer]
+    @Timer: ->
+
+    # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
+    # @return [TintBy]
+    @TintBy: ->
+
+    # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
+    # @return [TintTo]
+    @TintTo: ->
+
+    # cc.TMXLayer represents the TMX layer.
+    # @return [TMXLayer]
+    @TMXLayer: ->
+
+    # cc.TMXLayerInfo contains the information about the layers like: - Layer name - Layer size - Layer opacity at creation time (it can be modified at runtime) - Whether the layer is visible (if it's not visible, then the CocosNode won't be created) This information is obtained from the TMX file.
+    # @return [TMXLayerInfo]
+    @TMXLayerInfo: ->
+
+    # cc.TMXMapInfo contains the information about the map like: - Map orientation (hexagonal, isometric or orthogonal) - Tile size - Map size And it also contains: - Layers (an array of TMXLayerInfo objects) - Tilesets (an array of TMXTilesetInfo objects) - ObjectGroups (an array of TMXObjectGroupInfo objects) This information is obtained from the TMX file.
+    # @return [TMXMapInfo]
+    @TMXMapInfo: ->
+
+    # cc.TMXObjectGroup represents the TMX object group.
+    # @return [TMXObjectGroup]
+    @TMXObjectGroup: ->
+
+    # cc.TMXTiledMap knows how to parse and render a TMX map.
+    # @return [TMXTiledMap]
+    @TMXTiledMap: ->
+
+    # cc.TMXTilesetInfo contains the information about the tilesets like: - Tileset name - Tileset spacing - Tileset margin - size of the tiles - Image used for the tiles - Image size This information is obtained from the TMX file.
+    # @return [TMXTilesetInfo]
+    @TMXTilesetInfo: ->
+
+    # Toggles the visibility of a node
+    # @return [ToggleVisibility]
+    @ToggleVisibility: ->
+
+    # @return [Touch]
+    @Touch: ->
+
+    # @return [TouchDelegate]
+    @TouchDelegate: ->
+
+    # cc.TouchDispatcher.
+    # @return [TouchDispatcher]
+    @TouchDispatcher: ->
+
+    # cc.TouchHandler Object than contains the delegate and priority of the event handler.
+    # @return [TouchHandler]
+    @TouchHandler: ->
+
+    # a Values object for transform
+    # @param [Point] pos
+    # @param [Point] scale
+    # @param [Number] rotation
+    # @param [Point] skew
+    # @param [Point] ap
+    # @param [Boolean] visible
+    # @return [TransformValues]
+    @TransformValues: (pos, scale, rotation, skew, ap, visible) ->
+
+    # Cross fades two scenes using the cc.RenderTexture object.
+    # @return [TransitionCrossFade]
+    @TransitionCrossFade: ->
+
+    # cc.TransitionEaseScene can ease the actions of the scene protocol.
+    # @return [TransitionEaseScene]
+    @TransitionEaseScene: ->
+
+    # Fade out the outgoing scene and then fade in the incoming scene.
+    # @return [TransitionFade]
+    @TransitionFade: ->
+
+    # Fade the tiles of the outgoing scene from the top-right corner to the bottom-left corner.
+    # @return [TransitionFadeBL]
+    @TransitionFadeBL: ->
+
+    # Fade the tiles of the outgoing scene from the top to the bottom.
+    # @return [TransitionFadeDown]
+    @TransitionFadeDown: ->
+
+    # Fade the tiles of the outgoing scene from the left-bottom corner the to top-right corner.
+    # @return [TransitionFadeTR]
+    @TransitionFadeTR: ->
+
+    # Fade the tiles of the outgoing scene from the top-right corner to the bottom-left corner.
+    # @return [TransitionFadeUp]
+    @TransitionFadeUp: ->
+
+    # Flips the screen half horizontally and half vertically.
+    # @return [TransitionFlipAngular]
+    @TransitionFlipAngular: ->
+
+    # Flips the screen horizontally.
+    # @return [TransitionFlipX]
+    @TransitionFlipX: ->
+
+    # Flips the screen vertically.
+    # @return [TransitionFlipY]
+    @TransitionFlipY: ->
+
+    # Zoom out and jump the outgoing scene, and then jump and zoom in the incoming
+    # @return [TransitionJumpZoom]
+    @TransitionJumpZoom: ->
+
+    # Move in from to the bottom the incoming scene.
+    # @return [TransitionMoveInB]
+    @TransitionMoveInB: ->
+
+    # Move in from to the left the incoming scene.
+    # @return [TransitionMoveInL]
+    @TransitionMoveInL: ->
+
+    # Move in from to the right the incoming scene.
+    # @return [TransitionMoveInR]
+    @TransitionMoveInR: ->
+
+    # Move in from to the top the incoming scene.
+    # @return [TransitionMoveInT]
+    @TransitionMoveInT: ->
+
+    # A transition which peels back the bottom right hand corner of a scene to transition to the scene beneath it simulating a page turn.
+    # @return [TransitionPageTurn]
+    @TransitionPageTurn: ->
+
+    # cc.TransitionProgress transition.
+    # @return [TransitionProgress]
+    @TransitionProgress: ->
+
+    # cc.TransitionProgressHorizontal transition.
+    # @return [TransitionProgressHorizontal]
+    @TransitionProgressHorizontal: ->
+
+    # cc.TransitionProgressInOut transition.
+    # @return [TransitionProgressInOut]
+    @TransitionProgressInOut: ->
+
+    # cc.TransitionProgressOutIn transition.
+    # @return [TransitionProgressOutIn]
+    @TransitionProgressOutIn: ->
+
+    # cc.TransitionRadialCCW transition.
+    # @return [TransitionProgressRadialCCW]
+    @TransitionProgressRadialCCW: ->
+
+    # cc.TransitionRadialCW transition.
+    # @return [TransitionProgressRadialCW]
+    @TransitionProgressRadialCW: ->
+
+    # cc.TransitionProgressVertical transition.
+    # @return [TransitionProgressVertical]
+    @TransitionProgressVertical: ->
+
+    # Rotate and zoom out the outgoing scene, and then rotate and zoom in the incoming
+    # @return [TransitionRotoZoom]
+    @TransitionRotoZoom: ->
+
+    # @return [TransitionScene]
+    @TransitionScene: ->
+
+    # A cc.Transition that supports orientation like.
+    # @return [TransitionSceneOriented]
+    @TransitionSceneOriented: ->
+
+    # Shrink the outgoing scene while grow the incoming scene
+    # @return [TransitionShrinkGrow]
+    @TransitionShrinkGrow: ->
+
+    # Slide in the incoming scene from the bottom border.
+    # @return [TransitionSlideInB]
+    @TransitionSlideInB: ->
+
+    # a transition that a new scene is slided from left
+    # @return [TransitionSlideInL]
+    @TransitionSlideInL: ->
+
+    # Slide in the incoming scene from the right border.
+    # @return [TransitionSlideInR]
+    @TransitionSlideInR: ->
+
+    # Slide in the incoming scene from the top border.
+    # @return [TransitionSlideInT]
+    @TransitionSlideInT: ->
+
+    # The odd columns goes upwards while the even columns goes downwards.
+    # @return [TransitionSplitCols]
+    @TransitionSplitCols: ->
+
+    # The odd rows goes to the left while the even rows goes to the right.
+    # @return [TransitionSplitRows]
+    @TransitionSplitRows: ->
+
+    # Turn off the tiles of the outgoing scene in random order
+    # @return [TransitionTurnOffTiles]
+    @TransitionTurnOffTiles: ->
+
+    # Flips the screen half horizontally and half vertically doing a little zooming out/in.
+    # @return [TransitionZoomFlipAngular]
+    @TransitionZoomFlipAngular: ->
+
+    # Flips the screen horizontally doing a zoom out/in The front face is the outgoing scene and the back face is the incoming scene.
+    # @return [TransitionZoomFlipX]
+    @TransitionZoomFlipX: ->
+
+    # Flips the screen vertically doing a little zooming out/in The front face is the outgoing scene and the back face is the incoming scene.
+    # @return [TransitionZoomFlipY]
+    @TransitionZoomFlipY: ->
+
+    # cc.TurnOffTiles action.
+    # @return [TurnOffTiles]
+    @TurnOffTiles: ->
+
+    # a Point with a vertex point, a tex coord point and a color 4B
+    # @param [Vertex2F] vertices1
+    # @param [Color4B] colors1
+    # @param [Tex2F] texCoords1
+    # @return [V2F_C4B_T2F]
+    @V2F_C4B_T2F: (vertices1, colors1, texCoords1) ->
+
+    # 4 ccVertex2FTex2FColor4B Quad
+    # @param [V2F_C4B_T2F] bl1
+    # @param [V2F_C4B_T2F] br1
+    # @param [V2F_C4B_T2F] tl1
+    # @param [V2F_C4B_T2F] tr1
+    # @return [V2F_C4B_T2F_Quad]
+    @V2F_C4B_T2F_Quad: (bl1, br1, tl1, tr1) ->
+
+    # A Triangle of ccV2F_C4B_T2F
+    # @param [V2F_C4B_T2F] a
+    # @param [V2F_C4B_T2F] b
+    # @param [V2F_C4B_T2F] c
+    # @return [V2F_C4B_T2F_Triangle]
+    @V2F_C4B_T2F_Triangle: (a, b, c) ->
+
+    # a Point with a vertex point, a tex coord point and a color 4F
+    # @param [Vertex2F] vertices1
+    # @param [Color4F] colors1
+    # @param [Tex2F] texCoords1
+    # @return [V2F_C4F_T2F]
+    @V2F_C4F_T2F: (vertices1, colors1, texCoords1) ->
+
+    # 4 ccVertex2FTex2FColor4F Quad
+    # @param [V2F_C4F_T2F] bl1
+    # @param [V2F_C4F_T2F] br1
+    # @param [V2F_C4F_T2F] tl1
+    # @param [V2F_C4F_T2F] tr1
+    # @return [V2F_C4F_T2F_Quad]
+    @V2F_C4F_T2F_Quad: (bl1, br1, tl1, tr1) ->
+
+    # a Point with a vertex point, a tex coord point and a color 4B
+    # @param [Vertex3F] vertices1
+    # @param [Color4B] colors1
+    # @param [Tex2F] texCoords1
+    # @return [V3F_C4B_T2F]
+    @V3F_C4B_T2F: (vertices1, colors1, texCoords1) ->
+
+    # 4 ccVertex3FTex2FColor4B
+    # @param [V3F_C4B_T2F] tl1
+    # @param [V3F_C4B_T2F] bl1
+    # @param [V3F_C4B_T2F] tr1
+    # @param [V3F_C4B_T2F] br1
+    # @return [V3F_C4B_T2F_Quad]
+    @V3F_C4B_T2F_Quad: (tl1, bl1, tr1, br1) ->
+
+    # A vertex composed of 2 floats: x, y
+    # @param [Number] x1
+    # @param [Number] y1
+    # @return [Vertex2F]
+    @Vertex2F: (x1, y1) ->
+
+    # A vertex composed of 3 floats: x, y, z
+    # @param [Number] x1
+    # @param [Number] y1
+    # @param [Number] z1
+    # @return [Vertex3F]
+    @Vertex3F: (x1, y1, z1) ->
+
+    # cc.WavesTiles3D action.
+    # @return [WavesTiles3D]
+    @WavesTiles3D: ->
+
+    # The Audio Engine implementation via Web Audio API.
+    # @return [WebAudioEngine]
+    @WebAudioEngine: ->
+

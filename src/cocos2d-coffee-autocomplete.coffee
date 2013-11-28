@@ -129,16 +129,32 @@ class Importer
 
         # Enrich 'cc' namespace
         if doc.name[0...3] is 'cc.' and doc.methods[0]?.ctor
-            if @documents['cc'] and doc.methods[0].name.indexOf('.') is -1
-                @documents['cc'].methods.push
-                    # Flags
-                    'constant': false
-                    'static': true
-                    # Infos
-                    name: doc.methods[0].name
-                    description: doc.description
-                    type: doc.name
-                    args: doc.methods[0].args
+            if @documents['cc']
+                methodName = doc.methods[0].name
+                if methodName[0...3] is 'cc.'
+                    methodName = methodName[3..]
+                if methodName.indexOf('.') is -1
+                    @documents['cc'].methods.push
+                        # Flags
+                        'constant': false
+                        'static': true
+                        # Infos
+                        name: methodName
+                        description: doc.description
+                        type: doc.name
+                        args: doc.methods[0].args
+                #docName = doc.name
+                #if docName[0...3] is 'cc.'
+                #    docName = docName[3..]
+                #if docName.indexOf('.') is -1
+                #    @documents['cc'].fields.push
+                #        # Flags
+                #        'constant': false
+                #        'static': true
+                #        # Infos
+                #        name: docName
+                #        description: doc.description
+                #        type: doc.name
 
 
         # Keep track of document
