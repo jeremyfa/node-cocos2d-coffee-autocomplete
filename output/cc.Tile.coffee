@@ -1,5 +1,5 @@
 
-# A Tile composed of position, startPosition and delta
+# A Tile composed of position, startPosition and delta.
 class Tile
 
     # Constructor

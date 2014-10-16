@@ -6,15 +6,21 @@ class EaseElasticIn extends EaseElastic
     # @return [EaseElasticIn]
     constructor: ->
 
-    # Creates the action with the inner action and the period in radians (default is 0.3)
+    # to copy object with deep copy.
+    # @return [EaseElasticIn]
+    clone: ->
+
+    # Creates the action with the inner action and the period in radians (default is 0.3).
     # @param [ActionInterval] action
     # @param [Number] period
     # @return [EaseElasticIn]
     @create: (action, period) ->
 
-    # @return [ActionInterval]
+    # Create a action.
+    # @return [EaseElasticOut]
     reverse: ->
 
-    # @param [Number] time1
-    update: (time1) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

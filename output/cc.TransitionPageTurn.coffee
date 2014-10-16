@@ -3,8 +3,11 @@
 class TransitionPageTurn extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [Boolean] backwards
     # @return [TransitionPageTurn]
-    constructor: ->
+    constructor: (t, scene, backwards) ->
 
     # @param [Size] vector
     # @return [ReverseTime|cc.TransitionScene]

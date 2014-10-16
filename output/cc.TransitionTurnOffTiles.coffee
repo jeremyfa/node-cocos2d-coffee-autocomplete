@@ -3,8 +3,10 @@
 class TransitionTurnOffTiles extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionTurnOffTiles]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # Turn off the tiles of the outgoing scene in random order
     # @param [Number] t

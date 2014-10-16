@@ -1,10 +1,12 @@
 
 # Subclass cc.MenuItem (or any subclass) to create your custom cc.MenuItem objects.
-class MenuItem extends NodeRGBA
+class MenuItem extends Node
 
     # Constructor
+    # @param [function|String] callback
+    # @param [Node] target
     # @return [MenuItem]
-    constructor: ->
+    constructor: (callback, target) ->
 
     # call the selector with target
     activate: ->
@@ -15,16 +17,21 @@ class MenuItem extends NodeRGBA
     # @return [MenuItem]
     @create: (callback, target) ->
 
+    # initializes a cc.MenuItem with callback
     # @param [function|String] callback
     # @param [Node] target
     # @return [Boolean]
     initWithCallback: (callback, target) ->
 
-    # MenuItem is Enabled
+    # return whether MenuItem is Enabled
     # @return [Boolean]
     isEnabled: ->
 
-    # MenuItem is selected
+    # only use for jsbinding
+    # @return [boolean]
+    isOpacityModifyRGB: ->
+
+    # return whether MenuItem is selected
     # @return [Boolean]
     isSelected: ->
 
@@ -32,7 +39,7 @@ class MenuItem extends NodeRGBA
     # @return [Rect]
     rect: ->
 
-    # same as setIsSelected(true)
+    # set the cc.MenuItem selected same as setIsSelected(true)
     selected: ->
 
     # set the callback to the menu item
@@ -44,11 +51,15 @@ class MenuItem extends NodeRGBA
     # @param [Boolean] enable
     setEnabled: (enable) ->
 
+    # only use for jsbinding
+    # @param value
+    setOpacityModifyRGB: (value) ->
+
     # set the target/selector of the menu item
     # @param [function|String] selector
     # @param [Node] rec
     setTarget: (selector, rec) ->
 
-    # same as setIsSelected(false)
+    # set the cc.MenuItem unselected same as setIsSelected(false)
     unselected: ->
 

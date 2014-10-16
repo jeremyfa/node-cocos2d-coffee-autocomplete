@@ -1,11 +1,13 @@
 
-# Features and Limitation: - You can add MenuItem objects in runtime using addChild: - But the only accecpted children are MenuItem objects
-class Menu extends LayerRGBA
+# Features and Limitation: - You can add MenuItem objects in runtime using addChild: - But the only accepted children are MenuItem objects
+class Menu extends Layer
 
     # Constructor
+    # @param [...cc.MenuItem|null] menuItems}
     # @return [Menu]
-    constructor: ->
+    constructor: (menuItems}) ->
 
+    # add a child for cc.Menu
     # @param [Node] child
     # @param [Number|Null] zOrder
     # @param [Number|Null] tag
@@ -22,6 +24,7 @@ class Menu extends LayerRGBA
     alignItemsInColumns: ->
 
     # align menu items in rows
+    # @param [Number] 
     alignItemsInRows: ->
 
     # align items vertically with default padding
@@ -32,18 +35,14 @@ class Menu extends LayerRGBA
     alignItemsVerticallyWithPadding: (padding) ->
 
     # create a new menu
+    # @param [...cc.MenuItem|null] menuItems
     # @return [Menu]
-    @create: ->
-
-    # @return [Color3B]
-    getColor: ->
-
-    # @return [Number]
-    getOpacity: ->
+    @create: (menuItems) ->
 
     # initializes a cc.Menu with a Array of cc.MenuItem objects
-    # @param arrayOfItems
-    initWithArray: (arrayOfItems) ->
+    # @param [Array] array
+    # @return [Boolean]
+    initWithArray: (array) ->
 
     # initializes a cc.Menu with it's items
     # @param [Array] args
@@ -54,47 +53,26 @@ class Menu extends LayerRGBA
     # @return [Boolean]
     isEnabled: ->
 
-    # custom on exit
+    # only use for jsbinding
+    # @return [boolean]
+    isOpacityModifyRGB: ->
+
+    # Event callback that is invoked every time when CCMenu enters the 'stage'.
+    onEnter: ->
+
+    # callback that is called every time the cc.Menu leaves the 'stage'.
     onExit: ->
 
-    # @param [Touch] touch
-    # @param [Object] e
-    # @return [Boolean]
-    onTouchBegan: (touch, e) ->
-
-    # touch cancelled
-    # @param touch
-    # @param e
-    onTouchCancelled: (touch, e) ->
-
-    # when a touch ended
-    # @param touch
-    # @param e
-    onTouchEnded: (touch, e) ->
-
-    # touch moved
-    # @param [Touch] touch
-    # @param [Object] e
-    onTouchMoved: (touch, e) ->
-
-    # make the menu clickable
-    registerWithTouchDispatcher: ->
-
+    # remove a child from cc.Menu
     # @param [Node] child
     # @param [boolean] cleanup
     removeChild: (child, cleanup) ->
-
-    # @param [Color3B] color
-    setColor: (color) ->
 
     # set whether or not the menu will receive events
     # @param [Boolean] enabled
     setEnabled: (enabled) ->
 
-    # set event handler priority.
-    # @param [Number] newPriority
-    setHandlerPriority: (newPriority) ->
-
-    # @param [Number] opa
-    setOpacity: (opa) ->
+    # only use for jsbinding
+    # @param value
+    setOpacityModifyRGB: (value) ->
 

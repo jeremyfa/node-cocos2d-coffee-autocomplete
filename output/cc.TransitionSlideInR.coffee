@@ -3,8 +3,10 @@
 class TransitionSlideInR extends TransitionSlideInL
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSlideInR]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # returns the action that will be performed by the incomming and outgoing scene
     # @return [MoveBy]

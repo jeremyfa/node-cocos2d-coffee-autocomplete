@@ -1,9 +1,10 @@
 
+# cc.Point
 class Point
 
-    # Constructor
-    # @param [Number] _x
-    # @param [Number] _y
+    # cc.Point is the class for point object, please do not use its constructor to create points, use cc.p() alias function instead.
+    # @param [Number] x
+    # @param [Number] y
     # @return [Point]
-    constructor: (_x, _y) ->
+    constructor: (x, y) ->
 

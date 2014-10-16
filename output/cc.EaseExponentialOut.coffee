@@ -1,19 +1,25 @@
 
-# Ease Exponential Out
+# Ease Exponential Out.
 class EaseExponentialOut extends ActionEase
 
     # Constructor
     # @return [EaseExponentialOut]
     constructor: ->
 
-    # creates the action
-    # @param [ActionInterval] action
+    # to copy object with deep copy.
     # @return [EaseExponentialOut]
+    clone: ->
+
+    # Creates the action easing object with the rate parameter.
+    # @param [ActionInterval] action
+    # @return [Object]
     @create: (action) ->
 
-    # @return [ActionInterval]
+    # Create a cc.EaseExponentialIn action.
+    # @return [EaseExponentialIn]
     reverse: ->
 
-    # @param [Number] time1
-    update: (time1) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

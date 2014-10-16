@@ -3,8 +3,10 @@
 class TransitionRotoZoom extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionRotoZoom]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # Creates a Transtion rotation and zoom
     # @param [Number] t

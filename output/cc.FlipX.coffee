@@ -1,22 +1,29 @@
 
-# Flips the sprite horizontally
+# Flips the sprite horizontally.
 class FlipX extends ActionInstant
 
+    # Plese use cc.flipX instead.
+    @FlipX.create = {}
+
     # Constructor
+    # @param [Boolean] flip
     # @return [FlipX]
-    constructor: ->
+    constructor: (flip) ->
 
-    # @param [Boolean] x
-    # @return [FlipX]
-    @create: (x) ->
-
-    # @param [Boolean] x
-    # @return [Boolean]
-    initWithFlipX: (x) ->
-
+    # to copy object with deep copy.
     # @return [FiniteTimeAction]
+    clone: ->
+
+    # initializes the action with a set flipX.
+    # @param [Boolean] flip
+    # @return [Boolean]
+    initWithFlipX: (flip) ->
+
+    # returns a reversed action.
+    # @return [FlipX]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

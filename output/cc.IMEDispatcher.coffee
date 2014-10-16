@@ -1,11 +1,9 @@
 
-# Input Method Edit Message Dispatcher.
-class IMEDispatcher extends Class
-
-    @IMEDispatcher.instance = {}
+# cc.imeDispatcher is a singleton object which manage input message dispatching.
+class imeDispatcher
 
     # Constructor
-    # @return [IMEDispatcher]
+    # @return [imeDispatcher]
     constructor: ->
 
     # Add delegate to concern ime msg
@@ -49,10 +47,6 @@ class IMEDispatcher extends Class
     # Get the content text, which current CCIMEDelegate which attached with IME has.
     # @return [String]
     getContentText: ->
-
-    # Returns the shared CCIMEDispatcher object for the system.
-    # @return [IMEDispatcher]
-    @getInstance: ->
 
     # Process keydown's keycode
     # @param [Number] keyCode

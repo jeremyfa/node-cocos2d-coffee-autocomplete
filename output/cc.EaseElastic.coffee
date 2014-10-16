@@ -1,12 +1,18 @@
 
-# Ease Elastic abstract class
+# Ease Elastic abstract class.
 class EaseElastic extends ActionEase
 
     # Constructor
+    # @param [ActionInterval] action
+    # @param [Number] period
     # @return [EaseElastic]
-    constructor: ->
+    constructor: (action, period) ->
 
-    # Creates the action with the inner action and the period in radians (default is 0.3)
+    # to copy object with deep copy.
+    # @return [EaseElastic]
+    clone: ->
+
+    # Creates the action with the inner action and the period in radians (default is 0.3).
     # @param [ActionInterval] action
     # @param [Number] period
     # @return [EaseElastic]
@@ -22,7 +28,8 @@ class EaseElastic extends ActionEase
     # @return [Boolean]
     initWithAction: (action, period) ->
 
-    # @return [Null]
+    # Create a action.
+    # @return [null]
     reverse: ->
 
     # set period of the wave in radians.

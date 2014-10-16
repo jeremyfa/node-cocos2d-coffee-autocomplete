@@ -6,14 +6,20 @@ class EaseBounceOut extends EaseBounce
     # @return [EaseBounceOut]
     constructor: ->
 
-    # creates the action
+    # to copy object with deep copy.
+    # @return [EaseBounceOut]
+    clone: ->
+
+    # Creates the action.
     # @param [ActionInterval] action
     # @return [EaseBounceOut]
     @create: (action) ->
 
-    # @return [ActionInterval]
+    # Create a action.
+    # @return [EaseBounceIn]
     reverse: ->
 
-    # @param [Number] time1
-    update: (time1) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

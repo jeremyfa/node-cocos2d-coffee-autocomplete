@@ -10,10 +10,6 @@ class ParticleFlower extends ParticleSystem
     # @return [ParticleFlower]
     @create: ->
 
-    # initialize a flower particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a flower particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

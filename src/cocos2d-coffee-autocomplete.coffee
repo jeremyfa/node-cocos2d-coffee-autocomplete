@@ -15,8 +15,8 @@ reserved = ['case', 'default', 'function', 'var', 'void', 'with', 'const', 'let'
 class Importer
 
     constructor: ->
-        @baseURL = 'http://www.cocos2d-x.org/reference/html5-js/V2.2.1'
-        @cachePath = path.normalize __dirname+'/../docs/www.cocos2d-x.org/reference/html5-js/V2.2.1'
+        @baseURL = 'http://www.cocos2d-x.org/reference/html5-js/V3.0'
+        @cachePath = path.normalize __dirname+'/../docs/www.cocos2d-x.org/reference/html5-js/V3.0'
         @outputPath = process.cwd()+'/output'
         @documents = {}
         @documentsList = []
@@ -38,9 +38,10 @@ class Importer
                 @extractDocument $(item)
 
         for doc in @documentsList
-            mkdirp.sync @outputPath
-            fs.writeFileSync @outputPath+'/'+doc.name+'.coffee', doc.toCoffeeScript()
-            @log ('generated file at '+@outputPath+'/'+doc.name+'.coffee').green
+            unless doc.name.indexOf('#') isnt -1
+                mkdirp.sync @outputPath
+                fs.writeFileSync @outputPath+'/'+doc.name+'.coffee', doc.toCoffeeScript()
+                @log ('generated file at '+@outputPath+'/'+doc.name+'.coffee').green
 
 
     # Get jQuery element from URI
@@ -68,13 +69,20 @@ class Importer
                 fs.writeFileSync(@cachePath+uri, html)
         
         # Get jQuery element from HTML
-        html = html.split("\n").join(' ').split("\r").join(' ')
+        html = html.split("\n").join(' ').split("\r").join(' ').split("\t").join(' ')
         html = html.replace /<script([^>]*)>(.*?)<\/script>/ig, ''
         bodyMatcher = /<body([^>]*)>(.*)<\/body>/ig
         bodyMatcher.lastIndex = 0
         headMatcher = /<head([^>]*)>(.*)<\/head>/ig
         headMatcher.lastIndex = 0
-        bodyContents = html.match(bodyMatcher)[0].replace(/^<body([^>]*)>/ig, '').replace(/<\/body>$/ig, '')
+        try
+            unless html.match(bodyMatcher)?.length
+                html = html.substring html.indexOf('<body')
+                html = html.substr 0, html.lastIndexOf('</body')
+                html += '</body>'
+            else
+                html = html.match(bodyMatcher)[0]
+            bodyContents = html.replace(/^<body([^>]*)>/ig, '').replace(/<\/body>$/ig, '')
 
         # Return result
         return $(bodyContents)

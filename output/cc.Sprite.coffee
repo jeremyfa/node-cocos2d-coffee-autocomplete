@@ -1,81 +1,91 @@
 
 # cc.Sprite is a 2d image ( http://en.wikipedia.org/wiki/Sprite_(computer_graphics) ) cc.Sprite can be created with an image, or with a sub-rectangle of an image.
-class Sprite extends NodeRGBA
+class Sprite extends Node
 
-    # Add child to sprite (override cc.Node )
-    addChild: {}
+    # - The index used on the TextureAtlas.
+    # [Number]
+    atlasIndex: 1
 
-    # draw sprite to canvas
-    draw: {}
+    # - The batch node object if this sprite is rendered by cc.SpriteBatchNode.
+    # [SpriteBatchNode]
+    batchNode: new SpriteBatchNode()
 
-    # Initializes an empty sprite with nothing init.
+    # - Indicates whether the sprite needs to be updated.
     # [Boolean]
-    init: new Boolean()
+    dirty: new Boolean()
 
-    # Initializes a sprite with a texture and a rect in points, optionally rotated.
+    # - Indicates whether or not the spirte is flipped on x axis.
     # [Boolean]
-    initWithTexture: new Boolean()
+    flippedX: new Boolean()
 
-    # Returns whether or not a cc.SpriteFrame is being displayed
+    # - Indicates whether or not the spirte is flipped on y axis.
     # [Boolean]
-    isFrameDisplayed: new Boolean()
+    flippedY: new Boolean()
 
-    # Sets the batch node to sprite
-    setBatchNode: {}
+    # cc.Sprite invalid index on the cc.SpriteBatchNode
+    @Sprite.INDEX_NOT_INITIALIZED = {}
 
-    # conforms to cc.TextureProtocol protocol
-    setBlendFunc: {}
+    # -
+    # [Number]
+    offsetX: 1
 
-    # color setter
-    setColor: {}
+    # -
+    # [Number]
+    offsetY: 1
 
-    # Sets a new display frame to the cc.Sprite.
-    setDisplayFrame: {}
+    # -
+    # [V3F_C4B_T2F_Quad]
+    quad: new V3F_C4B_T2F_Quad()
 
-    # opacity setter
-    setOpacity: {}
+    # - Texture used to render the sprite.
+    # [Texture2D]
+    texture: new Texture2D()
 
-    # opacity: conforms to CCRGBAProtocol protocol
-    setOpacityModifyRGB: {}
+    # - The weak reference of the cc.TextureAtlas when the sprite is rendered using via cc.SpriteBatchNode.
+    # [TextureAtlas]
+    textureAtlas: new TextureAtlas()
 
-    # Texture of sprite setter
-    setTexture: {}
-
-    # updates the texture rect of the CCSprite in points.
-    setTextureRect: {}
-
-    # updates the quad according the the rotation, position, scale values.
-    updateTransform: {}
+    # -
+    # [Boolean]
+    textureRectRotated: new Boolean()
 
     # Constructor
-    # @return [Sprite]
-    constructor: ->
-
-    # Create a sprite with filename and rect
-    # @param [String] fileName
+    # @param [String|cc.SpriteFrame|HTMLImageElement|cc.Texture2D] fileName
     # @param [Rect] rect
+    # @param [Boolean] rotated
     # @return [Sprite]
-    @create: (fileName, rect) ->
+    constructor: (fileName, rect, rotated) ->
 
-    # Creates a sprite with a sprite frame.
-    # @param [SpriteFrame] spriteFrame
-    # @return [Sprite]
-    @createWithSpriteFrame: (spriteFrame) ->
+    # Add child to sprite (override cc.Node)
+    # @param [Sprite] child
+    # @param [Number] localZOrder
+    # @param [String] tag
+    addChild: (child, localZOrder, tag) ->
 
-    # Creates a sprite with a sprite frame.
-    # @param [String] spriteFrameName
-    # @return [Sprite]
-    @createWithSpriteFrameName: (spriteFrameName) ->
+    # Add a event listener for texture loaded event.
+    # @param [Function] callback
+    # @param [Object] target
+    addLoadedEventListener: (callback, target) ->
 
-    # Creates a sprite with an exsiting texture contained in a CCTexture2D object After creation, the rect will be the size of the texture, and the offset will be (0,0).
-    # @param [Texture2D] texture
+    # Create a sprite with image path or frame name or texture or spriteFrame.
+    # @param [String|cc.SpriteFrame|HTMLImageElement|cc.Texture2D] fileName
     # @param [Rect] rect
+    # @param [Boolean] rotated
     # @return [Sprite]
-    @createWithTexture: (texture, rect) ->
+    @create: (fileName, rect, rotated) ->
+
+    @createWithSpriteFrame: ->
+
+    @createWithSpriteFrameName: ->
+
+    @createWithTexture: ->
 
     # Returns the current displayed frame.
     # @return [SpriteFrame]
     displayFrame: ->
+
+    # draw sprite to canvas
+    draw: ->
 
     # Returns the index used on the TextureAtlas.
     # @return [Number]
@@ -85,11 +95,11 @@ class Sprite extends NodeRGBA
     # @return [SpriteBatchNode|null]
     getBatchNode: ->
 
-    # conforms to cc.TextureProtocol protocol
+    # Returns the blend function
     # @return [BlendFunc]
     getBlendFunc: ->
 
-    # Gets the offset position of the sprite.
+    # Returns the offset position of the sprite.
     # @return [Point]
     getOffsetPosition: ->
 
@@ -97,21 +107,25 @@ class Sprite extends NodeRGBA
     # @return [V3F_C4B_T2F_Quad]
     getQuad: ->
 
-    # return the SpriteBatchNode of the cc.Sprite
-    # @return [SpriteBatchNode]
-    getSpriteBatchNode: ->
+    # Returns the texture of the sprite node
+    # @return [Texture2D]
+    getTexture: ->
 
-    # Gets the weak reference of the cc.TextureAtlas when the sprite is rendered using via cc.SpriteBatchNode
+    # Returns the weak reference of the cc.TextureAtlas when the sprite is rendered using via cc.SpriteBatchNode
     # @return [TextureAtlas]
     getTextureAtlas: ->
 
-    # returns the rect of the cc.Sprite in points
+    # Returns the rect of the cc.Sprite in points
     # @return [Rect]
     getTextureRect: ->
 
-    # IsRelativeAnchorPoint setter (override cc.Node )
+    # Sets whether ignore anchor point for positioning
     # @param [Boolean] relative
     ignoreAnchorPointForPosition: (relative) ->
+
+    # Initializes an empty sprite with nothing init.
+    # @return [Boolean]
+    init: ->
 
     # Initializes a sprite with an image filename.
     # @param [String] filename
@@ -129,7 +143,14 @@ class Sprite extends NodeRGBA
     # @return [Boolean]
     initWithSpriteFrameName: (spriteFrameName) ->
 
-    # Whether or not the Sprite needs to be updated in the Atlas
+    # Initializes a sprite with a texture and a rect in points, optionally rotated.
+    # @param [Texture2D|HTMLImageElement|HTMLCanvasElement] texture
+    # @param [Rect] rect
+    # @param [Boolean] rotated
+    # @return [Boolean]
+    initWithTexture: (texture, rect, rotated) ->
+
+    # Returns whether or not the Sprite needs to be updated in the Atlas
     # @return [Boolean]
     isDirty: ->
 
@@ -141,7 +162,12 @@ class Sprite extends NodeRGBA
     # @return [Boolean]
     isFlippedY: ->
 
-    # return IsOpacityModifyRGB value
+    # Returns whether or not a cc.SpriteFrame is being displayed
+    # @param [SpriteFrame] frame
+    # @return [Boolean]
+    isFrameDisplayed: (frame) ->
+
+    # Returns whether opacity modify color or not.
     # @return [Boolean]
     isOpacityModifyRGB: ->
 
@@ -149,7 +175,7 @@ class Sprite extends NodeRGBA
     # @return [Boolean]
     isTextureRectRotated: ->
 
-    # Removes all children from the container (override cc.Node )
+    # Removes all children from the container.
     # @param cleanup
     removeAllChildren: (cleanup) ->
 
@@ -163,28 +189,38 @@ class Sprite extends NodeRGBA
     # @param [Number] zOrder
     reorderChild: (child, zOrder) ->
 
-    # HACK: optimization
-    SET_DIRTY_RECURSIVELY: ->
-
-    # AnchorPoint setter (override cc.Node )
-    # @param [Point] anchor
-    setAnchorPoint: (anchor) ->
-
-    # Set the index used on the TextureAtlas.
+    # Sets the index used on the TextureAtlas.
     # @param [Number] atlasIndex
     setAtlasIndex: (atlasIndex) ->
 
-    # Makes the Sprite to be updated in the Atlas.
+    # Sets the batch node to sprite
+    # @param [SpriteBatchNode|null] spriteBatchNode
+    setBatchNode: (spriteBatchNode) ->
+
+    # conforms to cc.TextureProtocol protocol
+    # @param [Number|cc.BlendFunc] src
+    # @param [Number] dst
+    setBlendFunc: (src, dst) ->
+
+    # Sets color of the sprite
+    # @param [Color] color3
+    setColor: (color3) ->
+
+    # Makes the sprite to be updated in the Atlas.
     # @param [Boolean] bDirty
     setDirty: (bDirty) ->
 
-    # set Recursively is or isn't Dirty used only when parent is cc.SpriteBatchNode
+    # Sets recursively the dirty flag.
     # @param [Boolean] value
     setDirtyRecursively: (value) ->
 
-    # changes the display frame with animation name and index.
-    # @param animationName
-    # @param frameIndex
+    # Sets a new display frame to the sprite.
+    # @param [SpriteFrame|String] newFrame
+    setDisplayFrame: (newFrame) ->
+
+    # Changes the display frame with animation name and index.
+    # @param [String] animationName
+    # @param [Number] frameIndex
     setDisplayFrameWithAnimationName: (animationName, frameIndex) ->
 
     # Sets whether the sprite should be flipped horizontally or not.
@@ -195,59 +231,64 @@ class Sprite extends NodeRGBA
     # @param [Boolean] flippedY
     setFlippedY: (flippedY) ->
 
-    # position setter (override cc.Node )
-    # @param [Point] pos
-    setPosition: (pos) ->
+    # Make the node dirty
+    # @param [Boolean] norecursive
+    setNodeDirty: (norecursive) ->
 
-    # Rotation setter (override cc.Node )
-    # @param [Number] rotation
-    setRotation: (rotation) ->
+    # Sets opacity of the sprite
+    # @param [Number] opacity
+    setOpacity: (opacity) ->
 
-    # The scale factor of the node.
-    # @param [Number] scale
-    # @param [Number|null] scaleY
-    setScale: (scale, scaleY) ->
+    # Sets whether opacity modify color or not.
+    # @param [Boolean] modify
+    setOpacityModifyRGB: (modify) ->
 
-    # ScaleX setter (override cc.Node )
-    # @param [Number] scaleX
-    setScaleX: (scaleX) ->
+    # Sets a new sprite frame to the sprite.
+    # @param [SpriteFrame|String] newFrame
+    setSpriteFrame: (newFrame) ->
 
-    # ScaleY setter (override cc.Node )
-    # @param [Number] scaleY
-    setScaleY: (scaleY) ->
-
-    # SkewX setter (override cc.Node )
-    # @param [Number] sx
-    setSkewX: (sx) ->
-
-    # SkewY setter (override cc.Node )
-    # @param [Number] sy
-    setSkewY: (sy) ->
-
-    # set the SpriteBatchNode of the cc.Sprite
-    # @param [SpriteBatchNode] spriteBatchNode
-    setSpriteBatchNode: (spriteBatchNode) ->
+    # Sets the texture of sprite
+    # @param [Texture2D|String] texture
+    setTexture: (texture) ->
 
     # Sets the weak reference of the cc.TextureAtlas when the sprite is rendered using via cc.SpriteBatchNode
     # @param [TextureAtlas] textureAtlas
     setTextureAtlas: (textureAtlas) ->
 
+    # Updates the texture rect of the CCSprite in points.
+    # @param [Rect] rect
+    # @param [Boolean] rotated
+    # @param [Size] untrimmedSize
+    setTextureRect: (rect, rotated, untrimmedSize) ->
+
     # set the vertex rect.
     # @param [Rect] rect
     setVertexRect: (rect) ->
 
-    # VertexZ setter (override cc.Node )
-    # @param [Number] vertexZ
-    setVertexZ: (vertexZ) ->
-
-    # visible setter (override cc.Node )
+    # Sets whether the sprite is visible or not.
     # @param [Boolean] visible
     setVisible: (visible) ->
+
+    # Sort all children of this sprite node.
+    sortAllChildren: ->
+
+    # Returns whether the texture have been loaded
+    # @return [boolean]
+    textureLoaded: ->
 
     # Update sprite's color
     updateColor: ->
 
-    # tell the sprite to use batch node render.
+    # Updates the display color
+    updateDisplayedColor: ->
+
+    # Update the display opacity.
+    updateDisplayedOpacity: ->
+
+    # Updates the quad according the the rotation, position, scale values.
+    updateTransform: ->
+
+    # Tell the sprite to use batch node render.
     # @param [SpriteBatchNode] batchNode
     useBatchNode: (batchNode) ->
 

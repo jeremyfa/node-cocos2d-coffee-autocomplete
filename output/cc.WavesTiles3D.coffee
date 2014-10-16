@@ -2,17 +2,16 @@
 # cc.WavesTiles3D action.
 class WavesTiles3D extends TiledGrid3DAction
 
-    # Constructor
-    # @return [WavesTiles3D]
-    constructor: ->
+    # Please use cc.wavesTiles3D instead creates the action with a number of waves, the waves amplitude, the grid size and the duration.
+    @WavesTiles3D.create = {}
 
-    # creates the action with a number of waves, the waves amplitude, the grid size and the duration
+    # Constructor
     # @param [Number] duration
     # @param [Size] gridSize
     # @param [Number] waves
     # @param [Number] amplitude
     # @return [WavesTiles3D]
-    @create: (duration, gridSize, waves, amplitude) ->
+    constructor: (duration, gridSize, waves, amplitude) ->
 
     # get amplitude of waves
     # @return [Number]
@@ -37,4 +36,8 @@ class WavesTiles3D extends TiledGrid3DAction
     # set amplitude rate of waves
     # @param [Number] amplitudeRate
     setAmplitudeRate: (amplitudeRate) ->
+
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

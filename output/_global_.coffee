@@ -1,25 +1,16 @@
 
 class _global_
 
-    # with frames and a delay between frames
-    delay: {}
+    view cc.view is the shared view object. cc.view is the shared view object.: {}
 
-    # WebGL constants
-    gl: {}
-
-    callback: ->
+    winSize cc.winSize is the alias object for the size of the current game window. cc.winSize is the alias object for the size of the current game window.: {}
 
     # returns a new clone of the action
     # @return [CatmullRomBy]
     clone: ->
 
-    get: ->
-
     # initializes the action with a duration and an array of points
-    # @param dt
-    # @param points
+    # @param [Number] dt
+    # @param [Array] points
     initWithDuration: (dt, points) ->
-
-    # @param newValue
-    set: (newValue) ->
 

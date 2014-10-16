@@ -58,40 +58,31 @@ class cc
     # [Number]
     @BLEND_SRC = 1
 
-    # Browser detection, based on mootools platform will print out win32, mac, etc type is the browser type, chrome, firefox etc
-    @Browser = {}
-
-    # Canvas of render type
-    # [Number]
-    @CANVAS = 1
-
-    # main Canvas of game engine
-    # [HTMLCanvasElement]
-    @canvas = new HTMLCanvasElement()
+    # A CCCamera is used in every CCNode.
+    @Camera = {}
 
     # If enabled, the cc.Node objects (cc.Sprite, cc.Label,etc) will be able to render in subpixels.
-    # [Number]
-    @COCOSNODE_RENDER_SUBPIXEL = 1
+    @COCOSNODE_RENDER_SUBPIXEL = {}
 
-    # mixin cc.Codec
-    @Codec = {}
+    # Number of kinds of control event.
+    @CONTROL_EVENT_TOTAL_NUMBER = {}
 
-    # ************************************************************************* Copyright (c) 2013 cocos2d-x.org http://www.cocos2d-x.org Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    @Component = {}
+    # Kinds of possible events for the control objects.
+    @CONTROL_EVENT_TOUCH_DOWN = {}
 
-    # ************************************************************************* Copyright (c) 2013 cocos2d-x.org http://www.cocos2d-x.org Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    @ComponentContainer = {}
+    # The possible state for a control.
+    @CONTROL_STATE_NORMAL = {}
 
-    # Runtime information
-    @config = {}
+    # returns a new clone of the controlPoints
+    # [Array]
+    @copyControlPoints = []
 
     # default tag for current item
     # [Number]
     @CURRENT_ITEM = 1
 
-    # default engine
-    # [String]
-    @DEFAULT_ENGINE = ''
+    # Default engine
+    @DEFAULT_ENGINE = {}
 
     # [Number]
     @DEFAULT_PADDING = 1
@@ -99,9 +90,8 @@ class cc
     # [Number]
     @DEFAULT_SPRITE_BATCH_CAPACITY = 1
 
-    # set default fps to 60
-    # [Number]
-    @defaultFPS = 1
+    # Default fps is 60
+    @defaultFPS = {}
 
     # [Number]
     @DEG = 1
@@ -126,56 +116,86 @@ class cc
     # [Number]
     @DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN = 1
 
-    # Senconds between FPS updates.
-    # [Number]
-    @DIRECTOR_FPS_INTERVAL = 1
+    @director = {}
 
-    # sets a 2D projection (orthogonal projection)
-    # [Number]
-    @DIRECTOR_PROJECTION_2D = 1
+    # Seconds between FPS updates.
+    @DIRECTOR_FPS_INTERVAL = {}
 
-    # sets a 3D projection with a fovy=60, znear=0.5f and zfar=1500.
-    # [Number]
-    @DIRECTOR_PROJECTION_3D = 1
-
-    # it calls "updateProjection" on the projection delegate.
-    # [Number]
-    @DIRECTOR_PROJECTION_CUSTOM = 1
-
-    # Default projection is 3D projection
-    # [Number]
-    @DIRECTOR_PROJECTION_DEFAULT = 1
-
-    # Position of the FPS (Default: 0,0 (bottom-left corner))
-    # [Point]
-    @DIRECTOR_STATS_POSITION = new Point()
+    # Position of the FPS (Default: 0,0 (bottom-left corner)) To modify it, in Web engine please refer to CCConfig.js, in JSB please refer to CCConfig.h
+    @DIRECTOR_STATS_POSITION = {}
 
     # default disabled tag
     # [Number]
     @DISABLE_TAG = 1
 
-    # drawing primitive of game engine
-    # [DrawingPrimitive]
-    @drawingUtil = new DrawingPrimitive()
+    # ************************************************ implementation of DisplayLinkDirector ************************************************
+    @DisplayLinkDirector = {}
+
+    # [Number]
+    @DST_ALPHA = 1
+
+    # [Number]
+    @DST_COLOR = 1
+
+    # Capitalize all characters automatically.
+    # [Number]
+    @EDITBOX_INPUT_FLAG_INITIAL_CAPS_ALL_CHARACTERS = 1
+
+    # This flag is a hint to the implementation that during text editing, the initial letter of each sentence should be capitalized.
+    # [Number]
+    @EDITBOX_INPUT_FLAG_INITIAL_CAPS_SENTENCE = 1
+
+    # This flag is a hint to the implementation that during text editing, the initial letter of each word should be capitalized.
+    # [Number]
+    @EDITBOX_INPUT_FLAG_INITIAL_CAPS_WORD = 1
+
+    # Indicates that the text entered is confidential data that should be obscured whenever possible.
+    # [Number]
+    @EDITBOX_INPUT_FLAG_PASSWORD = 1
+
+    # Indicates that the text entered is sensitive data that the implementation must never store into a dictionary or table for use in predictive, auto-completing, or other accelerated input schemes.
+    # [Number]
+    @EDITBOX_INPUT_FLAG_SENSITIVE = 1
+
+    # The EditBoxInputMode defines the type of text that the user is allowed * to enter.
+    # [Number]
+    @EDITBOX_INPUT_MODE_ANY = 1
+
+    # The user is allowed to enter a real number value.
+    # [Number]
+    @EDITBOX_INPUT_MODE_DECIMAL = 1
+
+    # The user is allowed to enter an e-mail address.
+    # [Number]
+    @EDITBOX_INPUT_MODE_EMAILADDR = 1
+
+    # The user is allowed to enter an integer value.
+    # [Number]
+    @EDITBOX_INPUT_MODE_NUMERIC = 1
+
+    # The user is allowed to enter a phone number.
+    # [Number]
+    @EDITBOX_INPUT_MODE_PHONENUMBER = 1
+
+    # The user is allowed to enter any text, except for line breaks.
+    # [Number]
+    @EDITBOX_INPUT_MODE_SINGLELINE = 1
+
+    # The user is allowed to enter a URL.
+    # [Number]
+    @EDITBOX_INPUT_MODE_URL = 1
 
     # If enabled, cocos2d will maintain an OpenGL state cache internally to avoid unnecessary switches.
-    # [Number]
-    @ENABLE_GL_STATE_CACHE = 1
+    @ENABLE_GL_STATE_CACHE = {}
 
     # If enabled, actions that alter the position property (eg: CCMoveBy, CCJumpBy, CCBezierBy, etc.
     @ENABLE_STACKABLE_ACTIONS = {}
 
-    # The current version of Cocos2d-html5 being used.
-    # [String]
-    @ENGINE_VERSION = ''
+    # The current version of Cocos2d-JS being used.
+    @ENGINE_VERSION = {}
 
-    # is director first run
-    # [Boolean]
-    @firstRun = new Boolean()
-
-    # If enabled, the texture coordinates will be calculated by using this formula: - texCoord.left = (rect.origin.x*2+1) / (texture.wide*2); - texCoord.right = texCoord.left + (rect.size.width*2-2)/(texture.wide*2); The same for bottom and top.
-    # [Number]
-    @FIX_ARTIFACTS_BY_STRECHING_TEXEL = 1
+    # If enabled, the texture coordinates will be calculated by using this formula: - texCoord.left = (rect.x*2+1) / (texture.wide*2); - texCoord.right = texCoord.left + (rect.width*2-2)/(texture.wide*2); The same for bottom and top.
+    @FIX_ARTIFACTS_BY_STRECHING_TEXEL = {}
 
     # [Number]
     @FLT_EPSILON = 1
@@ -183,43 +203,35 @@ class cc
     # [Number]
     @FLT_MAX = 1
 
-    # Image Format:JPG
     # [Number]
-    @FMT_JPG = 1
+    @FLT_MIN = 1
+
+    # Image Format:JPG
+    @FMT_JPG = {}
 
     # Image Format:PNG
-    # [Number]
-    @FMT_PNG = 1
+    @FMT_PNG = {}
 
     # Image Format:RAWDATA
-    # [Number]
-    @FMT_RAWDATA = 1
+    @FMT_RAWDATA = {}
 
     # Image Format:TIFF
-    # [Number]
-    @FMT_TIFF = 1
+    @FMT_TIFF = {}
 
     # Image Format:UNKNOWN
-    # [Number]
-    @FMT_UNKNOWN = 1
+    @FMT_UNKNOWN = {}
 
     # Image Format:WEBP
-    # [Number]
-    @FMT_WEBP = 1
+    @FMT_WEBP = {}
 
-    # ************************************************************************* Copyright (c) 2010-2012 cocos2d-x.org Copyright (c) 2008-2010 Ricardo Quesada Copyright (c) 2011 Zynga Inc.
+    # ************************************************************************* Copyright (c) 2008-2010 Ricardo Quesada Copyright (c) 2011-2012 cocos2d-x.org Copyright (c) 2013-2014 Chukong Technologies Inc.
     @g_NumberOfDraws = {}
-
-    # TextureCache - Alloc, Init & Dealloc
-    # [object]
-    @g_sharedTextureCache = new object()
-
-    # This Div element contain all game canvas
-    # [HTMLDivElement]
-    @gameDiv = new HTMLDivElement()
 
     # GL server side states
     @GL_ALL = {}
+
+    # A update entry list
+    @HashUpdateEntry = {}
 
     # enum for jpg
     # [Number]
@@ -236,87 +248,45 @@ class cc
     # [Number]
     @INVALID_INDEX = 1
 
-    # whether or not support retina display
-    # [Number]
-    @IS_RETINA_DISPLAY_SUPPORTED = 1
-
-    # Is show bebug info on web page
-    @IS_SHOW_DEBUG_ON_PAGE = {}
+    # Whether or not support retina display
+    @IS_RETINA_DISPLAY_SUPPORTED = {}
 
     # default size for font size
     # [Number]
     @ITEM_SIZE = 1
 
-    # keymap
-    # [object]
-    @KEY = new object()
+    # Key map for keyboard event
+    @KEY = {}
+
+    # [Number]
+    @KEYBOARD_RETURNTYPE_DEFAULT = 1
+
+    # [Number]
+    @KEYBOARD_RETURNTYPE_DONE = 1
+
+    # [Number]
+    @KEYBOARD_RETURNTYPE_GO = 1
+
+    # [Number]
+    @KEYBOARD_RETURNTYPE_SEARCH = 1
+
+    # [Number]
+    @KEYBOARD_RETURNTYPE_SEND = 1
 
     # [Number]
     @LABEL_AUTOMATIC_WIDTH = 1
 
-    # If enabled, all subclasses of cc.LabeltAtlas will draw a bounding box Useful for debugging purposes only.
-    # [Number]
-    @LABELATLAS_DEBUG_DRAW = 1
+    # If enabled, all subclasses of cc.LabelAtlas will draw a bounding box Useful for debugging purposes only.
+    @LABELATLAS_DEBUG_DRAW = {}
 
     # If enabled, all subclasses of cc.LabelBMFont will draw a bounding box Useful for debugging purposes only.
-    # [Number]
-    @LABELBMFONT_DEBUG_DRAW = 1
+    @LABELBMFONT_DEBUG_DRAW = {}
 
-    # Arabic language code
-    # [Number]
-    @LANGUAGE_ARABIC = 1
+    # A list double-linked list used for "updates with priority"
+    @ListEntry = {}
 
-    # Chinese language code
-    # [Number]
-    @LANGUAGE_CHINESE = 1
-
-    # English language code
-    # [Number]
-    @LANGUAGE_ENGLISH = 1
-
-    # French language code
-    # [Number]
-    @LANGUAGE_FRENCH = 1
-
-    # German language code
-    # [Number]
-    @LANGUAGE_GERMAN = 1
-
-    # Hungarian language code
-    # [Number]
-    @LANGUAGE_HUNGARIAN = 1
-
-    # Italian language code
-    # [Number]
-    @LANGUAGE_ITALIAN = 1
-
-    # Japanese language code
-    # [Number]
-    @LANGUAGE_JAPANESE = 1
-
-    # Korean language code
-    # [Number]
-    @LANGUAGE_KOREAN = 1
-
-    # Norwegian language code
-    # [Number]
-    @LANGUAGE_NORWEGIAN = 1
-
-    # Polish language code
-    # [Number]
-    @LANGUAGE_POLISH = 1
-
-    # Portuguese language code
-    # [Number]
-    @LANGUAGE_PORTUGUESE = 1
-
-    # Russian language code
-    # [Number]
-    @LANGUAGE_RUSSIAN = 1
-
-    # Spanish language code
-    # [Number]
-    @LANGUAGE_SPANISH = 1
+    # The min corner of the box
+    @max = {}
 
     # [Number]
     @MENU_HANDLER_PRIORITY = 1
@@ -327,98 +297,65 @@ class cc
     # [Number]
     @MENU_STATE_WAITING = 1
 
-    # Node on enter
-    @NODE_ON_ENTER = {}
-
-    # Node on exit
-    @NODE_ON_EXIT = {}
+    # The max corner of the box
+    @min = {}
 
     # Default Node tag
     # [Number]
     @NODE_TAG_INVALID = 1
 
+    # NodeGrid class is a class serves as a decorator of cc.Node, Grid node can run grid actions over all its children
+    @NodeGrid = {}
+
     # default tag for normal
     # [Number]
     @NORMAL_TAG = 1
 
-    # If most of your imamges have pre-multiplied alpha, set it to 1 (if you are going to use .PNG/.JPG file images).
     # [Number]
-    @OPTIMIZE_BLEND_FUNC_FOR_PREMULTIPLIED_ALPHA = 1
+    @ONE = 1
+
+    # [Number]
+    @ONE_MINUS_CONSTANT_ALPHA = 1
+
+    # [Number]
+    @ONE_MINUS_CONSTANT_COLOR = 1
+
+    # [Number]
+    @ONE_MINUS_DST_ALPHA = 1
+
+    # [Number]
+    @ONE_MINUS_DST_COLOR = 1
+
+    # [Number]
+    @ONE_MINUS_SRC_ALPHA = 1
+
+    # [Number]
+    @ONE_MINUS_SRC_COLOR = 1
+
+    # If most of your images have pre-multiplied alpha, set it to 1 (if you are going to use .PNG/.JPG file images).
+    @OPTIMIZE_BLEND_FUNC_FOR_PREMULTIPLIED_ALPHA = {}
 
     # Device oriented horizontally, home button on the right
-    # [Number]
-    @ORIENTATION_LANDSCAPE_LEFT = 1
+    @ORIENTATION_LANDSCAPE_LEFT = {}
 
     # Device oriented horizontally, home button on the left
-    # [Number]
-    @ORIENTATION_LANDSCAPE_RIGHT = 1
+    @ORIENTATION_LANDSCAPE_RIGHT = {}
 
     # Device oriented vertically, home button on the bottom
-    # [Number]
-    @ORIENTATION_PORTRAIT = 1
+    @ORIENTATION_PORTRAIT = {}
 
     # Device oriented vertically, home button on the top
-    # [Number]
-    @ORIENTATION_PORTRAIT_UPSIDE_DOWN = 1
+    @ORIENTATION_PORTRAIT_UPSIDE_DOWN = {}
 
-    # save original size of canvas, use for resize canvas
-    # [Size]
-    @originalCanvasSize = new Size()
-
-    # Ball Shape for ShapeMode of Particle
+    # paticle default capacity
     # [Number]
-    @PARTICLE_BALL_SHAPE = 1
-
-    # The Particle emitter lives forever
-    # [Number]
-    @PARTICLE_DURATION_INFINITY = 1
-
-    # Gravity mode (A mode)
-    # [Number]
-    @PARTICLE_MODE_GRAVITY = 1
-
-    # Radius mode (B mode)
-    # [Number]
-    @PARTICLE_MODE_RADIUS = 1
-
-    # Shape Mode of Particle Draw
-    # [Number]
-    @PARTICLE_SHAPE_MODE = 1
-
-    # Star Shape for ShapeMode of Particle
-    # [Number]
-    @PARTICLE_STAR_SHAPE = 1
-
-    # The starting radius of the particle is equal to the ending radius
-    # [Number]
-    @PARTICLE_START_RADIUS_EQUAL_TO_END_RADIUS = 1
-
-    # The starting size of the particle is equal to the ending size
-    # [Number]
-    @PARTICLE_START_SIZE_EQUAL_TO_END_SIZE = 1
-
-    # Texture Mode of Particle Draw
-    # [Number]
-    @PARTICLE_TEXTURE_MODE = 1
-
-    # Living particles are attached to the world and are unaffected by emitter repositioning.
-    # [Number]
-    @PARTICLE_TYPE_FREE = 1
-
-    # Living particles are attached to the emitter and are translated along with it.
-    # [Number]
-    @PARTICLE_TYPE_GROUPED = 1
-
-    # Living particles are attached to the world but will follow the emitter repositioning.
-    # [Number]
-    @PARTICLE_TYPE_RELATIVE = 1
+    @PARTICLE_DEFAULT_CAPACITY = 1
 
     # PI is the ratio of a circle's circumference to its diameter.
     # [Number]
     @PI = 1
 
-    # ************************************************************************* Copyright (c) 2011 Devon Govett Copyright (c) 2010-2012 cocos2d-x.org http://www.cocos2d-x.org Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    @PNGReader = {}
+    @plistParser A Plist Parser A Plist Parser = {}
 
     # smallest such that 1.0+FLT_EPSILON != 1.0
     # [Number]
@@ -428,74 +365,20 @@ class cc
     # [Number]
     @PRIORITY_NON_SYSTEM = 1
 
-    # Priority level reserved for system services.
-    # [Number]
-    @PRIORITY_SYSTEM = 1
-
-    # [Number]
-    @PROGRESS_TEXTURE_COORDS = 1
-
-    # [Number]
-    @PROGRESS_TEXTURE_COORDS_COUNT = 1
-
-    # Bar
-    # [Number]
-    @PROGRESS_TIMER_TYPE_BAR = 1
-
-    # Radial Counter-Clockwise
-    # [Number]
-    @PROGRESS_TIMER_TYPE_RADIAL = 1
-
     # [Number]
     @RAD = 1
-
-    # main Canvas 2D/3D Context of game engine
-    # [CanvasRenderingContext2D|WebGLRenderingContext]
-    @renderContext = new CanvasRenderingContext2D()
-
-    # current render type of game engine
-    # [Number]
-    @renderContextType = 1
 
     # [Number]
     @REPEAT_FOREVER = 1
 
-    # resource type
-    # [Object]
-    @RESOURCE_TYPE = {}
-
     # It's the suffix that will be appended to the files in order to load "retina display" images.
-    # [String]
-    @RETINA_DISPLAY_FILENAME_SUFFIX = ''
+    @RETINA_DISPLAY_FILENAME_SUFFIX = {}
 
     # If enabled, cocos2d supports retina display.
-    # [Number]
-    @RETINA_DISPLAY_SUPPORT = 1
+    @RETINA_DISPLAY_SUPPORT = {}
 
     # XXX: Yes, nodes might have a sort problem once every 15 days if the game runs at 60 FPS and each frame sprites are reordered.
-    # [Number]
-    @s_globalOrderOfArrival = 1
-
-    # [Number]
-    @SAX_ARRAY = 1
-
-    # [Number]
-    @SAX_DICT = 1
-
-    # [Number]
-    @SAX_INT = 1
-
-    # [Number]
-    @SAX_KEY = 1
-
-    # [Number]
-    @SAX_NONE = 1
-
-    # [Number]
-    @SAX_REAL = 1
-
-    # [Number]
-    @SAX_STRING = 1
+    @s_globalOrderOfArrival = {}
 
     # A tag constant for identifying fade scenes
     # [Number]
@@ -511,11 +394,37 @@ class cc
 
     @SHADER_POSITION_COLOR = {}
 
+    @SHADER_POSITION_COLOR_FRAG = {}
+
+    @SHADER_POSITION_COLOR_LENGTH_TEXTURE_FRAG = {}
+
+    @SHADER_POSITION_COLOR_LENGTH_TEXTURE_VERT = {}
+
+    @SHADER_POSITION_COLOR_VERT = {}
+
     @SHADER_POSITION_LENGTHTEXTURECOLOR = {}
 
     @SHADER_POSITION_TEXTURE = {}
 
+    @SHADER_POSITION_TEXTURE_A8COLOR_FRAG = {}
+
+    @SHADER_POSITION_TEXTURE_A8COLOR_VERT = {}
+
+    @SHADER_POSITION_TEXTURE_COLOR_ALPHATEST_FRAG = {}
+
+    @SHADER_POSITION_TEXTURE_COLOR_FRAG = {}
+
+    @SHADER_POSITION_TEXTURE_COLOR_VERT = {}
+
+    @SHADER_POSITION_TEXTURE_FRAG = {}
+
     @SHADER_POSITION_TEXTURE_UCOLOR = {}
+
+    @SHADER_POSITION_TEXTURE_UCOLOR_FRAG = {}
+
+    @SHADER_POSITION_TEXTURE_UCOLOR_VERT = {}
+
+    @SHADER_POSITION_TEXTURE_VERT = {}
 
     @SHADER_POSITION_TEXTUREA8COLOR = {}
 
@@ -525,46 +434,45 @@ class cc
 
     @SHADER_POSITION_UCOLOR = {}
 
-    @SHADERTYPE_MAX = {}
+    @SHADER_POSITION_UCOLOR_FRAG = {}
 
-    @SHADERTYPE_POSITION_COLOR = {}
+    @SHADER_POSITION_UCOLOR_VERT = {}
 
-    @SHADERTYPE_POSITION_LENGTH_TEXTURECOLOR = {}
-
-    @SHADERTYPE_POSITION_TEXTURE = {}
-
-    @SHADERTYPE_POSITION_TEXTURE_A8COLOR = {}
-
-    @SHADERTYPE_POSITION_TEXTURE_UCOLOR = {}
-
-    @SHADERTYPE_POSITION_TEXTURECOLOR = {}
-
-    @SHADERTYPE_POSITION_TEXTURECOLOR_ALPHATEST = {}
-
-    @SHADERTYPE_POSITION_UCOLOR = {}
-
-    # cocos2d application instance
-    # [AppController]
-    @sharedAppController = new AppController()
+    @SHADEREX_SWITCHMASK_FRAG = {}
 
     # If enabled, all subclasses of cc.Sprite will draw a bounding box Useful for debugging purposes only.
-    # [Number]
-    @SPRITE_DEBUG_DRAW = 1
-
-    # cc.Sprite invalid index on the cc.SpriteBatchNode
-    # [Number]
-    @SPRITE_INDEX_NOT_INITIALIZED = 1
+    @SPRITE_DEBUG_DRAW = {}
 
     # If enabled, all subclasses of cc.Sprite that are rendered using an cc.SpriteBatchNode draw a bounding box.
-    # [Number]
-    @SPRITEBATCHNODE_DEBUG_DRAW = 1
+    @SPRITEBATCHNODE_DEBUG_DRAW = {}
 
     # If enabled, the cc.Sprite objects rendered with cc.SpriteBatchNode will be able to render in subpixels.
-    # [Number]
-    @SPRITEBATCHNODE_RENDER_SUBPIXEL = 1
+    @SPRITEBATCHNODE_RENDER_SUBPIXEL = {}
 
-    # Device type
-    @TARGET_PLATFORM = {}
+    # [Number]
+    @SRC_ALPHA = 1
+
+    # [Number]
+    @SRC_ALPHA_SATURATE = 1
+
+    # [Number]
+    @SRC_COLOR = 1
+
+    # the value of stencil bits.
+    # [Number]
+    @stencilBits = 1
+
+    # The constant value of the fill style from bottom to top for cc.TableView
+    @TABLEVIEW_FILL_BOTTOMUP = {}
+
+    # The constant value of the fill style from top to bottom for cc.TableView
+    @TABLEVIEW_FILL_TOPDOWN = {}
+
+    # Data source that governs table backend data.
+    @TableViewDataSource = {}
+
+    # Sole purpose of this delegate is to single touch event in this version.
+    @TableViewDelegate = {}
 
     # text alignment : center
     # [Number]
@@ -578,65 +486,35 @@ class cc
     # [Number]
     @TEXT_ALIGNMENT_RIGHT = 1
 
-    # 8-bit textures used as masks
-    @TEXTURE_2D_PIXEL_FORMAT_A8 = {}
-
-    # 16-bit textures used as masks
-    @TEXTURE_2D_PIXEL_FORMAT_AI88 = {}
-
-    # Default texture format: RGBA8888
-    @TEXTURE_2D_PIXEL_FORMAT_DEFAULT = {}
-
-    # 8-bit intensity texture
-    @TEXTURE_2D_PIXEL_FORMAT_I8 = {}
-
-    # 2-bit PVRTC-compressed texture: PVRTC2
-    @TEXTURE_2D_PIXEL_FORMAT_PVRTC2 = {}
-
-    # 4-bit PVRTC-compressed texture: PVRTC4
-    @TEXTURE_2D_PIXEL_FORMAT_PVRTC4 = {}
-
-    # 16-bit texture without Alpha channel
-    @TEXTURE_2D_PIXEL_FORMAT_RGB565 = {}
-
-    # 16-bit textures: RGB5A1
-    @TEXTURE_2D_PIXEL_FORMAT_RGB5A1 = {}
-
-    # 24-bit texture: RGBA888
-    @TEXTURE_2D_PIXEL_FORMAT_RGB888 = {}
-
-    # 16-bit textures: RGBA4444
-    @TEXTURE_2D_PIXEL_FORMAT_RGBA4444 = {}
-
-    # 32-bit texture: RGBA8888
-    @TEXTURE_2D_PIXEL_FORMAT_RGBA8888 = {}
-
     # Use GL_TRIANGLE_STRIP instead of GL_TRIANGLES when rendering the texture atlas.
-    # [Number]
-    @TEXTURE_ATLAS_USE_TRIANGLE_STRIP = 1
+    @TEXTURE_ATLAS_USE_TRIANGLE_STRIP = {}
 
     # By default, cc.TextureAtlas (used by many cocos2d classes) will use VAO (Vertex Array Objects).
-    # [Number]
-    @TEXTURE_ATLAS_USE_VAO = 1
+    @TEXTURE_ATLAS_USE_VAO = {}
 
     # If enabled, NPOT textures will be used where available.
-    # [Number]
-    @TEXTURE_NPOT_SUPPORT = 1
-
-    # ************************************************************************* Copyright (c) 2011 Gordon P.
-    @TIFFReader = {}
+    @TEXTURE_NPOT_SUPPORT = {}
 
     # [Number]
-    @TMX_LAYER_ATTRIB_BASE64 = 1
+    @TGA_ERROR_COMPRESSED_FILE = 1
 
     # [Number]
-    @TMX_LAYER_ATTRIB_GZIP = 1
+    @TGA_ERROR_FILE_OPEN = 1
 
     # [Number]
-    @TMX_LAYER_ATTRIB_NONE = 1
+    @TGA_ERROR_INDEXED_COLOR = 1
 
     # [Number]
-    @TMX_LAYER_ATTRIB_ZLIB = 1
+    @TGA_ERROR_MEMORY = 1
+
+    # [Number]
+    @TGA_ERROR_READING_FILE = 1
+
+    # [Number]
+    @TGA_OK = 1
+
+    # A png file reader
+    @tiffReader = {}
 
     # Hexagonal orientation
     # [Number]
@@ -683,42 +561,6 @@ class cc
     # [Number]
     @TMX_TILE_VERTICAL_FLAG = 1
 
-    # Layer will receive all the touches at once The onTouchesXXX API will be called
-    @TOUCH_ALL_AT_ONCE = {}
-
-    # [Number]
-    @TOUCH_BEGAN = 1
-
-    # [Number]
-    @TOUCH_CANCELLED = 1
-
-    # [Number]
-    @TOUCH_ENDED = 1
-
-    # [Number]
-    @TOUCH_MOVED = 1
-
-    # Layer will receive only one touch at the time.
-    @TOUCH_ONE_BY_ONE = {}
-
-    # [Number]
-    @TouchMax = 1
-
-    # [Number]
-    @TouchSelectorAllBits = 1
-
-    # [Number]
-    @TouchSelectorBeganBit = 1
-
-    # [Number]
-    @TouchSelectorCancelledBit = 1
-
-    # [Number]
-    @TouchSelectorEndedBit = 1
-
-    # [Number]
-    @TouchSelectorMovedBit = 1
-
     # vertical orientation type where the Bottom is nearer
     # [Number]
     @TRANSITION_ORIENTATION_DOWN_OVER = 1
@@ -735,13 +577,13 @@ class cc
     # [Number]
     @TRANSITION_ORIENTATION_UP_OVER = 1
 
-    # android back button
-    # [Number]
-    @TYPE_BACK_CLICKED = 1
+    @UIInterfaceOrientationLandscapeLeft = {}
 
-    # android menu button
-    # [Number]
-    @TYPE_MENU_CLICKED = 1
+    @UIInterfaceOrientationLandscapeRight = {}
+
+    @UIInterfaceOrientationPortrait = {}
+
+    @UIInterfaceOrientationPortraitUpsideDown = {}
 
     # maximum unsigned int value
     # [Number]
@@ -784,8 +626,7 @@ class cc
     @UNIFORM_TIME_S = {}
 
     # If enabled, it will use LA88 (Luminance Alpha 16-bit textures) for CCLabelTTF objects.
-    # [Number]
-    @USE_LA88_LABELS = 1
+    @USE_LA88_LABELS = {}
 
     @VERTEX_ATTRIB_COLOR = {}
 
@@ -793,11 +634,11 @@ class cc
 
     @VERTEX_ATTRIB_FLAG_NONE = {}
 
-    @VERTEX_ATTRIB_FLAG_POSCOLORTEX = {}
+    @VERTEX_ATTRIB_FLAG_POS_COLOR_TEX = {}
 
     @VERTEX_ATTRIB_FLAG_POSITION = {}
 
-    @VERTEX_ATTRIB_FLAG_TEXCOORDS = {}
+    @VERTEX_ATTRIB_FLAG_TEX_COORDS = {}
 
     @VERTEX_ATTRIB_MAX = {}
 
@@ -817,46 +658,67 @@ class cc
     # [Number]
     @VERTICAL_TEXT_ALIGNMENT_TOP = 1
 
-    # WebGL of render type
     # [Number]
-    @WEBGL = 1
+    @ZERO = 1
 
     # default tag for zoom action tag
     # [Number]
     @ZOOM_ACTION_TAG = 1
+
+    # the dollar sign, classic like jquery, this selector add extra methods to HTMLElement without touching its prototype it is also chainable like jquery
+    # @param [HTMLElement|String] x
+    # @return [$]
+    @$: (x) ->
 
     # Creates a new element, and adds cc.$ methods
     # @param [String] x
     # @return [$]
     @$new: (x) ->
 
-    # @param [Number] a
-    # @param [Number] b
-    # @param [Number] c
-    # @param [Number] d
-    # @param [Number] tx
-    # @param [Number] ty
-    @AffineTransform: (a, b, c, d, tx, ty) ->
+    # Allocates and initializes the action.
+    # @return [Action]
+    @action: ->
 
-    # Concatenate `t2' to `t1' and return the result: t' = t1 * t2
+    # creates the action of ActionEase
+    # @param [ActionInterval] action
+    # @return [ActionEase]
+    @actionEase: (action) ->
+
+    # An interval action is an action that takes place within a certain period of time.
+    # @param [Number] d
+    # @return [ActionInterval]
+    @actionInterval: (d) ->
+
+    # Creates an initializes the action with the property name (key), and the from and to parameters.
+    # @param [Number] duration
+    # @param [String] key
+    # @param [Number] from
+    # @param [Number] to
+    # @return [ActionTween]
+    @actionTween: (duration, key, from, to) ->
+
+    # Concatenate a transform matrix to another and return the result: t' = t1 * t2
     # @param [AffineTransform] t1
     # @param [AffineTransform] t2
     # @return [AffineTransform]
-    @AffineTransformConcat: (t1, t2) ->
+    @affineTransformConcat: (t1, t2) ->
 
-    # Return true if `t1' and `t2' are equal, false otherwise.
+    # Return true if an affine transform equals to another, false otherwise.
     # @param [AffineTransform] t1
     # @param [AffineTransform] t2
     # @return [Boolean]
-    @AffineTransformEqualToTransform: (t1, t2) ->
+    @affineTransformEqualToTransform: (t1, t2) ->
 
+    # Create a identity transformation matrix: [ 1, 0, 0, 0, 1, 0 ]
     # @return [AffineTransform]
-    @AffineTransformIdentity: ->
+    @affineTransformIdentity: ->
 
+    # Get the invert transform of an AffineTransform object
     # @param [AffineTransform] t
     # @return [AffineTransform]
-    @AffineTransformInvert: (t) ->
+    @affineTransformInvert: (t) ->
 
+    # Create a cc.AffineTransform object with all contents in the matrix
     # @param [Number] a
     # @param [Number] b
     # @param [Number] c
@@ -864,95 +726,69 @@ class cc
     # @param [Number] tx
     # @param [Number] ty
     # @return [AffineTransform]
-    @AffineTransformMake: (a, b, c, d, tx, ty) ->
+    @affineTransformMake: (a, b, c, d, tx, ty) ->
 
+    # Create a identity transformation matrix: [ 1, 0, 0, 0, 1, 0 ]
     # @return [AffineTransform]
-    @AffineTransformMakeIdentity: ->
+    @affineTransformMakeIdentity: ->
 
+    # Create a new affine transformation with a base transformation matrix and a rotation based on it.
     # @param [AffineTransform] aTransform
     # @param [Number] anAngle
     # @return [AffineTransform]
-    @AffineTransformRotate: (aTransform, anAngle) ->
+    @affineTransformRotate: (aTransform, anAngle) ->
 
+    # Create a new affine transformation with a base transformation matrix and a scale based on it.
     # @param [AffineTransform] t
     # @param [Number] sx
     # @param [Number] sy
     # @return [AffineTransform]
-    @AffineTransformScale: (t, sx, sy) ->
+    @affineTransformScale: (t, sx, sy) ->
 
+    # Create a new affine transformation with a base transformation matrix and a translation based on it.
     # @param [AffineTransform] t
     # @param [Number] tx
     # @param [Number] ty
     # @return [AffineTransform]
-    @AffineTransformTranslate: (t, tx, ty) ->
+    @affineTransformTranslate: (t, tx, ty) ->
 
-    # append an object to array
-    # @param [Array] arr
-    # @param [*] addObj
-    @ArrayAppendObject: (arr, addObj) ->
+    # create the animate with animation
+    # @param [Animation] animation
+    # @return [Animate]
+    @animate: (animation) ->
 
     # Inserts some objects at index
     # @param [Array] arr
     # @param [Array] addObjs
     # @param [Number] index
     # @return [Array]
-    @ArrayAppendObjectsToIndex: (arr, addObjs, index) ->
-
-    # Inserts an object at index
-    # @param [Array] arr
-    # @param [*] addObj
-    # @param [Number] index
-    # @return [Array]
-    @ArrayAppendObjectToIndex: (arr, addObj, index) ->
-
-    # Returns a Boolean value that indicates whether value is present in the array.
-    # @param [Array] arr
-    # @param [*] findObj
-    # @return [Boolean]
-    @ArrayContainsObject: (arr, findObj) ->
-
-    # Returns index of first occurence of object, -1 if value not found.
-    # @param [Array] arr
-    # @param [*] findObj
-    # @return [Number]
-    @ArrayGetIndexOfObject: (arr, findObj) ->
-
-    # Returns index of first occurence of value, -1 if value not found.
-    # @param [Array] arr
-    # @param [*] value
-    # @return [Number]
-    @ArrayGetIndexOfValue: (arr, value) ->
+    @arrayAppendObjectsToIndex: (arr, addObjs, index) ->
 
     # Removes from arr all values in minusArr.
     # @param [Array] arr
     # @param [Array] minusArr
-    @ArrayRemoveArray: (arr, minusArr) ->
+    @arrayRemoveArray: (arr, minusArr) ->
 
     # Searches for the first occurance of object and removes it.
     # @param [Array] arr
     # @param [*] delObj
-    @ArrayRemoveObject: (arr, delObj) ->
-
-    # Removes object at specified index and pushes back all subsequent objects.Behaviour undefined if index outside [0, num-1].
-    # @param [Array] arr
-    # @param [Number] index
-    @ArrayRemoveObjectAtIndex: (arr, index) ->
+    @arrayRemoveObject: (arr, delObj) ->
 
     # Verify Array's Type
     # @param [Array] arr
     # @param [function] type
     # @return [Boolean]
-    @ArrayVerifyType: (arr, type) ->
-
-    # Output Assert message.
-    # @param [Boolean] cond
-    # @param [String] message
-    @Assert: (cond, message) ->
+    @arrayVerifyType: (arr, type) ->
 
     # Function added for JS bindings compatibility.
     # @param [object] jsObj
     # @param [object] superclass
     @associateWithNative: (jsObj, superclass) ->
+
+    # @param me
+    # @param opt_methodName
+    # @param var_args
+    @base: (me, opt_methodName, var_args) ->
 
     # @param [Number] a
     # @param [Number] b
@@ -962,55 +798,40 @@ class cc
     # @return [Number]
     @bezierAt: (a, b, c, d, t) ->
 
-    # Black Color (0,0,0)
-    @black: ->
+    # An action that moves the target with a cubic Bezier curve by a certain distance.
+    # @param [Number] t
+    # @param [Array] c
+    # @return [BezierBy]
+    @bezierBy: (t, c) ->
 
-    # Blue color (0,0,255)
-    @blue: ->
+    # An action that moves the target with a cubic Bezier curve to a destination point.
+    # @param [Number] t
+    # @param [Array] c
+    # @return [BezierTo]
+    @bezierTo: (t, c) ->
 
-    # helper macro that creates an ccColor3B type
-    # @param [Number] r
-    # @param [Number] g
-    # @param [Number] b
-    # @return [Number|Number|Number]
-    @c3b: (r, g, b) ->
+    # Blend Function used for textures
+    # @param [Number] src1
+    # @param [Number] dst1
+    @BlendFunc: (src1, dst1) ->
 
-    # returns true if both ccColor3B are equal.
-    # @param [Color3B] color1
-    # @param [Color3B] color2
-    # @return [Boolean]
-    @c3BEqual: (color1, color2) ->
+    # @return [BlendFunc]
+    @blendFuncDisable: ->
 
-    # helper macro that creates an ccColor4B type
-    # @param [Number] r
-    # @param [Number] g
-    # @param [Number] b
-    # @param [Number] a
-    # @return [Number|Number|Number|Number]
-    @c4b: (r, g, b, a) ->
+    # Blinks a cc.Node object by modifying it's visible attribute.
+    # @param [Number] duration
+    # @param blinks
+    # @return [Blink]
+    @blink: (duration, blinks) ->
 
-    # Returns a cc.Color4B from a cc.Color4F.
-    # @param [Color4F] c
-    # @return [Color4B]
-    @c4BFromccc4F: (c) ->
+    # Creates the action with the callback
+    # @param [function] selector
+    # @param [object|null] selectorTarget
+    # @param [*|null] data
+    # @return [CallFunc]
+    @callFunc: (selector, selectorTarget, data) ->
 
-    # returns YES if both cc.Color4F are equal.
-    # @param [Color4F] a
-    # @param [Color4F] b
-    # @return [Boolean]
-    @c4FEqual: (a, b) ->
-
-    # Returns a cc.Color4F from a cc.Color3B.
-    # @param [Color3B] c
-    # @return [Color4F]
-    @c4FFromccc3B: (c) ->
-
-    # Returns a cc.Color4F from a cc.Color4B.
-    # @param [Color4B] c
-    # @return [Color4F]
-    @c4FFromccc4B: (c) ->
-
-    # Returns the Cardinal Spline position for a given set of control points, tension and time CatmullRom Spline formula: s(-ttt + 2tt - t)P1 + s(-ttt + tt)P2 + (2ttt - 3tt + 1)P2 + s(ttt - 2tt + t)P3 + (-2ttt + 3tt)P3 + s(ttt - tt)P4
+    # Returns the Cardinal Spline position for a given set of control points, tension and time.
     # @param [Point] p0
     # @param [Point] p1
     # @param [Point] p2
@@ -1018,7 +839,41 @@ class cc
     # @param [Number] tension
     # @param [Number] t
     # @return [Point]
-    @CardinalSplineAt: (p0, p1, p2, p3, tension, t) ->
+    @cardinalSplineAt: (p0, p1, p2, p3, tension, t) ->
+
+    # creates an action with a Cardinal Spline array of points and tension.
+    # @param [Number] duration
+    # @param [Array] points
+    # @param [Number] tension
+    # @return [CardinalSplineBy]
+    @cardinalSplineBy: (duration, points, tension) ->
+
+    # creates an action with a Cardinal Spline array of points and tension.
+    # @param [Number] duration
+    # @param [Array] points
+    # @param [Number] tension
+    # @return [CardinalSplineTo]
+    @cardinalSplineTo: (duration, points, tension) ->
+
+    # Creates an action with a Cardinal Spline array of points and tension
+    # @param [Number] dt
+    # @param [Array] points
+    # @return [CatmullRomBy]
+    @catmullRomBy: (dt, points) ->
+
+    # creates an action with a Cardinal Spline array of points and tension.
+    # @param [Number] dt
+    # @param [Array] points
+    # @return [CatmullRomTo]
+    @catmullRomTo: (dt, points) ->
+
+    # convert an affine transform object to a kmMat4 object
+    # @param [AffineTransform] trans
+    # @param [kmMat4] mat
+    @CGAffineToGL: (trans, mat) ->
+
+    # Check webgl error.Error will be shown in console if exists.
+    @checkGLErrorDebug: ->
 
     # Clamp a value between from and to.
     # @param [Number] value
@@ -1027,28 +882,43 @@ class cc
     # @return [Number]
     @clampf: (value, min_inclusive, max_inclusive) ->
 
-    # copy an new object
+    # Create a new object and copy all properties in an exist object to the new object
     # @param [object|Array] obj
     # @return [Array|object]
     @clone: (obj) ->
 
-    # Support image format type
-    # @param [String] filename
-    # @return [Number]
-    @computeImageFormatType: (filename) ->
+    # returns a new clone of the controlPoints
+    # @param controlPoints
+    # @return [Array]
+    @cloneControlPoints: (controlPoints) ->
+
+    # Generate a color object based on multiple forms of parameters
+    # @param [Number|String|cc.Color] r
+    # @param [Number] g
+    # @param [Number] b
+    # @param [Number] a
+    # @return [Color]
+    @color: (r, g, b, a) ->
+
+    # returns true if both ccColor3B are equal.
+    # @param [Color] color1
+    # @param [Color] color2
+    # @return [Boolean]
+    @colorEqual: (color1, color2) ->
+
+    # convert Color to a string of color for style.
+    # @param [Color] color
+    # @return [String]
+    @colorToHex: (color) ->
 
     # On Mac it returns 1; On iPhone it returns 2 if RetinaDisplay is On.
-    @CONTENT_SCALE_FACTOR: ->
+    # @return [Number]
+    @contentScaleFactor: ->
 
-    # convert Color3B to a string of color for style.
-    # @param clr
-    # @return [String]
-    @convertColor3BtoHexString: (clr) ->
-
-    # convert a string of color for style to Color3B.
-    # @param [String] clrSt
-    # @return [Color3B]
-    @convertHexNumToColor3B: (clrSt) ->
+    # Copy an array's item to a new array (its performance is better than Array.slice)
+    # @param [Array] arr
+    # @return [Array]
+    @copyArray: (arr) ->
 
     # create a webgl context
     # @param [HTMLCanvasElement] canvas
@@ -1056,60 +926,297 @@ class cc
     # @return [WebGLRenderingContext]
     @create3DContext: (canvas, opt_attribs) ->
 
+    # Common getter setter configuration function
+    # @param [Object] proto
+    # @param [String] prop
+    # @param [function] getter
+    # @param [function] setter
+    # @param [String] getterName
+    # @param [String] setterName
+    @defineGetterSetter: (proto, prop, getter, setter, getterName, setterName) ->
+
     # converts degrees to radians
     # @param [Number] angle
     # @return [Number]
-    @DEGREES_TO_RADIANS: (angle) ->
+    @degreesToRadians: (angle) ->
+
+    # Delays the action a certain amount of seconds
+    # @param [Number] d
+    # @return [DelayTime]
+    @delayTime: (d) ->
 
     # Disable default GL states: - GL_TEXTURE_2D - GL_TEXTURE_COORD_ARRAY - GL_COLOR_ARRAY
-    @DISABLE_DEFAULT_GL_STATES: ->
+    @disableDefaultGLStates: ->
 
-    # dump config info, but only in debug mode
-    @dumpConfig: ->
+    # Iterate over an object or an array, executing a function for each matched element.
+    # @param [object|array] obj
+    # @param [function] iterator
+    # @param [object] context
+    @each: (obj, iterator, context) ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeBackIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeBackInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeBackOut: ->
+
+    # Creates the action easing object.
+    # @param [Number] p0
+    # @param [Number] p1
+    # @param [Number] p2
+    # @param [Number] p3
+    # @return [Object]
+    @easeBezierAction: (p0, p1, p2, p3) ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeBounceIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeBounceInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeBounceOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeCircleActionIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeCircleActionInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeCircleActionOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeCubicActionIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeCubicActionInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeCubicActionOut: ->
+
+    # Creates the action easing obejct with the period in radians (default is 0.3).
+    # @param [Number] period
+    # @return [Object]
+    @easeElasticIn: (period) ->
+
+    # Creates the action easing object with the period in radians (default is 0.3).
+    # @param [Number] period
+    # @return [Object]
+    @easeElasticInOut: (period) ->
+
+    # Creates the action easing object with the period in radians (default is 0.3).
+    # @param [Number] period
+    # @return [Object]
+    @easeElasticOut: (period) ->
+
+    # Creates the action easing object with the rate parameter.
+    # @return [Object]
+    @easeExponentialIn: ->
+
+    # creates an EaseExponentialInOut action easing object.
+    # @return [Object]
+    @easeExponentialInOut: ->
+
+    # creates the action easing object.
+    # @return [Object]
+    @easeExponentialOut: ->
+
+    # Creates the action easing object with the rate parameter.
+    # @param [Number] rate
+    # @return [Object]
+    @easeIn: (rate) ->
+
+    # Creates the action easing object with the rate parameter.
+    # @param [Number] rate
+    # @return [Object]
+    @easeInOut: (rate) ->
+
+    # Creates the action easing object with the rate parameter.
+    # @param [Number] rate
+    # @return [Object]
+    @easeOut: (rate) ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuadraticActionIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuadraticActionInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuadraticActionOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuarticActionIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuarticActionInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuarticActionOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuinticActionIn: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuinticActionInOut: ->
+
+    # Creates the action easing object.
+    # @return [Object]
+    @easeQuinticActionOut: ->
+
+    # Creates the action with the inner action and the rate parameter.
+    # @param [ActionInterval] action
+    # @param [Number] rate
+    # @return [EaseRateAction]
+    @easeRateAction: (action, rate) ->
+
+    # creates an EaseSineIn action.
+    # @return [Object]
+    @easeSineIn: ->
+
+    # creates the action easing object.
+    # @return [Object]
+    @easeSineInOut: ->
+
+    # Creates an EaseSineOut action easing object.
+    # @return [Object]
+    @easeSineOut: ->
 
     # GL states that are enabled: - GL_TEXTURE_2D - GL_VERTEX_ARRAY - GL_TEXTURE_COORD_ARRAY - GL_COLOR_ARRAY
-    @ENABLE_DEFAULT_GL_STATES: ->
+    @enableDefaultGLStates: ->
 
-    # Load the .fnt file
-    # @param [String] fntFile
-    # @return [BMFontConfiguration]
-    @FNTConfigLoadFile: (fntFile) ->
+    # Copy all of the properties in source objects to target object and return the target object.
+    # @param [object] target
+    # @param [object] *sources
+    # @return [object]
+    @extend: (target, *sources) ->
 
-    # Purges the FNT config cache
-    @FNTConfigRemoveCache: ->
+    # Fades In an object that implements the cc.RGBAProtocol protocol.
+    # @param [Number] duration
+    # @return [FadeIn]
+    @fadeIn: (duration) ->
 
-    # helper function to create a cc.GridSize
-    # @param [Number] x
-    # @param [Number] y
-    # @return [GridSize]
-    @g: (x, y) ->
+    # Fades Out an object that implements the cc.RGBAProtocol protocol.
+    # @param [Number] d
+    # @return [FadeOut]
+    @fadeOut: (d) ->
 
-    # generate texture's cache for texture tint
+    # Creates the action with the grid size and the duration.
+    # @param duration
+    # @param gridSize
+    # @return [FadeOutBLTiles]
+    @fadeOutBLTiles: (duration, gridSize) ->
+
+    # Creates the action with the grid size and the duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [FadeOutDownTiles]
+    @fadeOutDownTiles: (duration, gridSize) ->
+
+    # Creates the action with the grid size and the duration.
+    # @param duration
+    # @param gridSize
+    # @return [FadeOutTRTiles]
+    @fadeOutTRTiles: (duration, gridSize) ->
+
+    # Creates the action with the grid size and the duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [FadeOutUpTiles]
+    @fadeOutUpTiles: (duration, gridSize) ->
+
+    # Fades an object that implements the cc.RGBAProtocol protocol.
+    # @param [Number] duration
+    # @param [Number] opacity
+    # @return [FadeTo]
+    @fadeTo: (duration, opacity) ->
+
+    # Create a FlipX action to flip or unflip the target.
+    # @param [Boolean] flip
+    # @return [FlipX]
+    @flipX: (flip) ->
+
+    # Create a Flip X 3D action with duration.
+    # @param [Number] duration
+    # @return [FlipX3D]
+    @flipX3D: (duration) ->
+
+    # Create a FlipY action to flip or unflip the target.
+    # @param [Boolean] flip
+    # @return [FlipY]
+    @flipY: (flip) ->
+
+    # Create a flip Y 3d action with duration.
+    # @param [Number] duration
+    # @return [FlipY3D]
+    @flipY3D: (duration) ->
+
+    # creates the action with a set boundary.
+    # @param [Node] followedNode
+    # @param [Rect] rect
+    # @return [Follow|Null]
+    @follow: (followedNode, rect) ->
+
+    # A string tool to construct a string with format string.
+    # @return [String]
+    @formatStr: ->
+
+    # Generates texture's cache for texture tint
     # @param [HTMLImageElement] texture
     # @return [Array]
     @generateTextureCacheForColor: (texture) ->
 
-    # generate tinted texture lighter: The source and destination colors are added to each other, resulting in brighter colors, moving towards color values of 1 (maximum brightness for that color).
+    # Generate tinted texture with lighter.
     # @param [HTMLImageElement] texture
     # @param [Array] tintedImgCache
-    # @param [Color3B|cc.Color4F] color
+    # @param [Color] color
     # @param [Rect] rect
     # @param [HTMLCanvasElement] renderCanvas
     # @return [HTMLCanvasElement]
     @generateTintImage: (texture, tintedImgCache, color, rect, renderCanvas) ->
 
-    # generate tinted texture source-in: Where source and destination overlaps and both are opaque, the source is displayed.
-    # @param [HTMLImageElement] texture
-    # @param [Color3B|cc.Color4F] color
+    # Tint a texture using the "multiply" operation
+    # @param [HTMLImageElement] image
+    # @param [Color] color
     # @param [Rect] rect
+    # @param [HTMLCanvasElement] renderCanvas
     # @return [HTMLCanvasElement]
-    @generateTintImage2: (texture, color, rect) ->
+    @generateTintImageWithMultiply: (image, color, rect, renderCanvas) ->
 
     # returns a point from the array
     # @param [Array] controlPoints
     # @param [Number] pos
     # @return [Array]
     @getControlPointAt: (controlPoints, pos) ->
+
+    # get image format by image data
+    # @param [Array] imgData
+    # @return [Number]
+    @getImageFormatByData: (imgData) ->
 
     # If the texture is not already bound, it binds it.
     # @param [Texture2D] textureId
@@ -1121,13 +1228,17 @@ class cc
     @glBindTexture2DN: (textureUnit, textureId) ->
 
     # If the vertex array is not already bound, it binds it.
-    # @param vaoId
+    # @param [Number] vaoId
     @glBindVAO: (vaoId) ->
 
     # Uses a blending function in case it not already used.
     # @param [Number] sfactor
     # @param [Number] dfactor
     @glBlendFunc: (sfactor, dfactor) ->
+
+    # @param [Number] sfactor
+    # @param [Number] dfactor
+    @glBlendFuncForParticle: (sfactor, dfactor) ->
 
     # Resets the blending mode back to the cached state in case you used glBlendFuncSeparate() or glBlendEquation().
     @glBlendResetToCache: ->
@@ -1150,27 +1261,57 @@ class cc
     @glEnable: (flags) ->
 
     # Will enable the vertex attribs that are passed as flags.
-    # @param [VERTEX_ATTRIB_FLAG_POSITION | cc.VERTEX_ATTRIB_FLAG_COLOR | cc.VERTEX_ATTRIB_FLAG_TEXCOORDS] flags
+    # @param [VERTEX_ATTRIB_FLAG_POSITION | cc.VERTEX_ATTRIB_FLAG_COLOR | cc.VERTEX_ATTRIB_FLAG_TEX_OORDS] flags
     @glEnableVertexAttribs: (flags) ->
 
     # Invalidates the GL state cache.
     @glInvalidateStateCache: ->
 
+    # Convert a kmMat4 object to an affine transform object
+    # @param [kmMat4] mat
+    # @param [AffineTransform] trans
+    @GLToCGAffine: (mat, trans) ->
+
     # Uses the GL program in case program is different than the current one.
     # @param [WebGLProgram] program
     @glUseProgram: (program) ->
 
-    # Gray Color (166,166,166)
-    @gray: ->
+    # creates the action with size and duration
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [Grid3DAction]
+    @grid3DAction: (duration, gridSize) ->
 
-    # Green Color (0,255,0)
-    @green: ->
+    # creates the action with size and duration
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [GridAction]
+    @gridAction: (duration, gridSize) ->
 
-    # find object from array by target
-    # @param [Array] arr
-    # @param [ListEntry|cc.HashUpdateEntry] findInt
-    # @return [ListEntry|cc.HashUpdateEntry]
-    @HASH_FIND_INT: (arr, findInt) ->
+    # Hash Element used for "selectors with interval"
+    # @param [Array] timers
+    # @param [Class] target
+    # @param [Number] timerIndex
+    # @param [Timer] currentTimer
+    # @param [Boolean] currentTimerSalvaged
+    # @param [Boolean] paused
+    # @param [Array] hh
+    @HashTimerEntry: (timers, target, timerIndex, currentTimer, currentTimerSalvaged, paused, hh) ->
+
+    # ************************************************************************* Copyright (c) 2008-2010 Ricardo Quesada Copyright (c) 2011-2012 cocos2d-x.org Copyright (c) 2013-2014 Chukong Technologies Inc.
+    # @param value
+    # @param location
+    # @param hh
+    @HashUniformEntry: (value, location, hh) ->
+
+    # convert a string of color for style to Color.
+    # @param [String] hex
+    # @return [Color]
+    @hexToColor: (hex) ->
+
+    # Hide the node.
+    # @return [Hide]
+    @hide: ->
 
     # IME Keyboard Notification Info structure
     # @param [Rect] begin
@@ -1180,14 +1321,271 @@ class cc
 
     # Increments the GL Draws counts by one.
     # @param [Number] addNumber
-    @INCREMENT_GL_DRAWS: (addNumber) ->
+    @incrementGLDraws: (addNumber) ->
 
-    # Update Debug setting.
-    @initDebugSetting: ->
+    # Another way to subclass: Using Google Closure.
+    # @param [Function] childCtor
+    # @param [Function] parentCtor
+    @inherits: (childCtor, parentCtor) ->
 
-    # @param [String] ch
-    # @return [Boolean]
-    @isspace_unicode: (ch) ->
+    # Check the obj whether is array or not
+    # @param [*] obj
+    # @return [boolean]
+    @isArray: (obj) ->
+
+    # Check the url whether cross origin
+    # @param [String] url
+    # @return [boolean]
+    @isCrossOrigin: (url) ->
+
+    # Check the obj whether is function or not
+    # @param [*] obj
+    # @return [boolean]
+    @isFunction: (obj) ->
+
+    # Check the obj whether is number or not
+    # @param [*] obj
+    # @return [boolean]
+    @isNumber: (obj) ->
+
+    # Check the obj whether is object or not
+    # @param [*] obj
+    # @return [boolean]
+    @isObject: (obj) ->
+
+    # Check the obj whether is string or not
+    # @param [*] obj
+    # @return [boolean]
+    @isString: (obj) ->
+
+    # Check the obj whether is undefined or not
+    # @param [*] obj
+    # @return [boolean]
+    @isUndefined: (obj) ->
+
+    # Moves a cc.Node object simulating a parabolic jump movement by modifying it's position attribute.
+    # @param [Number] duration
+    # @param [Point|Number] position
+    # @param [Number] y
+    # @param [Number] height
+    # @param [Number] jumps
+    # @return [JumpBy]
+    @jumpBy: (duration, position, y, height, jumps) ->
+
+    # creates the action with the number of jumps, the sin amplitude, the grid size and the duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] numberOfJumps
+    # @param [Number] amplitude
+    # @return [JumpTiles3D]
+    @jumpTiles3D: (duration, gridSize, numberOfJumps, amplitude) ->
+
+    # Moves a cc.Node object to a parabolic position simulating a jump movement by modifying it's position attribute.
+    # @param [Number] duration
+    # @param [Point|Number] position
+    # @param [Number] y
+    # @param [Number] height
+    # @param [Number] jumps
+    # @return [JumpTo]
+    @jumpTo: (duration, position, y, height, jumps) ->
+
+    # A struture that represents an axis-aligned bounding box.
+    # @param min
+    # @param max
+    @kmAABB: (min, max) ->
+
+    # Assigns pIn to pOut, returns pOut.
+    # @param pOut
+    # @param pIn
+    @kmAABBAssign: (pOut, pIn) ->
+
+    # Returns KM_TRUE if point is in the specified AABB, returns KM_FALSE otherwise.
+    # @param pPoint
+    # @param pBox
+    @kmAABBContainsPoint: (pPoint, pBox) ->
+
+    # Scales pIn by s, stores the resulting AABB in pOut.
+    # @param pOut
+    # @param pIn
+    # @param s
+    @kmAABBScale: (pOut, pIn, s) ->
+
+    # A 4x4 matrix mat = | 0 4 8 12 | | 1 5 9 13 | | 2 6 10 14 | | 3 7 11 15 |
+    @kmMat4: ->
+
+    # Returns KM_TRUE if the 2 matrices are equal (approximately)
+    # @param pMat1
+    # @param pMat2
+    @kmMat4AreEqual: (pMat1, pMat2) ->
+
+    # Assigns the value of pIn to pOut
+    # @param pOut
+    # @param pIn
+    @kmMat4Assign: (pOut, pIn) ->
+
+    # Extract a 3x3 rotation matrix from the input 4x4 transformation.
+    # @param pOut
+    # @param pIn
+    @kmMat4ExtractRotation: (pOut, pIn) ->
+
+    # Fills a kmMat4 structure with the values from a 16 element array of floats
+    # @param pOut
+    # @param pMat
+    @kmMat4Fill: (pOut, pMat) ->
+
+    # Extract the forward vector from a 4x4 matrix.
+    # @param pOut
+    # @param pIn
+    @kmMat4GetForwardVec3: (pOut, pIn) ->
+
+    # Extract the right vector from a 4x4 matrix.
+    # @param pOut
+    # @param pIn
+    @kmMat4GetRightVec3: (pOut, pIn) ->
+
+    # Get the up vector from a matrix.
+    # @param pOut
+    # @param pIn
+    @kmMat4GetUpVec3: (pOut, pIn) ->
+
+    # Sets pOut to an identity matrix returns pOut
+    # @param pOut
+    @kmMat4Identity: (pOut) ->
+
+    # Calculates the inverse of pM and stores the result in pOut.
+    # @param pOut
+    # @param pM
+    @kmMat4Inverse: (pOut, pM) ->
+
+    # Returns KM_TRUE if pIn is an identity matrix KM_FALSE otherwise
+    # @param pIn
+    @kmMat4IsIdentity: (pIn) ->
+
+    # Builds a translation matrix in the same way as gluLookAt() the resulting matrix is stored in pOut.
+    # @param pOut
+    # @param pEye
+    # @param pCenter
+    # @param pUp
+    @kmMat4LookAt: (pOut, pEye, pCenter, pUp) ->
+
+    # Multiplies pM1 with pM2, stores the result in pOut, returns pOut
+    # @param pOut
+    # @param pM1
+    # @param pM2
+    @kmMat4Multiply: (pOut, pM1, pM2) ->
+
+    # Creates an orthographic projection matrix like glOrtho
+    # @param pOut
+    # @param left
+    # @param right
+    # @param bottom
+    # @param top
+    # @param nearVal
+    # @param farVal
+    @kmMat4OrthographicProjection: (pOut, left, right, bottom, top, nearVal, farVal) ->
+
+    # Creates a perspective projection matrix in the same way as gluPerspective
+    # @param pOut
+    # @param fovY
+    # @param aspect
+    # @param zNear
+    # @param zFar
+    @kmMat4PerspectiveProjection: (pOut, fovY, aspect, zNear, zFar) ->
+
+    # Build a rotation matrix from an axis and an angle.
+    # @param pOut
+    # @param axis
+    # @param radians
+    @kmMat4RotationAxisAngle: (pOut, axis, radians) ->
+
+    # Builds a rotation matrix from pitch, yaw and roll.
+    # @param pOut
+    # @param pitch
+    # @param yaw
+    # @param roll
+    @kmMat4RotationPitchYawRoll: (pOut, pitch, yaw, roll) ->
+
+    # Converts a quaternion to a rotation matrix, the result is stored in pOut, returns pOut
+    # @param pOut
+    # @param pQ
+    @kmMat4RotationQuaternion: (pOut, pQ) ->
+
+    # Take the rotation from a 4x4 transformation matrix, and return it as an axis and an angle (in radians) returns the output axis.
+    # @param pAxis
+    # @param radians
+    # @param pIn
+    @kmMat4RotationToAxisAngle: (pAxis, radians, pIn) ->
+
+    # Build a 4x4 OpenGL transformation matrix using a 3x3 rotation matrix, and a 3d vector representing a translation.
+    # @param pOut
+    # @param rotation
+    # @param translation
+    @kmMat4RotationTranslation: (pOut, rotation, translation) ->
+
+    # Builds an X-axis rotation matrix and stores it in pOut, returns pOut
+    # @param pOut
+    # @param radians
+    @kmMat4RotationX: (pOut, radians) ->
+
+    # Builds a rotation matrix using the rotation around the Y-axis The result is stored in pOut, pOut is returned.
+    # @param pOut
+    # @param radians
+    @kmMat4RotationY: (pOut, radians) ->
+
+    # Builds a rotation matrix around the Z-axis.
+    # @param pOut
+    # @param radians
+    @kmMat4RotationZ: (pOut, radians) ->
+
+    # Builds a scaling matrix
+    # @param pOut
+    # @param x
+    # @param y
+    # @param z
+    @kmMat4Scaling: (pOut, x, y, z) ->
+
+    # Builds a translation matrix.
+    # @param pOut
+    # @param x
+    # @param y
+    # @param z
+    @kmMat4Translation: (pOut, x, y, z) ->
+
+    # Sets pOut to the transpose of pIn, returns pOut
+    # @param pOut
+    # @param pIn
+    @kmMat4Transpose: (pOut, pIn) ->
+
+    # Returns POINT_INFRONT_OF_PLANE if pP is infront of pIn.
+    # @param pIn
+    # @param pP
+    @kmPlaneClassifyPoint: (pIn, pP) ->
+
+    # Creates a plane from 3 points.
+    # @param pOut
+    # @param p1
+    # @param p2
+    # @param p3
+    @kmPlaneFromPoints: (pOut, p1, p2, p3) ->
+
+    # Adapted from the OGRE engine! Gets the shortest arc quaternion to rotate this vector to the destination vector.
+    # @param pOut
+    # @param vec1
+    # @param vec2
+    # @param fallback
+    @kmQuaternionRotationBetweenVec3: (pOut, vec1, vec2, fallback) ->
+
+    # Returns the square of s (e.g.
+    # @param [Number] s
+    @kmSQR: (s) ->
+
+    # creates a lens 3d action with center position, radius
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Point] position
+    # @param [Number] radius
+    # @return [Lens3D]
+    @lens3D: (duration, gridSize, position, radius) ->
 
     # Linear interpolation between 2 numbers, the ratio sets how much it is biased to each end
     # @param [Number] a
@@ -1195,27 +1593,27 @@ class cc
     # @param [Number] r
     @lerp: (a, b, r) ->
 
-    # @param [TouchHandler] p1
-    # @param [TouchHandler] p2
-    # @return [Boolean]
-    @less: (p1, p2) ->
+    # creates the action with amplitude, a grid and duration
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [Liquid]
+    @liquid: (duration, gridSize, waves, amplitude) ->
 
-    # Load the images to the cache
-    # @param [String] imageUrl
-    @loadImage: (imageUrl) ->
+    # Create the action.
+    # @param [Number] duration
+    # @param [Point|Number] deltaPos
+    # @param [Number] deltaY
+    # @return [MoveBy]
+    @moveBy: (duration, deltaPos, deltaY) ->
 
-    # Output Debug message.
-    # @param [String] message
-    @log: (message) ->
-
-    @logERROR: ->
-
-    # Magenta Color (255,0,255)
-    @magenta: ->
-
-    # Pop out a message box
-    # @param [String] message
-    @MessageBox: (message) ->
+    # Create new action.
+    # @param [Number] duration
+    # @param [Point] position
+    # @param [Number] y
+    # @return [MoveBy]
+    @moveTo: (duration, position, y) ->
 
     # @param [Number] x
     # @return [Number]
@@ -1223,14 +1621,12 @@ class cc
 
     # Helpful macro that setups the GL server state, the correct GL program and sets the Model View Projection matrix
     # @param [Node] node
-    @NODE_DRAW_SETUP: (node) ->
+    @nodeDrawSetup: (node) ->
 
-    # Orange Color (255,127,0)
-    @orange: ->
-
-    # Helper macro that creates a cc.Point.
-    # @param [Number] x
+    # Helper function that creates a cc.Point.
+    # @param [Number|cc.Point] x
     # @param [Number] y
+    # @return [Point]
     @p: (x, y) ->
 
     # Calculates sum of two points.
@@ -1240,9 +1636,15 @@ class cc
     @pAdd: (v1, v2) ->
 
     # adds one point to another (inplace)
-    # @param v1
-    # @param v2
+    # @param [Point] v1
+    # @param [point] v2
     @pAddIn: (v1, v2) ->
+
+    # create PageTurn3D action
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [PageTurn3D]
+    @pageTurn3D: (duration, gridSize) ->
 
     # @param [Point] a
     # @param [Point] b
@@ -1282,7 +1684,7 @@ class cc
     # Calculates the distance between two points
     # @param [Point] v1
     # @param [Point] v2
-    # @return [pLength]
+    # @return [Number]
     @pDistance: (v1, v2) ->
 
     # Calculates the square distance between two points (not calling sqrt() )
@@ -1314,8 +1716,8 @@ class cc
     @pFuzzyEqual: (a, b, variance) ->
 
     # copies the position of one point to another
-    # @param v1
-    # @param v2
+    # @param [Point] v1
+    # @param [Point] v2
     @pIn: (v1, v2) ->
 
     # ccpIntersectPoint return the intersection point of line A-B, C-D
@@ -1325,6 +1727,12 @@ class cc
     # @param [Point] D
     # @return [Point]
     @pIntersectPoint: (A, B, C, D) ->
+
+    # Creates a Place action with a position.
+    # @param [Point|Number] pos
+    # @param [Number] y
+    # @return [Place]
+    @place: (pos, y) ->
 
     # Calculates distance between point an origin
     # @param [Point] v
@@ -1343,7 +1751,7 @@ class cc
     # @return [pAdd]
     @pLerp: (a, b, alpha) ->
 
-    # A general line-line intersection test
+    # A general line-line intersection test indicating successful intersection of a line note that to truly test intersection for segments we have to make sure that s & t lie within [0.
     # @param [Point] A
     # @param [Point] B
     # @param [Point] C
@@ -1365,8 +1773,8 @@ class cc
     @pMult: (point, floatVar) ->
 
     # multiplies the point with the given factor (inplace)
-    # @param point
-    # @param floatVar
+    # @param [Point] point
+    # @param [Number] floatVar
     @pMultIn: (point, floatVar) ->
 
     # Returns opposite of point.
@@ -1380,41 +1788,30 @@ class cc
     @pNormalize: (v) ->
 
     # normalizes the point (inplace)
-    # @param v
-    @pNormalizeIn: (v) ->
+    # @param 
+    @pNormalizeIn: ->
 
-    # Converts a rect in pixels to points
-    # @param pixels
-    @POINT_PIXELS_TO_POINTS: (pixels) ->
-
-    # Converts a rect in points to pixels
-    # @param [Point] points
-    # @return [Point]
-    @POINT_POINTS_TO_PIXELS: (points) ->
-
+    # Apply the affine transformation on a point.
     # @param [Point] point
     # @param [AffineTransform] t
     # @return [Point]
-    @PointApplyAffineTransform: (point, t) ->
+    @pointApplyAffineTransform: (point, t) ->
 
+    # Check whether a point's value equals to another
     # @param [Point] point1
     # @param [Point] point2
     # @return [Boolean]
     @pointEqualToPoint: (point1, point2) ->
 
-    # Returns a Core Graphics point structure corresponding to the data in a given string.
-    # @param [String] content
+    # Converts a Point in pixels to points
+    # @param [Rect] pixels
     # @return [Point]
-    @PointFromString: (content) ->
+    @pointPixelsToPoints: (pixels) ->
 
-    # @param [Number] x
-    # @param [Number] y
+    # Converts a Point in points to pixels
+    # @param [Point] points
     # @return [Point]
-    @PointMake: (x, y) ->
-
-    # The "left bottom" point -- equivalent to cc.p(0, 0).
-    # @return [Point]
-    @PointZero: ->
+    @pointPointsToPixels: (points) ->
 
     # Calculates perpendicular of v, rotated 90 degrees counter-clockwise -- cross(v, perp(v)) = 0
     # @param [Point] point
@@ -1426,6 +1823,19 @@ class cc
     # @param [Point] v2
     # @return [pMult]
     @pProject: (v1, v2) ->
+
+    # Creates and initializes the action with a duration, a "from" percentage and a "to" percentage
+    # @param [Number] duration
+    # @param [Number] fromPercentage
+    # @param [Number] toPercentage
+    # @return [ProgressFromTo]
+    @progressFromTo: (duration, fromPercentage, toPercentage) ->
+
+    # Creates and initializes with a duration and a percent
+    # @param [Number] duration
+    # @param [Number] percent
+    # @return [ProgressTo]
+    @progressTo: (duration, percent) ->
 
     # Rotates two points.
     # @param [Point] v1
@@ -1466,9 +1876,9 @@ class cc
     @pSub: (v1, v2) ->
 
     # subtracts one point from another (inplace)
-    # @param v1
-    # @param v2
-    @pSubIn: (v1, v2) ->
+    # @param [Point] v1
+    # @param 
+    @pSubIn: (v1, ) ->
 
     # Converts a vector to radians.
     # @param [Point] v
@@ -1482,66 +1892,74 @@ class cc
     @pUnrotate: (v1, v2) ->
 
     # sets the position of the point to 0
-    # @param v
+    # @param [Point] v
     @pZeroIn: (v) ->
 
     # converts radians to degrees
     # @param [Number] angle
     # @return [Number]
-    @RADIANS_TO_DEGREES: (angle) ->
+    @radiansToDegrees: (angle) ->
+
+    # converts radians to degrees
+    # @param [Number] angle
+    # @return [Number]
+    @radiansToDegress: (angle) ->
+
+    # get a random number from 0 to 0xffffff
+    # @return [number]
+    @rand: ->
 
     # returns a random float between 0 and 1
     # @return [Number]
-    @RANDOM_0_1: ->
+    @random0To1: ->
 
     # returns a random float between -1 and 1
     # @return [Number]
-    @RANDOM_MINUS1_1: ->
+    @randomMinus1To1: ->
 
-    # Converts a rect in pixels to points
-    # @param [Rect] pixel
-    @RECT_PIXELS_TO_POINTS: (pixel) ->
+    # Helper function that creates a cc.Rect.
+    # @param [Number|cc.Rect] x
+    # @param [Number] y
+    # @param [Number] w
+    # @param [Number] h
+    # @return [Rect]
+    @rect: (x, y, w, h) ->
 
-    # Converts a rect in points to pixels
-    # @param [Rect] point
-    @RECT_POINTS_TO_PIXELS: (point) ->
-
+    # Apply the affine transformation on a rect.
     # @param [Rect] rect
     # @param [AffineTransform] anAffineTransform
     # @return [Rect]
-    @RectApplyAffineTransform: (rect, anAffineTransform) ->
+    @rectApplyAffineTransform: (rect, anAffineTransform) ->
 
+    # Check whether a rect contains a point
     # @param [Rect] rect
     # @param [Point] point
     # @return [Boolean]
     @rectContainsPoint: (rect, point) ->
 
+    # Check whether the rect1 contains rect2
     # @param [Rect] rect1
     # @param [Rect] rect2
     # @return [Boolean]
     @rectContainsRect: (rect1, rect2) ->
 
+    # Check whether a rect's value equals to another
     # @param [Rect] rect1
     # @param [Rect] rect2
     # @return [Boolean]
     @rectEqualToRect: (rect1, rect2) ->
 
-    # Returns a Core Graphics rectangle structure corresponding to the data in a given string.
-    # @param [String] content
-    # @return [Rect]
-    @RectFromString: (content) ->
-
-    # return the rightmost x-value of 'rect'
+    # Returns the rightmost x-value of a rect
     # @param [Rect] rect
     # @return [Number]
     @rectGetMaxX: (rect) ->
 
-    # Return the topmost y-value of `rect'
+    # Return the topmost y-value of a rect
     # @param [Rect] rect
     # @return [Number]
     @rectGetMaxY: (rect) ->
 
-    # return the midpoint x-value of 'rect'
+    # Return the midpoint x-value of a rect
     # @param [Rect] rect
     # @return [Number]
     @rectGetMidX: (rect) ->
@@ -1551,12 +1969,12 @@ class cc
     # @return [Number]
     @rectGetMidY: (rect) ->
 
-    # return the leftmost x-value of 'rect'
+    # Returns the leftmost x-value of a rect
     # @param [Rect] rect
     # @return [Number]
     @rectGetMinX: (rect) ->
 
-    # Return the bottommost y-value of `rect'
+    # Return the bottommost y-value of a rect
     # @param [Rect] rect
     # @return [Number]
     @rectGetMinY: (rect) ->
@@ -1567,22 +1985,27 @@ class cc
     # @return [Rect]
     @rectIntersection: (rectA, rectB) ->
 
+    # Check whether a rect intersect with another
     # @param [Rect] rectA
     # @param [Rect] rectB
     # @return [Boolean]
     @rectIntersectsRect: (rectA, rectB) ->
 
-    # @param [Number] x
-    # @param [Number] y
-    # @param [Number] width
-    # @param [Number] height
-    # @return [Rect]
-    @RectMake: (x, y, width, height) ->
-
+    # Check whether a rect overlaps another
     # @param [Rect] rectA
     # @param [Rect] rectB
     # @return [Boolean]
     @rectOverlapsRect: (rectA, rectB) ->
+
+    # Converts a rect in pixels to points
+    # @param [Rect] pixel
+    # @return [Rect]
+    @rectPixelsToPoints: (pixel) ->
+
+    # Converts a rect in points to pixels
+    # @param [Rect] point
+    # @return [Rect]
+    @rectPointsToPixels: (point) ->
 
     # Returns the smallest rectangle that contains the two source rectangles.
     # @param [Rect] rectA
@@ -1590,26 +2013,26 @@ class cc
     # @return [Rect]
     @rectUnion: (rectA, rectB) ->
 
-    # The "zero" rectangle -- equivalent to cc.rect(0, 0, 0, 0).
-    # @return [Rect]
-    @RectZero: ->
+    # Create a RemoveSelf object with a flag indicate whether the target should be cleaned up while removing.
+    # @param [Boolean] isNeedCleanUp
+    # @return [RemoveSelf]
+    @removeSelf: (isNeedCleanUp) ->
 
-    # Red Color (255,0,0,)
-    @red: ->
+    # Creates a Repeat action.
+    # @param [FiniteTimeAction] action
+    # @param [Number] times
+    # @return [Repeat]
+    @repeat: (action, times) ->
 
-    # Adds a standard touch delegate to the dispatcher's list.
-    # @param [Object] delegate
-    # @param [Number] priority
-    @registerStandardDelegate: (delegate, priority) ->
+    # Create a acton which repeat forever
+    # @param [FiniteTimeAction] action
+    # @return [RepeatForever]
+    @repeatForever: (action) ->
 
-    # register a targeted touch delegate to the dispatcher's list.
-    # @param [Number] priority
-    # @param [Boolean] swallowsTouches
-    # @param [Object] delegate
-    @registerTargetedDelegate: (priority, swallowsTouches, delegate) ->
-
-    # @param A
-    @RENDER_IN_SUBPIXEL: (A) ->
+    # creates an action with the number of times that the current grid will be reused
+    # @param [Number] times
+    # @return [ReuseGrid]
+    @reuseGrid: (times) ->
 
     # returns a new copy of the array reversed.
     # @param controlPoints
@@ -1620,337 +2043,575 @@ class cc
     # @param controlPoints
     @reverseControlPointsInline: (controlPoints) ->
 
-    # enable/disable contextMenu for Canvas
-    # @param [Boolean] enabled
-    @setContextMenuEnable: (enabled) ->
+    # Executes an action in reverse order, from time=duration to time=0.
+    # @param [FiniteTimeAction] action
+    # @return [ReverseTime]
+    @reverseTime: (action) ->
+
+    # creates a ripple 3d action with radius, number of waves, amplitude
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Point] position
+    # @param [Number] radius
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [Ripple3D]
+    @ripple3D: (duration, gridSize, position, radius, waves, amplitude) ->
+
+    # Rotates a cc.Node object clockwise a number of degrees by modifying it's rotation attribute.
+    # @param [Number] duration
+    # @param [Number] deltaAngleX
+    # @param [Number] deltaAngleY
+    # @return [RotateBy]
+    @rotateBy: (duration, deltaAngleX, deltaAngleY) ->
+
+    # Creates a RotateTo action with separate rotation angles.
+    # @param [Number] duration
+    # @param [Number] deltaAngleX
+    # @param [Number] deltaAngleY
+    # @return [RotateTo]
+    @rotateTo: (duration, deltaAngleX, deltaAngleY) ->
+
+    # Scales a cc.Node object a zoom factor by modifying it's scale attribute.
+    # @param [Number] duration
+    # @param [Number] sx
+    # @param [Number|Null] sy
+    # @return [ScaleBy]
+    @scaleBy: (duration, sx, sy) ->
+
+    # Scales a cc.Node object to a zoom factor by modifying it's scale attribute.
+    # @param [Number] duration
+    # @param [Number] sx
+    # @param [Number] sy
+    # @return [ScaleTo]
+    @scaleTo: (duration, sx, sy) ->
+
+    # helper constructor to create an array of sequenceable actions
+    # @param [Array|cc.FiniteTimeAction] tempArray
+    # @return [Sequence]
+    @sequence: (tempArray) ->
+
+    # @param [Number] sfactor
+    # @param [Number] dfactor
+    @setBlending: (sfactor, dfactor) ->
+
+    # Sets the shader program for this node Since v2.0, each rendering node must set its shader program.
+    # @param [Node] node
+    # @param [GLProgram] program
+    @setProgram: (node, program) ->
 
     # sets the projection matrix as dirty
     @setProjectionMatrixDirty: ->
 
-    # setup game main canvas,renderContext,gameDiv and drawingUtil with argument can receive follow type of arguemnt: - empty: create a canvas append to document's body, and setup other option - string: search the element by document.getElementById(), if this element is HTMLCanvasElement, set this element as main canvas of engine, and set it's ParentNode as cc.gameDiv.
-    # @param el
-    # @param width
-    # @param height
-    @setup: (el, width, height) ->
+    # creates the action with a range, shake Z vertices, a grid and duration
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] range
+    # @param [Boolean] shakeZ
+    # @return [Shaky3D]
+    @shaky3D: (duration, gridSize, range, shakeZ) ->
 
-    # the entity stored in soundList and effectList, containing the audio element and the extension name.
-    # @param audio
-    # @param ext
-    @SimpleSFX: (audio, ext) ->
+    # Creates the action with a range, whether or not to shake Z vertices, a grid size, and duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] range
+    # @param [Boolean] shakeZ
+    # @return [ShakyTiles3D]
+    @shakyTiles3D: (duration, gridSize, range, shakeZ) ->
 
-    # @param [Number] w
+    # Creates the action with a range, whether of not to shatter Z vertices, a grid size and duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] range
+    # @param [Boolean] shatterZ
+    # @return [ShatteredTiles3D]
+    @shatteredTiles3D: (duration, gridSize, range, shatterZ) ->
+
+    # Show the Node.
+    # @return [Show]
+    @show: ->
+
+    # Creates the action with a random seed, the grid size and the duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] seed
+    # @return [ShuffleTiles]
+    @shuffleTiles: (duration, gridSize, seed) ->
+
+    # Helper function that creates a cc.Size.
+    # @param [Number|cc.Size] w
     # @param [Number] h
     # @return [Size]
     @size: (w, h) ->
 
-    # Converts a rect in pixels to points
-    # @param [Size] sizeInPixels
-    # @return [Size]
-    @SIZE_PIXELS_TO_POINTS: (sizeInPixels) ->
-
-    # Converts a rect in points to pixels
-    # @param [Size] sizeInPoints
-    # @return [Size]
-    @SIZE_POINTS_TO_PIXELS: (sizeInPoints) ->
-
+    # Apply the affine transformation on a size.
     # @param [Size] size
     # @param [AffineTransform] t
     # @return [Size]
-    @SizeApplyAffineTransform: (size, t) ->
+    @sizeApplyAffineTransform: (size, t) ->
 
+    # Check whether a point's value equals to another
     # @param [Size] size1
     # @param [Size] size2
     # @return [Boolean]
     @sizeEqualToSize: (size1, size2) ->
 
-    # Returns a Core Graphics size structure corresponding to the data in a given string.
-    # @param [String] content
+    # Converts a size in pixels to points
+    # @param [Size] sizeInPixels
     # @return [Size]
-    @SizeFromString: (content) ->
+    @sizePixelsToPoints: (sizeInPixels) ->
 
-    # @param [Number] width
-    # @param [Number] height
+    # Converts a Size in points to pixels
+    # @param [Size] sizeInPoints
     # @return [Size]
-    @SizeMake: (width, height) ->
+    @sizePointsToPixels: (sizeInPoints) ->
 
-    # The "zero" size -- equivalent to cc.size(0, 0).
-    # @return [Size]
-    @SizeZero: ->
+    # Skews a cc.Node object by skewX and skewY degrees.
+    # @param [Number] t
+    # @param [Number] sx
+    # @param [Number] sy
+    # @return [SkewBy]
+    @skewBy: (t, sx, sy) ->
 
-    # first, judge whether the form of the string like this: {x,y} if the form is right,the string will be splited into the parameter strs; or the parameter strs will be empty.
-    # @param [String] content
-    # @param [String] strs
-    # @return [String]
-    @splitWithForm: (content, strs) ->
+    # Create new action.
+    # @param [Number] t
+    # @param [Number] sx
+    # @param [Number] sy
+    # @return [SkewTo]
+    @skewTo: (t, sx, sy) ->
 
-    # string to array
-    # @param [String] input
-    # @return [Array]
-    @StringToArray: (input) ->
+    # Create a spawn action which runs several actions in parallel.
+    # @param [Array|cc.FiniteTimeAction] tempArray
+    # @return [FiniteTimeAction]
+    @spawn: (tempArray) ->
+
+    # creates the speed action.
+    # @param [ActionInterval] action
+    # @param [Number] speed
+    # @return [Speed]
+    @speed: (action, speed) ->
+
+    # creates the action with the number of columns to split and the duration.
+    # @param [Number] duration
+    # @param [Number] cols
+    # @return [SplitCols]
+    @splitCols: (duration, cols) ->
+
+    # creates the action with the number of rows to split and the duration.
+    # @param [Number] duration
+    # @param [Number] rows
+    # @return [SplitRows]
+    @splitRows: (duration, rows) ->
+
+    # Allocates and initializes the action
+    # @return [StopGrid]
+    @stopGrid: ->
 
     # simple macro that swaps 2 variables modified from c++ macro, you need to pass in the x and y variables names in string, and then a reference to the whole object as third variable
-    # @param x
-    # @param y
-    # @param ref
-    @SWAP: (x, y, ref) ->
+    # @param [String] x
+    # @param [String] y
+    # @param [Object] ref
+    @swap: (x, y, ref) ->
 
-    # helper macro that creates an Tex2F type
+    # Create an action with the specified action and forced target
+    # @param [Node] target
+    # @param [FiniteTimeAction] action
+    # @return [TargetedAction]
+    @targetedAction: (target, action) ->
+
+    # Helper macro that creates an Tex2F type: A texcoord composed of 2 floats: u, y
     # @param [Number] u
     # @param [Number] v
     # @return [Tex2F]
     @tex2: (u, v) ->
 
-    # @param [Number] type
-    @TouchHandlerHelperData: (type) ->
+    # releases the memory used for the image
+    # @param [ImageTGA] psInfo
+    @tgaDestroy: (psInfo) ->
 
-    # Removes a touch delegate.
-    # @param delegate
-    @unregisterTouchDelegate: (delegate) ->
+    # ImageTGA Flip
+    # @param [ImageTGA] psInfo
+    @tgaFlipImage: (psInfo) ->
 
-    # Unpack a gzipped byte array
-    # @param [Array] input
-    # @return [String]
-    @unzip: (input) ->
+    # load the image header field from stream.
+    # @param [Array] buffer
+    # @param [Number] bufSize
+    # @param [ImageTGA] psInfo
+    # @return [Boolean]
+    @tgaLoadHeader: (buffer, bufSize, psInfo) ->
 
-    # Unpack a gzipped byte array
-    # @param [Array] input
-    # @param [Number] bytes
-    # @return [Array]
-    @unzipAsArray: (input, bytes) ->
+    # loads the image pixels.
+    # @param [Array] buffer
+    # @param [Number] bufSize
+    # @param [ImageTGA] psInfo
+    # @return [Boolean]
+    @tgaLoadImageData: (buffer, bufSize, psInfo) ->
 
-    # Unpack a gzipped byte string encoded as base64
-    # @param [String] input
-    # @return [String]
-    @unzipBase64: (input) ->
+    # Load RLE image data
+    # @param buffer
+    # @param bufSize
+    # @param psInfo
+    # @return [boolean]
+    @tgaLoadRLEImageData: (buffer, bufSize, psInfo) ->
 
-    # Unpack a gzipped byte string encoded as base64
-    # @param [String] input
-    # @param [Number] bytes
-    # @return [Array]
-    @unzipBase64AsArray: (input, bytes) ->
+    # converts RGB to grayscale
+    # @param [ImageTGA] psInfo
+    @tgaRGBtogreyscale: (psInfo) ->
 
-    # Trims str st str=[0, index) after the operation.
-    # @param [Array] str
-    # @param [Number] index
-    @utf8_trim_from: (str, index) ->
+    # Creates the action with duration and grid size
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [TiledGrid3DAction]
+    @tiledGrid3DAction: (duration, gridSize) ->
 
-    # @param [Array] str
-    @utf8_trim_ws: (str) ->
+    # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
+    # @param [Number] duration
+    # @param [Number] deltaRed
+    # @param [Number] deltaGreen
+    # @param [Number] deltaBlue
+    # @return [TintBy]
+    @tintBy: (duration, deltaRed, deltaGreen, deltaBlue) ->
 
-    # helper function to create a cc.V2F_C4B_T2F_Quad
-    # @return [V2F_C4B_T2F_Quad]
-    @V2F_C4B_T2F_QuadZero: ->
+    # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
+    # @param [Number] duration
+    # @param [Number] red
+    # @param [Number] green
+    # @param [Number] blue
+    # @return [TintTo]
+    @tintTo: (duration, red, green, blue) ->
 
-    # @param sourceQuad
-    @V3F_C4B_T2F_QuadCopy: (sourceQuad) ->
+    # Toggles the visibility of a node.
+    # @return [ToggleVisibility]
+    @toggleVisibility: ->
 
-    # helper function to create a cc.V3F_C4B_T2F_Quad
-    # @return [V3F_C4B_T2F_Quad]
-    @V3F_C4B_T2F_QuadZero: ->
+    # Creates the action with a random seed, the grid size and the duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number|Null] seed
+    # @return [TurnOffTiles]
+    @turnOffTiles: (duration, gridSize, seed) ->
 
-    # helper macro that creates an Vertex2F type
+    # creates the action with center position, number of twirls, amplitude, a grid size and duration
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Point] position
+    # @param [Number] twirls
+    # @param [Number] amplitude
+    # @return [Twirl]
+    @twirl: (duration, gridSize, position, twirls, amplitude) ->
+
+    # Code copied & pasted from SpacePatrol game https://github.com/slembcke/SpacePatrol Renamed and added some changes for cocos2d
+    @v2fzero: ->
+
+    # Helper macro that creates an Vertex2F type composed of 2 floats: x, y
     # @param [Number] x
     # @param [Number] y
     # @return [Vertex2F]
-    @Vertex2: (x, y) ->
+    @vertex2: (x, y) ->
 
-    # helper macro that creates an Vertex3F type
+    # Helper macro that creates an Vertex3F type composed of 3 floats: x, y, z
     # @param [Number] x
     # @param [Number] y
     # @param [Number] z
     # @return [Vertex3F]
     @vertex3: (x, y, z) ->
 
-    # The entity stored in cc.WebAudioEngine, representing a sound object
-    # @param key
-    # @param sourceNode
-    # @param volumeNode
-    # @param startTime
-    # @param pauseTime
-    @WebAudioSFX: (key, sourceNode, volumeNode, startTime, pauseTime) ->
+    # returns whether or not the line intersects
+    # @param [Number] Ax
+    # @param [Number] Ay
+    # @param [Number] Bx
+    # @param [Number] By
+    # @param [Number] Cx
+    # @param [Number] Cy
+    # @param [Number] Dx
+    # @param [Number] Dy
+    # @return [Object]
+    @vertexLineIntersect: (Ax, Ay, Bx, By, Cx, Cy, Dx, Dy) ->
 
-    # White color (255,255,255)
-    @white: ->
+    # converts a line to a polygon
+    # @param [Float32Array] points
+    # @param [Number] stroke
+    # @param [Float32Array] vertices
+    # @param [Number] offset
+    # @param [Number] nuPoints
+    @vertexLineToPolygon: (points, stroke, vertices, offset, nuPoints) ->
 
-    # Yellow color (255,255,0)
-    @yellow: ->
+    # returns wheter or not polygon defined by vertex list is clockwise
+    # @param [Array] verts
+    # @return [Boolean]
+    @vertexListIsClockwise: (verts) ->
 
-    # the dollar sign, classic like jquery, this selector add extra methods to HTMLElement without touching its prototype it is also chainable like jquery
-    # @param [HTMLElement|String] x
-    # @return [$]
-    @$: (x) ->
+    # initializes the action with amplitude, horizontal sin, vertical sin, a grid and duration
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @param [Boolean] horizontal
+    # @param [Boolean] vertical
+    # @return [Waves]
+    @waves: (duration, gridSize, waves, amplitude, horizontal, vertical) ->
+
+    # Create a wave 3d action with duration, grid size, waves and amplitude.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    @waves3D: (duration, gridSize, waves, amplitude) ->
+
+    # creates the action with a number of waves, the waves amplitude, the grid size and the duration.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [WavesTiles3D]
+    @wavesTiles3D: (duration, gridSize, waves, amplitude) ->
+
+    # cc.Acceleration
+    # @param [Number] x
+    # @param [Number] y
+    # @param [Number] z
+    # @param [Number] timestamp
+    # @return [Acceleration]
+    @Acceleration: (x, y, z, timestamp) ->
 
     # Base class for cc.Action objects.
     # @return [Action]
     @Action: ->
 
     # Base class for Easing actions
+    # @param [ActionInterval] action
     # @return [ActionEase]
-    @ActionEase: ->
+    @ActionEase: (action) ->
 
     # Instant actions are immediate actions.
     # @return [ActionInstant]
     @ActionInstant: ->
 
     # An interval action is an action that takes place within a certain period of time.
+    # @param [Number] d
     # @return [ActionInterval]
-    @ActionInterval: ->
+    @ActionInterval: (d) ->
 
-    # cc.ActionManager is a singleton that manages all the actions.
+    # cc.ActionManager is a class that can manage actions.
     # @return [ActionManager]
     @ActionManager: ->
 
+    # cc.ActionTween cc.ActionTween is an action that lets you update any property of an object.
+    # @param [Number] duration
+    # @param [String] key
+    # @param [Number] from
+    # @param [Number] to
+    # @return [ActionTween]
+    @ActionTween: (duration, key, from, to) ->
+
+    # @return [ActionTweenDelegate]
+    @ActionTweenDelegate: ->
+
+    # cc.AffineTransform
+    # @param [Number] a
+    # @param [Number] b
+    # @param [Number] c
+    # @param [Number] d
+    # @param [Number] tx
+    # @param [Number] ty
+    # @return [AffineTransform]
+    @AffineTransform: (a, b, c, d, tx, ty) ->
+
     # Animates a sprite given the name of an Animation
+    # @param [Animation] animation
     # @return [Animate]
-    @Animate: ->
+    @Animate: (animation) ->
 
     # A cc.Animation object is used to perform animations on the cc.Sprite objects.
+    # @param [Array] frames
+    # @param [Number] delay
+    # @param [Number] loops
     # @return [Animation]
-    @Animation: ->
+    @Animation: (frames, delay, loops) ->
 
-    # Singleton that manages the Animations.
-    # @return [AnimationCache]
-    @AnimationCache: ->
+    # cc.animationCache is a singleton object that manages the Animations.
+    # @return [animationCache]
+    @animationCache: ->
 
     # cc.AnimationFrame A frame of the animation.
+    # @param spriteFrame
+    # @param delayUnits
+    # @param userInfo
     # @return [AnimationFrame]
-    @AnimationFrame: ->
+    @AnimationFrame: (spriteFrame, delayUnits, userInfo) ->
 
-    # struct that holds the size in pixels, texture coordinates and delays for animated cc.ParticleSystem
-    # @param [T2F_Quad] texCoords
-    # @param delay
-    # @param size
-    # @return [AnimationFrameData]
-    @AnimationFrameData: (texCoords, delay, size) ->
+    # Array for object sorting utils
+    # @return [ArrayForObjectSorting]
+    @ArrayForObjectSorting: ->
 
-    # Controller of Game Application
-    # @return [AppController]
-    @AppController: ->
+    # @return [async]
+    @async: ->
 
-    # Run main loop of game engine
-    # @return [Application]
-    @Application: ->
+    # Async Pool class, a helper of cc.async
+    # @param [Object|Array] srcObj
+    # @param [Number] limit
+    # @param [function] iterator
+    # @param [function] onEnd
+    # @param [object] target
+    # @return [AsyncPool]
+    @AsyncPool: (srcObj, limit, iterator, onEnd, target) ->
 
-    # cc.AtlasNode is a subclass of cc.Node that implements the cc.RGBAProtocol and cc.TextureProtocol protocol It knows how to render a TextureAtlas object.
+    # cc.AtlasNode is a subclass of cc.Node, it knows how to render a TextureAtlas object.
+    # @param [String] tile
+    # @param [Number] tileWidth
+    # @param [Number] tileHeight
+    # @param [Number] itemsToRender
     # @return [AtlasNode]
-    @AtlasNode: ->
+    @AtlasNode: (tile, tileWidth, tileHeight, itemsToRender) ->
 
-    # A simple Audio Engine engine API.
-    # @return [AudioEngine]
-    @AudioEngine: ->
+    # cc.audioEngine is the singleton object, it provide simple audio APIs.
+    # @return [audioEngine]
+    @audioEngine: ->
 
     # An action that moves the target with a cubic Bezier curve by a certain distance.
+    # @param [Number] t
+    # @param [Array] c
     # @return [BezierBy]
-    @BezierBy: ->
+    @BezierBy: (t, c) ->
 
     # An action that moves the target with a cubic Bezier curve to a destination point.
+    # @param [Number] t
+    # @param [Array] c
     # @return [BezierTo]
-    @BezierTo: ->
+    @BezierTo: (t, c) ->
 
-    # Blend Function used for textures
-    # @param [Number] src1
-    # @param [Number] dst1
-    # @return [BlendFunc]
-    @BlendFunc: (src1, dst1) ->
+    # Binary Stream Reader
+    # @param binaryData
+    # @return [BinaryStreamReader]
+    @BinaryStreamReader: (binaryData) ->
 
     # Blinks a cc.Node object by modifying it's visible attribute
+    # @param [Number] duration
+    # @param [Number] blinks
     # @return [Blink]
-    @Blink: ->
+    @Blink: (duration, blinks) ->
 
-    # cc.BMFontConfiguration has parsed _configuration of the the .fnt file
-    # @return [BMFontConfiguration]
-    @BMFontConfiguration: ->
-
-    # helper macro that creates an ccColor4F type
-    # @param [Number] r
-    # @param [Number] g
-    # @param [Number] b
-    # @param [Number] a
-    # @return [c4f]
-    @c4f: (r, g, b, a) ->
-
-    # Calls a 'callback'
+    # Calls a 'callback'.
+    # @param [function] selector
+    # @param [object|null] selectorTarget
+    # @param [*|null] data
     # @return [CallFunc]
-    @CallFunc: ->
-
-    # A CCCamera is used in every CCNode.
-    # @return [Camera]
-    @Camera: ->
+    @CallFunc: (selector, selectorTarget, data) ->
 
     # Cardinal Spline path.
+    # @param [Number] duration
+    # @param [Array] points
+    # @param [Number] tension
     # @return [CardinalSplineBy]
-    @CardinalSplineBy: ->
+    @CardinalSplineBy: (duration, points, tension) ->
 
     # Cardinal Spline path.
+    # @param [Number] duration
+    # @param [Array] points
+    # @param [Number] tension
     # @return [CardinalSplineTo]
-    @CardinalSplineTo: ->
+    @CardinalSplineTo: (duration, points, tension) ->
 
     # An action that moves the target with a CatmullRom curve by a certain distance.
+    # @param [Number] dt
+    # @param [Array] points
     # @return [CatmullRomBy]
-    @CatmullRomBy: ->
+    @CatmullRomBy: (dt, points) ->
 
     # An action that moves the target with a CatmullRom curve to a destination point.
+    # @param [Number] dt
+    # @param [Array] points
     # @return [CatmullRomTo]
-    @CatmullRomTo: ->
+    @CatmullRomTo: (dt, points) ->
 
     # The base Class implementation (does nothing)
     # @return [Class]
     @Class: ->
 
-    # RGB color composed of bytes 3 bytes
-    # @param [Number | cc.Color3B] r1
-    # @param [Number] g1
-    # @param [Number] b1
-    # @return [Color3B]
-    @Color3B: (r1, g1, b1) ->
+    # cc.ClippingNode is a subclass of cc.Node.
+    # @param [Node] stencil
+    # @return [ClippingNode]
+    @ClippingNode: (stencil) ->
 
-    # RGBA color composed of 4 bytes
-    # @param [Number] r1
-    # @param [Number] g1
-    # @param [Number] b1
-    # @param [Number] a1
-    # @return [Color4B]
-    @Color4B: (r1, g1, b1, a1) ->
+    # cc.Color
+    # @param [Number] r
+    # @param [Number] g
+    # @param [Number] b
+    # @param [Number] a
+    # @return [Color]
+    @Color: (r, g, b, a) ->
 
-    # RGBA color composed of 4 floats
-    # @param [Number] r1
-    # @param [Number] g1
-    # @param [Number] b1
-    # @param [Number] a1
-    # @return [Color4F]
-    @Color4F: (r1, g1, b1, a1) ->
+    # The base class of component in CocoStudio
+    # @return [Component]
+    @Component: ->
+
+    # The component container for Cocostudio, it has some components.
+    # @return [ComponentContainer]
+    @ComponentContainer: ->
+
+    # cc.configuration is a singleton object which contains some openGL variables
+    # @return [configuration]
+    @configuration: ->
+
+    # cc.ContainerStrategy class is the root strategy class of container's scale strategy, it controls the behavior of how to scale the cc.container and cc._canvas object
+    # @return [ContainerStrategy]
+    @ContainerStrategy: ->
+
+    # cc.ContentStrategy class is the root strategy class of content's scale strategy, it controls the behavior of how to scale the scene and setup the viewport for the game
+    # @return [ContentStrategy]
+    @ContentStrategy: ->
+
+    # CCControl is inspired by the UIControl API class from the UIKit library of CocoaTouch.
+    # @return [Control]
+    @Control: ->
+
+    # CCControlButton: Button control for Cocos2D.
+    # @return [ControlButton]
+    @ControlButton: ->
+
+    # ControlColourPicker: color picker ui component.
+    # @return [ControlColourPicker]
+    @ControlColourPicker: ->
+
+    # ControlHuePicker: HUE picker ui component.
+    # @return [ControlHuePicker]
+    @ControlHuePicker: ->
+
+    # CCControlPotentiometer: Potentiometer control for Cocos2D.
+    # @return [ControlPotentiometer]
+    @ControlPotentiometer: ->
+
+    # ControlSaturationBrightnessPicker: Saturation brightness picker ui component.
+    # @return [ControlSaturationBrightnessPicker]
+    @ControlSaturationBrightnessPicker: ->
+
+    # ControlSlider: Slider ui component.
+    # @return [ControlSlider]
+    @ControlSlider: ->
+
+    # ControlStepper: Stepper ui component.
+    # @return [ControlStepper]
+    @ControlStepper: ->
+
+    # CCControlSwitch: Switch control ui component
+    # @return [ControlSwitch]
+    @ControlSwitch: ->
+
+    # ControlSwitchSprite: Sprite switch control ui component
+    # @return [ControlSwitchSprite]
+    @ControlSwitchSprite: ->
 
     # Delays the action a certain amount of seconds
     # @return [DelayTime]
     @DelayTime: ->
 
-    # Class that creates and handle the main Window and manages how and when to execute the Scenes.
+    # ATTENTION: USE cc.director INSTEAD OF cc.Director.
     # @return [Director]
     @Director: ->
 
-    # OpenGL projection protocol
-    # @return [DirectorDelegate]
-    @DirectorDelegate: ->
-
-    # DisplayLinkDirector is a Director that synchronizes timers with the refresh rate of the display.
-    # @return [DisplayLinkDirector]
-    @DisplayLinkDirector: ->
-
-    # the DOM object
-    # @return [DOM]
-    @DOM: ->
-
-    # Drawing primitives Utility Class.
-    # @return [DrawingPrimitive]
-    @DrawingPrimitive: ->
-
-    # Canvas of DrawingPrimitive implement version
-    # @return [DrawingPrimitiveCanvas]
-    @DrawingPrimitiveCanvas: ->
-
-    # Canvas of DrawingPrimitive implement version
-    # @return [DrawingPrimitiveWebGL]
-    @DrawingPrimitiveWebGL: ->
+    # CCDrawNode Node that draws dots, segments and polygons.
+    # @return [DrawNode]
+    @DrawNode: ->
 
     # cc.EaseBackIn action.
     # @return [EaseBackIn]
@@ -1963,6 +2624,11 @@ class cc
     # cc.EaseBackOut action.
     # @return [EaseBackOut]
     @EaseBackOut: ->
+
+    # cc.EaseBezierAction action.
+    # @param [Action] action
+    # @return [EaseBezierAction]
+    @EaseBezierAction: (action) ->
 
     # cc.EaseBounce abstract class.
     # @return [EaseBounce]
@@ -1980,9 +2646,35 @@ class cc
     # @return [EaseBounceOut]
     @EaseBounceOut: ->
 
-    # Ease Elastic abstract class
+    # cc.EaseCircleActionIn action.
+    # @return [EaseCircleActionIn]
+    @EaseCircleActionIn: ->
+
+    # cc.EaseCircleActionInOut action.
+    # @return [EaseCircleActionInOut]
+    @EaseCircleActionInOut: ->
+
+    # cc.EaseCircleActionOut action.
+    # @return [EaseCircleActionOut]
+    @EaseCircleActionOut: ->
+
+    # cc.EaseCubicActionIn action.
+    # @return [EaseCubicActionIn]
+    @EaseCubicActionIn: ->
+
+    # cc.EaseCubicActionInOut action.
+    # @return [EaseCubicActionInOut]
+    @EaseCubicActionInOut: ->
+
+    # cc.EaseCubicActionOut action.
+    # @return [EaseCubicActionOut]
+    @EaseCubicActionOut: ->
+
+    # Ease Elastic abstract class.
+    # @param [ActionInterval] action
+    # @param [Number] period
     # @return [EaseElastic]
-    @EaseElastic: ->
+    @EaseElastic: (action, period) ->
 
     # Ease Elastic In action.
     # @return [EaseElasticIn]
@@ -1996,53 +2688,128 @@ class cc
     # @return [EaseElasticOut]
     @EaseElasticOut: ->
 
-    # cc.Ease Exponential In
+    # cc.Ease Exponential In.
     # @return [EaseExponentialIn]
     @EaseExponentialIn: ->
 
-    # Ease Exponential InOut
+    # Ease Exponential InOut.
     # @return [EaseExponentialInOut]
     @EaseExponentialInOut: ->
 
-    # Ease Exponential Out
+    # Ease Exponential Out.
     # @return [EaseExponentialOut]
     @EaseExponentialOut: ->
 
-    # cc.EaseIn action with a rate
+    # cc.EaseIn action with a rate.
     # @return [EaseIn]
     @EaseIn: ->
 
-    # cc.EaseInOut action with a rate
+    # cc.EaseInOut action with a rate.
     # @return [EaseInOut]
     @EaseInOut: ->
 
-    # cc.EaseOut action with a rate
+    # cc.EaseOut action with a rate.
     # @return [EaseOut]
     @EaseOut: ->
 
-    # Base class for Easing actions with rate parameters
-    # @return [EaseRateAction]
-    @EaseRateAction: ->
+    # cc.EaseQuadraticActionIn action.
+    # @return [EaseQuadraticActionIn]
+    @EaseQuadraticActionIn: ->
 
-    # Ease Sine In
+    # cc.EaseQuadraticActionInOut action.
+    # @return [EaseQuadraticActionInOut]
+    @EaseQuadraticActionInOut: ->
+
+    # cc.EaseQuadraticActionIn action.
+    # @return [EaseQuadraticActionOut]
+    @EaseQuadraticActionOut: ->
+
+    # cc.EaseQuarticActionIn action.
+    # @return [EaseQuarticActionIn]
+    @EaseQuarticActionIn: ->
+
+    # cc.EaseQuarticActionInOut action.
+    # @return [EaseQuarticActionInOut]
+    @EaseQuarticActionInOut: ->
+
+    # cc.EaseQuarticActionOut action.
+    # @return [EaseQuarticActionOut]
+    @EaseQuarticActionOut: ->
+
+    # cc.EaseQuinticActionIn action.
+    # @return [EaseQuinticActionIn]
+    @EaseQuinticActionIn: ->
+
+    # cc.EaseQuinticActionInOut action.
+    # @return [EaseQuinticActionInOut]
+    @EaseQuinticActionInOut: ->
+
+    # cc.EaseQuinticActionOut action.
+    # @return [EaseQuinticActionOut]
+    @EaseQuinticActionOut: ->
+
+    # Base class for Easing actions with rate parameters
+    # @param [ActionInterval] action
+    # @param [Number] rate
+    # @return [EaseRateAction]
+    @EaseRateAction: (action, rate) ->
+
+    # Ease Sine In.
     # @return [EaseSineIn]
     @EaseSineIn: ->
 
-    # Ease Sine InOut
+    # Ease Sine InOut.
     # @return [EaseSineInOut]
     @EaseSineInOut: ->
 
-    # Ease Sine Out
+    # Ease Sine Out.
     # @return [EaseSineOut]
     @EaseSineOut: ->
 
+    # cc.EditBox is a brief Class for edit box.
+    # @return [EditBox]
+    @EditBox: ->
+
+    # @return [EditBoxDelegate]
+    @EditBoxDelegate: ->
+
+    # Base class of all kinds of events.
+    # @return [Event]
+    @Event: ->
+
+    # The Custom event
+    # @return [EventCustom]
+    @EventCustom: ->
+
+    # The widget focus event.
+    # @return [EventFocus]
+    @EventFocus: ->
+
+    # The base class of event listener.
+    # @return [EventListener]
+    @EventListener: ->
+
+    # cc.eventManager is a singleton object which manages event listener subscriptions and event dispatching.
+    # @return [eventManager]
+    @eventManager: ->
+
+    # The mouse event
+    # @return [EventMouse]
+    @EventMouse: ->
+
+    # The touch event
+    # @return [EventTouch]
+    @EventTouch: ->
+
     # Fades In an object that implements the cc.RGBAProtocol protocol.
+    # @param [Number] duration
     # @return [FadeIn]
-    @FadeIn: ->
+    @FadeIn: (duration) ->
 
     # Fades Out an object that implements the cc.RGBAProtocol protocol.
+    # @param [Number] duration
     # @return [FadeOut]
-    @FadeOut: ->
+    @FadeOut: (duration) ->
 
     # cc.FadeOutBLTiles action.
     # @return [FadeOutBLTiles]
@@ -2061,194 +2828,301 @@ class cc
     @FadeOutUpTiles: ->
 
     # Fades an object that implements the cc.RGBAProtocol protocol.
+    # @param [Number] duration
+    # @param [Number] opacity
     # @return [FadeTo]
-    @FadeTo: ->
+    @FadeTo: (duration, opacity) ->
 
     # Base class actions that do have a finite time duration.
     # @return [FiniteTimeAction]
     @FiniteTimeAction: ->
 
-    # Flips the sprite horizontally
+    # Flips the sprite horizontally.
+    # @param [Boolean] flip
     # @return [FlipX]
-    @FlipX: ->
+    @FlipX: (flip) ->
+
+    # cc.FlipX3D action.
+    # @param [Number] duration
+    # @return [FlipX3D]
+    @FlipX3D: (duration) ->
 
     # Flips the sprite vertically
+    # @param [Boolean] flip
     # @return [FlipY]
-    @FlipY: ->
+    @FlipY: (flip) ->
+
+    # cc.FlipY3D action.
+    # @param [Number] duration
+    # @return [FlipY3D]
+    @FlipY3D: (duration) ->
 
     # cc.Follow is an action that "follows" a node.
+    # @param [Node] followedNode
+    # @param [Rect] rect
     # @return [Follow]
-    @Follow: ->
+    @Follow: (followedNode, rect) ->
 
-    # Class that implements a glProgram
+    # cc.FontDefinition
+    # @return [FontDefinition]
+    @FontDefinition: ->
+
+    # An object to boot the game.
+    # @return [game]
+    @game: ->
+
+    # Class that implements a WebGL program
     # @return [GLProgram]
     @GLProgram: ->
 
-    # A 2D grid size
-    # @param [Number] x1
-    # @param [Number] y1
-    # @return [GridSize]
-    @GridSize: (x1, y1) ->
+    # FBO class that grabs the the contents of the screen
+    # @return [Grabber]
+    @Grabber: ->
+
+    # cc.Grid3D is a 3D grid implementation.
+    # @return [Grid3D]
+    @Grid3D: ->
+
+    # Base class for cc.Grid3D actions.
+    # @return [Grid3DAction]
+    @Grid3DAction: ->
+
+    # Base class for Grid actions
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @return [GridAction]
+    @GridAction: (duration, gridSize) ->
+
+    # Base class for cc.Grid
+    # @return [GridBase]
+    @GridBase: ->
 
     # @return [HashElement]
     @HashElement: ->
 
-    # Hash Element used for "selectors with interval"
-    # @param [Array] timers
-    # @param [Class] target
-    # @param [Number] timerIndex
-    # @param [Timer] currentTimer
-    # @param [Boolean] currentTimerSalvaged
-    # @param [Boolean] paused
-    # @param [Array] hh
-    # @return [HashTimerEntry]
-    @HashTimerEntry: (timers, target, timerIndex, currentTimer, currentTimerSalvaged, paused, hh) ->
-
-    # a update entry list
-    # @param [ListEntry] list
-    # @param [ListEntry] entry
-    # @param [Class] target
-    # @param [Array] hh
-    # @return [HashUpdateEntry]
-    @HashUpdateEntry: (list, entry, target, hh) ->
-
-    # Hide the node
+    # Hide the node.
     # @return [Hide]
     @Hide: ->
 
-    # Image
-    # @return [Image]
-    @Image: ->
+    # TGA format
+    # @param [Number] status
+    # @param [Number] type
+    # @param [Number] pixelDepth
+    # @param [Number] width
+    # @param [Number] height
+    # @param [Array] imageData
+    # @param [Number] flipped
+    # @return [ImageTGA]
+    @ImageTGA: (status, type, pixelDepth, width, height, imageData, flipped) ->
 
     # Input method editor delegate.
     # @return [IMEDelegate]
     @IMEDelegate: ->
 
-    # Input Method Edit Message Dispatcher.
-    # @return [IMEDispatcher]
-    @IMEDispatcher: ->
+    # cc.imeDispatcher is a singleton object which manage input message dispatching.
+    # @return [imeDispatcher]
+    @imeDispatcher: ->
+
+    # This class manages all events of input.
+    # @return [inputManager]
+    @inputManager: ->
+
+    # An Invocation class
+    # @return [Invocation]
+    @Invocation: ->
 
     # Moves a cc.Node object simulating a parabolic jump movement by modifying it's position attribute.
+    # @param [Number] duration
+    # @param [Point|Number] position
+    # @param [Number] y
+    # @param [Number] height
+    # @param [Number] jumps
     # @return [JumpBy]
-    @JumpBy: ->
+    @JumpBy: (duration, position, y, height, jumps) ->
 
     # cc.JumpTiles3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] numberOfJumps
+    # @param [Number] amplitude
     # @return [JumpTiles3D]
-    @JumpTiles3D: ->
+    @JumpTiles3D: (duration, gridSize, numberOfJumps, amplitude) ->
 
     # Moves a cc.Node object to a parabolic position simulating a jump movement by modifying it's position attribute.
+    # @param [Number] duration
+    # @param [Point|Number] position
+    # @param [Number] y
+    # @param [Number] height
+    # @param [Number] jumps
     # @return [JumpTo]
-    @JumpTo: ->
+    @JumpTo: (duration, position, y, height, jumps) ->
 
-    # you must extend the keyboardDelegate and implement your own game logic in keydown and keyup functions
-    # @return [KeyboardDelegate]
-    @KeyboardDelegate: ->
-
-    # Dispatch the keyboard message
-    # @return [KeyboardDispatcher]
-    @KeyboardDispatcher: ->
-
-    # KeyboardHandler is an object that contains KeyboardDelegate
-    # @return [KeyboardHandler]
-    @KeyboardHandler: ->
+    # The Quaternion class
+    # @param [Number] x
+    # @param [Number] y
+    # @param [Number] z
+    # @param [Number] w
+    # @return [kmQuaternion]
+    @kmQuaternion: (x, y, z, w) ->
 
     # using image file to print text label on the screen, might be a bit slower than cc.Label, similar to cc.LabelBMFont
+    # @param [String] strText
+    # @param [String] charMapFile
+    # @param [Number] itemWidth
+    # @param [Number] itemHeight
+    # @param [Number] startCharMap
     # @return [LabelAtlas]
-    @LabelAtlas: ->
+    @LabelAtlas: (strText, charMapFile, itemWidth, itemHeight, startCharMap) ->
 
     # cc.LabelBMFont is a subclass of cc.SpriteBatchNode.
+    # @param [String] str
+    # @param [String] fntFile
+    # @param [Number] width
+    # @param [Number] alignment
+    # @param [Point] imageOffset
     # @return [LabelBMFont]
-    @LabelBMFont: ->
+    @LabelBMFont: (str, fntFile, width, alignment, imageOffset) ->
 
-    # cc.LabelTTF is a subclass of cc.TextureNode that knows how to render text labels All features from cc.TextureNode are valid in cc.LabelTTF cc.LabelTTF objects are slow for js-binding on mobile devices.Consider using cc.LabelAtlas or cc.LabelBMFont instead.
+    # cc.LabelTTF is a subclass of cc.TextureNode that knows how to render text labels with system font or a ttf font file All features from cc.Sprite are valid in cc.LabelTTF cc.LabelTTF objects are slow for js-binding on mobile devices.
+    # @param [String] text
+    # @param [String|cc.FontDefinition] fontName
+    # @param [Number] fontSize
+    # @param [Size] dimensions
+    # @param [Number] hAlignment
+    # @param [Number] vAlignment
     # @return [LabelTTF]
-    @LabelTTF: ->
+    @LabelTTF: (text, fontName, fontSize, dimensions, hAlignment, vAlignment) ->
 
     # cc.Layer is a subclass of cc.Node that implements the TouchEventsDelegate protocol.
     # @return [Layer]
     @Layer: ->
 
     # CCLayerColor is a subclass of CCLayer that implements the CCRGBAProtocol protocol.
+    # @param [Color] color
+    # @param [Number] width
+    # @param [Number] height
     # @return [LayerColor]
-    @LayerColor: ->
+    @LayerColor: (color, width, height) ->
 
     # CCLayerGradient is a subclass of cc.LayerColor that draws gradients across the background.
+    # @param [Color] start
+    # @param [Color] end
+    # @param [Point] v
     # @return [LayerGradient]
-    @LayerGradient: ->
+    @LayerGradient: (start, end, v) ->
 
     # CCMultipleLayer is a CCLayer with the ability to multiplex it's children.
+    # @param [Array] layers
     # @return [LayerMultiplex]
-    @LayerMultiplex: ->
+    @LayerMultiplex: (layers) ->
 
-    # CCLayerRGBA is a subclass of CCLayer that implements the CCRGBAProtocol protocol using a solid color as the background.
-    # @return [LayerRGBA]
-    @LayerRGBA: ->
+    # cc.Lens3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Point] position
+    # @param [Number] radius
+    # @return [Lens3D]
+    @Lens3D: (duration, gridSize, position, radius) ->
 
-    # A list double-linked list used for "updates with priority"
-    # @param [ListEntry] prev
-    # @param [ListEntry] next
-    # @param [Class] target
-    # @param [Number] priority
-    # @param [Boolean] paused
-    # @param [Boolean] markedForDeletion
-    # @return [ListEntry]
-    @ListEntry: (prev, next, target, priority, paused, markedForDeletion) ->
+    # cc.Liquid action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [Liquid]
+    @Liquid: (duration, gridSize, waves, amplitude) ->
 
-    # A class to pre-load resources before engine start game main loop.
-    # @return [Loader]
-    @Loader: ->
+    # Loader for resource loading process.
+    # @return [loader]
+    @loader: ->
 
-    # Used to display the loading screen
-    # @return [LoaderScene]
-    @LoaderScene: ->
-
-    # Features and Limitation: - You can add MenuItem objects in runtime using addChild: - But the only accecpted children are MenuItem objects
+    # Features and Limitation: - You can add MenuItem objects in runtime using addChild: - But the only accepted children are MenuItem objects
+    # @param [...cc.MenuItem|null] menuItems}
     # @return [Menu]
-    @Menu: ->
+    @Menu: (menuItems}) ->
 
     # Subclass cc.MenuItem (or any subclass) to create your custom cc.MenuItem objects.
+    # @param [function|String] callback
+    # @param [Node] target
     # @return [MenuItem]
-    @MenuItem: ->
+    @MenuItem: (callback, target) ->
 
     # Helper class that creates a MenuItemLabel class with a LabelAtlas
+    # @param [String] value
+    # @param [String] charMapFile
+    # @param [Number] itemWidth
+    # @param [Number] itemHeight
+    # @param [String] startCharMap
+    # @param [function|String|Null] callback
+    # @param [Node|Null] target
     # @return [MenuItemAtlasFont]
-    @MenuItemAtlasFont: ->
+    @MenuItemAtlasFont: (value, charMapFile, itemWidth, itemHeight, startCharMap, callback, target) ->
 
     # Helper class that creates a CCMenuItemLabel class with a Label
+    # @param [String] value
+    # @param [function|String] callback
+    # @param [Node] target
     # @return [MenuItemFont]
-    @MenuItemFont: ->
+    @MenuItemFont: (value, callback, target) ->
 
     # cc.MenuItemImage accepts images as items.
+    # @param [string|null] normalImage
+    # @param [string|null] selectedImage
+    # @param [string|null] disabledImage
+    # @param [function|string|null] callback
+    # @param [Node|null] target
     # @return [MenuItemImage]
-    @MenuItemImage: ->
+    @MenuItemImage: (normalImage, selectedImage, disabledImage, callback, target) ->
 
     # Any cc.Node that supports the cc.LabelProtocol protocol can be added.
+    # @param [Node] label
+    # @param [function|String] selector
+    # @param [Node] target
     # @return [MenuItemLabel]
-    @MenuItemLabel: ->
+    @MenuItemLabel: (label, selector, target) ->
 
     # CCMenuItemSprite accepts CCNode objects as items.
+    # @param [Image|Null] normalSprite
+    # @param [Image|Null] selectedSprite
+    # @param [Image|cc.Node|Null] three
+    # @param [String|function|cc.Node|Null] four
+    # @param [String|function|Null] five
     # @return [MenuItemSprite]
-    @MenuItemSprite: ->
+    @MenuItemSprite: (normalSprite, selectedSprite, three, four, five) ->
 
     # A simple container class that "toggles" it's inner items The inner items can be any MenuItem
     # @return [MenuItemToggle]
     @MenuItemToggle: ->
 
+    # MenuPassive: The menu passive ui component
+    # @return [MenuPassive]
+    @MenuPassive: ->
+
+    # cc.MotionStreak manages a Ribbon based on it's motion in absolute space.
+    # @return [MotionStreak]
+    @MotionStreak: ->
+
     # Moves a CCNode object x,y pixels by modifying it's position attribute.
+    # @param [Number] duration
+    # @param [Point|Number] deltaPos
+    # @param [Number] deltaY
     # @return [MoveBy]
-    @MoveBy: ->
+    @MoveBy: (duration, deltaPos, deltaY) ->
 
     # Moves a CCNode object to the position x,y.
+    # @param [Number] duration
+    # @param [Point|Number] position
+    # @param [Number] y
     # @return [MoveTo]
-    @MoveTo: ->
+    @MoveTo: (duration, position, y) ->
 
-    # cc.Node is the main element.
+    # cc.Node is the root class of all node.
     # @return [Node]
     @Node: ->
 
-    # cc.NodeRGBA is a subclass of cc.Node that implements the CCRGBAProtocol protocol.
-    # @return [NodeRGBA]
-    @NodeRGBA: ->
+    # This action simulates a page turn from the bottom right hand corner of the screen.
+    # @return [PageTurn3D]
+    @PageTurn3D: ->
 
     # cc.ParallaxNode: A node that simulates a parallax scroller The children will be moved faster / slower than the parent according the the parallax ratio.
     # @return [ParallaxNode]
@@ -2257,8 +3131,8 @@ class cc
     # Structure that contains the values of each particle
     # @param [Point] pos
     # @param [Point] startPos
-    # @param [Color4F] color
-    # @param [Color4F] deltaColor
+    # @param [Color] color
+    # @param [Color] deltaColor
     # @param [Size] size
     # @param [Size] deltaSize
     # @param [Number] rotation
@@ -2269,6 +3143,12 @@ class cc
     # @param [Particle.ModeA] modeB
     # @return [Particle]
     @Particle: (pos, startPos, color, deltaColor, size, deltaSize, rotation, deltaRotation, timeToLive, atlasIndex, modeA, modeB) ->
+
+    # cc.ParticleBatchNode is like a batch node: if it contains children, it will draw them in 1 single OpenGL call (often known as "batch draw").
+    # @param [String|cc.Texture2D] fileImage
+    # @param [Number] capacity
+    # @return [ParticleBatchNode]
+    @ParticleBatchNode: (fileImage, capacity) ->
 
     # An explosion particle system
     # @return [ParticleExplosion]
@@ -2318,103 +3198,144 @@ class cc
     # @return [ParticleSystem]
     @ParticleSystem: ->
 
+    # @return [path]
+    @path: ->
+
     # Places the node in a certain position
+    # @param [Point|Number] pos
+    # @param [Number] y
     # @return [Place]
-    @Place: ->
+    @Place: (pos, y) ->
 
-    # @param [Number] _x
-    # @param [Number] _y
+    # cc.plistParser is a singleton object for parsing plist files
+    # @return [plistParser]
+    @plistParser: ->
+
+    # cc.Point
+    # @param [Number] x
+    # @param [Number] y
     # @return [Point]
-    @Point: (_x, _y) ->
+    @Point: (x, y) ->
 
+    # Parallax Object.
     # @return [PointObject]
     @PointObject: ->
 
-    # Point Sprite component
-    # @param [Vertex2F] pos1
-    # @param [Color4B] color1
-    # @param [Number] size1
-    # @return [PointSprite]
-    @PointSprite: (pos1, color1, size1) ->
-
     # Progress from a percentage to another percentage
+    # @param [Number] duration
+    # @param [Number] fromPercentage
+    # @param [Number] toPercentage
     # @return [ProgressFromTo]
-    @ProgressFromTo: ->
+    @ProgressFromTo: (duration, fromPercentage, toPercentage) ->
 
     # cc.Progresstimer is a subclass of cc.Node.
     # @return [ProgressTimer]
     @ProgressTimer: ->
 
     # Progress to percentage
+    # @param [Number] duration
+    # @param [Number] percent
     # @return [ProgressTo]
-    @ProgressTo: ->
+    @ProgressTo: (duration, percent) ->
 
-    # A 2D Quad.
-    # @param [Vertex2F] tl1
-    # @param [Vertex2F] tr1
-    # @param [Vertex2F] bl1
-    # @param [Vertex2F] br1
-    # @return [Quad2]
-    @Quad2: (tl1, tr1, bl1, br1) ->
+    # A class inhert from cc.Node, use for saving some protected children in other list.
+    # @return [ProtectedNode]
+    @ProtectedNode: ->
 
-    # A 3D Quad.
-    # @param [Vertex3F] bl1
-    # @param [Vertex3F] br1
-    # @param [Vertex3F] tl1
-    # @param [Vertex3F] tr1
-    # @return [Quad3]
-    @Quad3: (bl1, br1, tl1, tr1) ->
-
-    # @param [Number|cc.Point|cc.Rect] x1
-    # @param [Number|cc.Size] y1
-    # @param [Number] width1
-    # @param [Number] height1
+    # cc.Rect
+    # @param [Number] width
+    # @param [Number] height
+    # @param width
+    # @param height
     # @return [Rect]
-    @Rect: (x1, y1, width1, height1) ->
+    @Rect: (width, height, width, height) ->
+
+    # Delete self in the next frame.
+    # @param [Boolean] isNeedCleanUp
+    # @return [RemoveSelf]
+    @RemoveSelf: (isNeedCleanUp) ->
 
     # cc.RenderTexture is a generic rendering target.
     # @return [RenderTexture]
     @RenderTexture: ->
 
     # Repeats an action a number of times.
+    # @param [FiniteTimeAction] action
+    # @param [Number] times
     # @return [Repeat]
-    @Repeat: ->
+    @Repeat: (action, times) ->
 
     # Repeats an action for ever.
+    # @param [FiniteTimeAction] action
     # @return [RepeatForever]
-    @RepeatForever: ->
+    @RepeatForever: (action) ->
+
+    # cc.ResolutionPolicy class is the root strategy class of scale strategy, its main task is to maintain the compatibility with Cocos2d-x
+    # @param [ContainerStrategy] containerStg
+    # @param [ContentStrategy] contentStg
+    # @return [ResolutionPolicy]
+    @ResolutionPolicy: (containerStg, contentStg) ->
+
+    # cc.ReuseGrid action
+    # @param [Number] times
+    # @return [ReuseGrid]
+    @ReuseGrid: (times) ->
 
     # Executes an action in reverse order, from time=duration to time=0
+    # @param [FiniteTimeAction] action
     # @return [ReverseTime]
-    @ReverseTime: ->
+    @ReverseTime: (action) ->
 
-    # premultiply alpha, or the effect will wrong when want to use other pixel format in CCTexture2D, such as RGB888, RGB5A1
-    # @param [Number] vr
-    # @param [Number] vg
-    # @param [Number] vb
-    # @param [Number] va
-    # @return [RGB_PREMULTIPLY_APLHA]
-    @RGB_PREMULTIPLY_APLHA: (vr, vg, vb, va) ->
+    # An RGBA color class, its value present as percent
+    # @param [Number] r
+    # @param [Number] g
+    # @param [Number] b
+    # @param [Number] a
+    # @return [RGBA]
+    @RGBA: (r, g, b, a) ->
+
+    # cc.Ripple3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Point] position
+    # @param [Number] radius
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [Ripple3D]
+    @Ripple3D: (duration, gridSize, position, radius, waves, amplitude) ->
 
     # Rotates a cc.Node object clockwise a number of degrees by modifying it's rotation attribute.
+    # @param [Number] duration
+    # @param [Number] deltaAngleX
+    # @param [Number] deltaAngleY
     # @return [RotateBy]
-    @RotateBy: ->
+    @RotateBy: (duration, deltaAngleX, deltaAngleY) ->
 
-    # Rotates a cc.Node object to a certain angle by modifying it's rotation attribute.
+    # Rotates a cc.Node object to a certain angle by modifying it's.
+    # @param [Number] duration
+    # @param [Number] deltaAngleX
+    # @param [Number] deltaAngleY
     # @return [RotateTo]
-    @RotateTo: ->
+    @RotateTo: (duration, deltaAngleX, deltaAngleY) ->
 
-    # a SAX Parser
-    # @return [SAXParser]
-    @SAXParser: ->
+    # A SAX Parser
+    # @return [saxParser]
+    @saxParser: ->
+
+    # A 9-slice sprite for cocos2d.
+    # @return [Scale9Sprite]
+    @Scale9Sprite: ->
 
     # Scales a cc.Node object a zoom factor by modifying it's scale attribute.
     # @return [ScaleBy]
     @ScaleBy: ->
 
     # Scales a cc.Node object to a zoom factor by modifying it's scale attribute.
+    # @param [Number] duration
+    # @param [Number] sx
+    # @param [Number] sy
     # @return [ScaleTo]
-    @ScaleTo: ->
+    @ScaleTo: (duration, sx, sy) ->
 
     # cc.Scene is a subclass of cc.Node that is used only as an abstract concept.
     # @return [Scene]
@@ -2424,107 +3345,157 @@ class cc
     # @return [Scheduler]
     @Scheduler: ->
 
-    # Runs actions sequentially, one after another
+    # The fullscreen API provides an easy way for web content to be presented using the user's entire screen.
+    # @return [screen]
+    @screen: ->
+
+    # ScrollView support for cocos2d -x.
+    # @return [ScrollView]
+    @ScrollView: ->
+
+    # Runs actions sequentially, one after another.
+    # @param [Array|cc.FiniteTimeAction] tempArray
     # @return [Sequence]
-    @Sequence: ->
+    @Sequence: (tempArray) ->
 
-    # Singleton that stores manages GL shaders
-    # @return [ShaderCache]
-    @ShaderCache: ->
+    # cc.shaderCache is a singleton object that stores manages GL shaders
+    # @return [shaderCache]
+    @shaderCache: ->
 
-    # cc.ShakyTiles3D action
+    # cc.Shaky3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] range
+    # @param [Boolean] shakeZ
+    # @return [Shaky3D]
+    @Shaky3D: (duration, gridSize, range, shakeZ) ->
+
+    # cc.ShakyTiles3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] range
+    # @param [Boolean] shakeZ
     # @return [ShakyTiles3D]
-    @ShakyTiles3D: ->
+    @ShakyTiles3D: (duration, gridSize, range, shakeZ) ->
 
-    # cc.ShatteredTiles3D action
+    # cc.ShatteredTiles3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] range
+    # @param [Boolean] shatterZ
     # @return [ShatteredTiles3D]
-    @ShatteredTiles3D: ->
+    @ShatteredTiles3D: (duration, gridSize, range, shatterZ) ->
 
-    # Show the node
+    # Show the node.
     # @return [Show]
     @Show: ->
 
-    # cc.ShuffleTiles action, Shuffle the tiles in random order
+    # cc.ShuffleTiles action, Shuffle the tiles in random order.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] seed
     # @return [ShuffleTiles]
-    @ShuffleTiles: ->
+    @ShuffleTiles: (duration, gridSize, seed) ->
 
-    # The Audio Engine implementation via tag in HTML5.
-    # @return [SimpleAudioEngine]
-    @SimpleAudioEngine: ->
-
-    # @param [Number] _width
-    # @param [Number] _height
+    # cc.Size
+    # @param [Number] width
+    # @param [Number] height
     # @return [Size]
-    @Size: (_width, _height) ->
+    @Size: (width, height) ->
 
-    # Skews a cc.Node object by skewX and skewY degrees
+    # Skews a cc.Node object by skewX and skewY degrees.
+    # @param [Number] t
+    # @param [Number] sx
+    # @param [Number] sy
     # @return [SkewBy]
-    @SkewBy: ->
+    @SkewBy: (t, sx, sy) ->
 
     # Skews a cc.Node object to given angles by modifying it's skewX and skewY attributes
+    # @param [Number] t
+    # @param [Number] sx
+    # @param [Number] sy
     # @return [SkewTo]
-    @SkewTo: ->
+    @SkewTo: (t, sx, sy) ->
+
+    # The sortable object interface
+    # @return [SortableObject]
+    @SortableObject: ->
+
+    # The SortedObject class
+    # @return [SortedObject]
+    @SortedObject: ->
+
+    # The Spacer class
+    # @return [Spacer]
+    @Spacer: ->
 
     # Spawn a new action immediately
     # @return [Spawn]
     @Spawn: ->
 
-    # Changes the speed of an action, making it take longer (speed1) or less (speed
+    # Changes the speed of an action, making it take longer (speed 1) or less (speed
+    # @param [ActionInterval] action
+    # @param [Number] speed
     # @return [Speed]
-    @Speed: ->
+    @Speed: (action, speed) ->
 
-    # cc.SplitCols action
+    # cc.SplitCols action.
+    # @param [Number] duration
+    # @param [Number] cols
     # @return [SplitCols]
-    @SplitCols: ->
+    @SplitCols: (duration, cols) ->
 
-    # cc.SplitRows action
+    # cc.SplitRows action.
+    # @param [Number] duration
+    # @param [Number] rows
     # @return [SplitRows]
-    @SplitRows: ->
+    @SplitRows: (duration, rows) ->
 
     # cc.Sprite is a 2d image ( http://en.wikipedia.org/wiki/Sprite_(computer_graphics) ) cc.Sprite can be created with an image, or with a sub-rectangle of an image.
+    # @param [String|cc.SpriteFrame|HTMLImageElement|cc.Texture2D] fileName
+    # @param [Rect] rect
+    # @param [Boolean] rotated
     # @return [Sprite]
-    @Sprite: ->
+    @Sprite: (fileName, rect, rotated) ->
 
     # In Canvas render mode ,cc.SpriteBatchNodeCanvas is like a normal node: if it contains children.
+    # @param [String|cc.Texture2D] fileImage
+    # @param [Number] capacity
     # @return [SpriteBatchNode]
-    @SpriteBatchNode: ->
+    @SpriteBatchNode: (fileImage, capacity) ->
 
     # A cc.SpriteFrame has: - texture: A cc.Texture2D that will be used by the cc.Sprite - rectangle: A rectangle of the texture You can modify the frame of a cc.Sprite by doing:
+    # @param [String|cc.Texture2D] filename
+    # @param [Rect] rect
+    # @param [Boolean] rotated
+    # @param [Point] offset
+    # @param [Size] originalSize
     # @return [SpriteFrame]
-    @SpriteFrame: ->
+    @SpriteFrame: (filename, rect, rotated, offset, originalSize) ->
 
-    # Singleton that handles the loading of the sprite frames.
-    # @return [SpriteFrameCache]
-    @SpriteFrameCache: ->
+    # cc.spriteFrameCache is a singleton that handles the loading of the sprite frames.
+    # @return [spriteFrameCache]
+    @spriteFrameCache: ->
 
-    # This type of delegate is the same one used by CocoaTouch.
-    # @return [StandardTouchDelegate]
-    @StandardTouchDelegate: ->
+    # cc.StopGrid action.
+    # @return [StopGrid]
+    @StopGrid: ->
 
-    # cc.StandardTouchHandler It forwardes each event to the delegate.
-    # @return [StandardTouchHandler]
-    @StandardTouchHandler: ->
+    # UITableView counterpart for cocos2d for iphone.
+    # @return [TableView]
+    @TableView: ->
 
-    # texture coordinates for a quad
-    # @param [Tex2F] bl
-    # @param [Tex2F] br
-    # @param [Tex2F] tl
-    # @param [Tex2F] tr
-    # @return [T2F_Quad]
-    @T2F_Quad: (bl, br, tl, tr) ->
+    # Abstract class for SWTableView cell node
+    # @return [TableViewCell]
+    @TableViewCell: ->
 
     # Overrides the target of an action so that it always runs on the target specified at action creation rather than the one specified by runAction.
+    # @param [Node] target
+    # @param [FiniteTimeAction] action
     # @return [TargetedAction]
-    @TargetedAction: ->
+    @TargetedAction: (target, action) ->
 
-    # Using this type of delegate results in two benefits: - 1.
-    # @return [TargetedTouchDelegate]
-    @TargetedTouchDelegate: ->
-
-    # @return [TargetedTouchHandler]
-    @TargetedTouchHandler: ->
-
-    # A texcoord composed of 2 floats: u, y
+    # cc.Tex2F
     # @param [Number] u1
     # @param [Number] v1
     # @return [Tex2F]
@@ -2535,50 +3506,60 @@ class cc
     @TextFieldDelegate: ->
 
     # A simple text input field with TTF font.
+    # @param [String] placeholder
+    # @param [Size] dimensions
+    # @param [Number] alignment
+    # @param [String] fontName
+    # @param [Number] fontSize
     # @return [TextFieldTTF]
-    @TextFieldTTF: ->
+    @TextFieldTTF: (placeholder, dimensions, alignment, fontName, fontSize) ->
 
-    # This class allows to easily create Canvas 2D textures from images, text or raw data.
-    # @return [Texture2DCanvas]
-    @Texture2DCanvas: ->
-
-    # This class allows to easily create OpenGL 2D textures from images, text or raw data.
-    # @return [Texture2DWebGL]
-    @Texture2DWebGL: ->
+    # This class allows to easily create OpenGL or Canvas 2D textures from images, text or raw data.
+    # @return [Texture2D]
+    @Texture2D: ->
 
     # A class that implements a Texture Atlas.
     # @return [TextureAtlas]
     @TextureAtlas: ->
 
-    # Implementation TextureCache
-    # @return [TextureCache]
-    @TextureCache: ->
+    # cc.textureCache is a singleton object, it's the global cache for cc.Texture2D
+    # @return [textureCache]
+    @textureCache: ->
 
-    # A Tile composed of position, startPosition and delta
+    # A Tile composed of position, startPosition and delta.
     # @param [Point] position
     # @param [Point] startPosition
     # @param [Size] delta
     # @return [Tile]
     @Tile: (position, startPosition, delta) ->
 
-    # image source
-    # @param [Array||String] data
-    # @param [Number] size
-    # @param [Number] offset
-    # @return [tImageSource]
-    @tImageSource: (data, size, offset) ->
+    # cc.TiledGrid3D is a 3D grid implementation.
+    # @return [TiledGrid3D]
+    @TiledGrid3D: ->
+
+    # Base class for cc.TiledGrid3D actions.
+    # @return [TiledGrid3DAction]
+    @TiledGrid3DAction: ->
 
     # Light weight timer
     # @return [Timer]
     @Timer: ->
 
     # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
+    # @param [Number] duration
+    # @param [Number] deltaRed
+    # @param [Number] deltaGreen
+    # @param [Number] deltaBlue
     # @return [TintBy]
-    @TintBy: ->
+    @TintBy: (duration, deltaRed, deltaGreen, deltaBlue) ->
 
     # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
+    # @param [Number] duration
+    # @param [Number] red
+    # @param [Number] green
+    # @param [Number] blue
     # @return [TintTo]
-    @TintTo: ->
+    @TintTo: (duration, red, green, blue) ->
 
     # cc.TMXLayer represents the TMX layer.
     # @return [TMXLayer]
@@ -2589,120 +3570,142 @@ class cc
     @TMXLayerInfo: ->
 
     # cc.TMXMapInfo contains the information about the map like: - Map orientation (hexagonal, isometric or orthogonal) - Tile size - Map size And it also contains: - Layers (an array of TMXLayerInfo objects) - Tilesets (an array of TMXTilesetInfo objects) - ObjectGroups (an array of TMXObjectGroupInfo objects) This information is obtained from the TMX file.
+    # @param [String] tmxFile
+    # @param [String] resourcePath
     # @return [TMXMapInfo]
-    @TMXMapInfo: ->
+    @TMXMapInfo: (tmxFile, resourcePath) ->
 
     # cc.TMXObjectGroup represents the TMX object group.
     # @return [TMXObjectGroup]
     @TMXObjectGroup: ->
 
     # cc.TMXTiledMap knows how to parse and render a TMX map.
+    # @param [String] tmxFile
+    # @param [String] resourcePath
     # @return [TMXTiledMap]
-    @TMXTiledMap: ->
+    @TMXTiledMap: (tmxFile, resourcePath) ->
 
     # cc.TMXTilesetInfo contains the information about the tilesets like: - Tileset name - Tileset spacing - Tileset margin - size of the tiles - Image used for the tiles - Image size This information is obtained from the TMX file.
     # @return [TMXTilesetInfo]
     @TMXTilesetInfo: ->
 
-    # Toggles the visibility of a node
+    # Toggles the visibility of a node.
     # @return [ToggleVisibility]
     @ToggleVisibility: ->
 
+    # The touch event class
+    # @param [Number] x
+    # @param [Number] y
+    # @param [Number] id
     # @return [Touch]
-    @Touch: ->
-
-    # @return [TouchDelegate]
-    @TouchDelegate: ->
-
-    # cc.TouchDispatcher.
-    # @return [TouchDispatcher]
-    @TouchDispatcher: ->
-
-    # cc.TouchHandler Object than contains the delegate and priority of the event handler.
-    # @return [TouchHandler]
-    @TouchHandler: ->
-
-    # a Values object for transform
-    # @param [Point] pos
-    # @param [Point] scale
-    # @param [Number] rotation
-    # @param [Point] skew
-    # @param [Point] ap
-    # @param [Boolean] visible
-    # @return [TransformValues]
-    @TransformValues: (pos, scale, rotation, skew, ap, visible) ->
+    @Touch: (x, y, id) ->
 
     # Cross fades two scenes using the cc.RenderTexture object.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionCrossFade]
-    @TransitionCrossFade: ->
-
-    # cc.TransitionEaseScene can ease the actions of the scene protocol.
-    # @return [TransitionEaseScene]
-    @TransitionEaseScene: ->
+    @TransitionCrossFade: (t, scene) ->
 
     # Fade out the outgoing scene and then fade in the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionFade]
-    @TransitionFade: ->
+    @TransitionFade: (t, scene, o) ->
 
     # Fade the tiles of the outgoing scene from the top-right corner to the bottom-left corner.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionFadeBL]
-    @TransitionFadeBL: ->
+    @TransitionFadeBL: (t, scene) ->
 
     # Fade the tiles of the outgoing scene from the top to the bottom.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionFadeDown]
-    @TransitionFadeDown: ->
+    @TransitionFadeDown: (t, scene) ->
 
     # Fade the tiles of the outgoing scene from the left-bottom corner the to top-right corner.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionFadeTR]
-    @TransitionFadeTR: ->
+    @TransitionFadeTR: (t, scene) ->
 
     # Fade the tiles of the outgoing scene from the top-right corner to the bottom-left corner.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionFadeUp]
-    @TransitionFadeUp: ->
+    @TransitionFadeUp: (t, scene) ->
 
     # Flips the screen half horizontally and half vertically.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionFlipAngular]
-    @TransitionFlipAngular: ->
+    @TransitionFlipAngular: (t, scene, o) ->
 
     # Flips the screen horizontally.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionFlipX]
-    @TransitionFlipX: ->
+    @TransitionFlipX: (t, scene, o) ->
 
     # Flips the screen vertically.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionFlipY]
-    @TransitionFlipY: ->
+    @TransitionFlipY: (t, scene, o) ->
 
     # Zoom out and jump the outgoing scene, and then jump and zoom in the incoming
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionJumpZoom]
-    @TransitionJumpZoom: ->
+    @TransitionJumpZoom: (t, scene) ->
 
     # Move in from to the bottom the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionMoveInB]
-    @TransitionMoveInB: ->
+    @TransitionMoveInB: (t, scene) ->
 
     # Move in from to the left the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionMoveInL]
-    @TransitionMoveInL: ->
+    @TransitionMoveInL: (t, scene) ->
 
     # Move in from to the right the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionMoveInR]
-    @TransitionMoveInR: ->
+    @TransitionMoveInR: (t, scene) ->
 
     # Move in from to the top the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionMoveInT]
-    @TransitionMoveInT: ->
+    @TransitionMoveInT: (t, scene) ->
 
     # A transition which peels back the bottom right hand corner of a scene to transition to the scene beneath it simulating a page turn.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [Boolean] backwards
     # @return [TransitionPageTurn]
-    @TransitionPageTurn: ->
+    @TransitionPageTurn: (t, scene, backwards) ->
 
     # cc.TransitionProgress transition.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgress]
-    @TransitionProgress: ->
+    @TransitionProgress: (t, scene) ->
 
     # cc.TransitionProgressHorizontal transition.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgressHorizontal]
-    @TransitionProgressHorizontal: ->
+    @TransitionProgressHorizontal: (t, scene) ->
 
     # cc.TransitionProgressInOut transition.
     # @return [TransitionProgressInOut]
@@ -2713,146 +3716,175 @@ class cc
     @TransitionProgressOutIn: ->
 
     # cc.TransitionRadialCCW transition.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgressRadialCCW]
-    @TransitionProgressRadialCCW: ->
+    @TransitionProgressRadialCCW: (t, scene) ->
 
     # cc.TransitionRadialCW transition.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgressRadialCW]
-    @TransitionProgressRadialCW: ->
+    @TransitionProgressRadialCW: (t, scene) ->
 
     # cc.TransitionProgressVertical transition.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgressVertical]
-    @TransitionProgressVertical: ->
+    @TransitionProgressVertical: (t, scene) ->
 
     # Rotate and zoom out the outgoing scene, and then rotate and zoom in the incoming
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionRotoZoom]
-    @TransitionRotoZoom: ->
+    @TransitionRotoZoom: (t, scene) ->
 
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionScene]
-    @TransitionScene: ->
+    @TransitionScene: (t, scene) ->
 
     # A cc.Transition that supports orientation like.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] orientation
     # @return [TransitionSceneOriented]
-    @TransitionSceneOriented: ->
+    @TransitionSceneOriented: (t, scene, orientation) ->
 
     # Shrink the outgoing scene while grow the incoming scene
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionShrinkGrow]
-    @TransitionShrinkGrow: ->
+    @TransitionShrinkGrow: (t, scene) ->
 
     # Slide in the incoming scene from the bottom border.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSlideInB]
-    @TransitionSlideInB: ->
+    @TransitionSlideInB: (t, scene) ->
 
     # a transition that a new scene is slided from left
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSlideInL]
-    @TransitionSlideInL: ->
+    @TransitionSlideInL: (t, scene) ->
 
     # Slide in the incoming scene from the right border.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSlideInR]
-    @TransitionSlideInR: ->
+    @TransitionSlideInR: (t, scene) ->
 
     # Slide in the incoming scene from the top border.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSlideInT]
-    @TransitionSlideInT: ->
+    @TransitionSlideInT: (t, scene) ->
 
     # The odd columns goes upwards while the even columns goes downwards.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSplitCols]
-    @TransitionSplitCols: ->
+    @TransitionSplitCols: (t, scene) ->
 
     # The odd rows goes to the left while the even rows goes to the right.
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSplitRows]
-    @TransitionSplitRows: ->
+    @TransitionSplitRows: (t, scene) ->
 
     # Turn off the tiles of the outgoing scene in random order
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionTurnOffTiles]
-    @TransitionTurnOffTiles: ->
+    @TransitionTurnOffTiles: (t, scene) ->
 
     # Flips the screen half horizontally and half vertically doing a little zooming out/in.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionZoomFlipAngular]
-    @TransitionZoomFlipAngular: ->
+    @TransitionZoomFlipAngular: (t, scene, o) ->
 
     # Flips the screen horizontally doing a zoom out/in The front face is the outgoing scene and the back face is the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionZoomFlipX]
-    @TransitionZoomFlipX: ->
+    @TransitionZoomFlipX: (t, scene, o) ->
 
     # Flips the screen vertically doing a little zooming out/in The front face is the outgoing scene and the back face is the incoming scene.
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] o
     # @return [TransitionZoomFlipY]
-    @TransitionZoomFlipY: ->
+    @TransitionZoomFlipY: (t, scene, o) ->
 
     # cc.TurnOffTiles action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number|Null] seed
     # @return [TurnOffTiles]
-    @TurnOffTiles: ->
+    @TurnOffTiles: (duration, gridSize, seed) ->
 
-    # a Point with a vertex point, a tex coord point and a color 4B
-    # @param [Vertex2F] vertices1
-    # @param [Color4B] colors1
-    # @param [Tex2F] texCoords1
-    # @return [V2F_C4B_T2F]
-    @V2F_C4B_T2F: (vertices1, colors1, texCoords1) ->
+    # cc.Twirl action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Point] position
+    # @param [Number] twirls
+    # @param [Number] amplitude
+    # @return [Twirl]
+    @Twirl: (duration, gridSize, position, twirls, amplitude) ->
 
-    # 4 ccVertex2FTex2FColor4B Quad
-    # @param [V2F_C4B_T2F] bl1
-    # @param [V2F_C4B_T2F] br1
-    # @param [V2F_C4B_T2F] tl1
-    # @param [V2F_C4B_T2F] tr1
-    # @return [V2F_C4B_T2F_Quad]
-    @V2F_C4B_T2F_Quad: (bl1, br1, tl1, tr1) ->
-
-    # A Triangle of ccV2F_C4B_T2F
-    # @param [V2F_C4B_T2F] a
-    # @param [V2F_C4B_T2F] b
-    # @param [V2F_C4B_T2F] c
-    # @return [V2F_C4B_T2F_Triangle]
-    @V2F_C4B_T2F_Triangle: (a, b, c) ->
-
-    # a Point with a vertex point, a tex coord point and a color 4F
-    # @param [Vertex2F] vertices1
-    # @param [Color4F] colors1
-    # @param [Tex2F] texCoords1
-    # @return [V2F_C4F_T2F]
-    @V2F_C4F_T2F: (vertices1, colors1, texCoords1) ->
-
-    # 4 ccVertex2FTex2FColor4F Quad
-    # @param [V2F_C4F_T2F] bl1
-    # @param [V2F_C4F_T2F] br1
-    # @param [V2F_C4F_T2F] tl1
-    # @param [V2F_C4F_T2F] tr1
-    # @return [V2F_C4F_T2F_Quad]
-    @V2F_C4F_T2F_Quad: (bl1, br1, tl1, tr1) ->
-
-    # a Point with a vertex point, a tex coord point and a color 4B
-    # @param [Vertex3F] vertices1
-    # @param [Color4B] colors1
-    # @param [Tex2F] texCoords1
-    # @return [V3F_C4B_T2F]
-    @V3F_C4B_T2F: (vertices1, colors1, texCoords1) ->
-
-    # 4 ccVertex3FTex2FColor4B
-    # @param [V3F_C4B_T2F] tl1
-    # @param [V3F_C4B_T2F] bl1
-    # @param [V3F_C4B_T2F] tr1
-    # @param [V3F_C4B_T2F] br1
-    # @return [V3F_C4B_T2F_Quad]
-    @V3F_C4B_T2F_Quad: (tl1, bl1, tr1, br1) ->
-
-    # A vertex composed of 2 floats: x, y
+    # cc.Vertex2F
     # @param [Number] x1
     # @param [Number] y1
     # @return [Vertex2F]
     @Vertex2F: (x1, y1) ->
 
-    # A vertex composed of 3 floats: x, y, z
+    # cc.Vertex3F
     # @param [Number] x1
     # @param [Number] y1
     # @param [Number] z1
     # @return [Vertex3F]
     @Vertex3F: (x1, y1, z1) ->
 
-    # cc.WavesTiles3D action.
-    # @return [WavesTiles3D]
-    @WavesTiles3D: ->
+    # cc.view is the singleton object which represents the game window.
+    # @return [view]
+    @view: ->
 
-    # The Audio Engine implementation via Web Audio API.
-    # @return [WebAudioEngine]
-    @WebAudioEngine: ->
+    # cc.visibleRect is a singleton object which defines the actual visible rect of the current view, it should represent the same rect as cc.view.getViewportRect()
+    # @return [visibleRect]
+    @visibleRect: ->
+
+    # cc.Waves action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @param [Boolean] horizontal
+    # @param [Boolean] vertical
+    # @return [Waves]
+    @Waves: (duration, gridSize, waves, amplitude, horizontal, vertical) ->
+
+    # cc.Waves3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [Waves3D]
+    @Waves3D: (duration, gridSize, waves, amplitude) ->
+
+    # cc.WavesTiles3D action.
+    # @param [Number] duration
+    # @param [Size] gridSize
+    # @param [Number] waves
+    # @param [Number] amplitude
+    # @return [WavesTiles3D]
+    @WavesTiles3D: (duration, gridSize, waves, amplitude) ->
+
+    # A class of Web Audio.
+    # @param src
+    # @return [WebAudio]
+    @WebAudio: (src) ->
 

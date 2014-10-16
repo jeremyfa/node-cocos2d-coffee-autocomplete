@@ -2,21 +2,22 @@
 # Tints a cc.Node that implements the cc.NodeRGB protocol from current tint to a custom one.
 class TintBy extends ActionInterval
 
+    # Please use cc.tintBy instead.
+    @TintBy.create = {}
+
     # Constructor
-    # @return [TintBy]
-    constructor: ->
-
-    # returns a new clone of the action
-    # @return [TintBy]
-    clone: ->
-
     # @param [Number] duration
     # @param [Number] deltaRed
     # @param [Number] deltaGreen
     # @param [Number] deltaBlue
     # @return [TintBy]
-    @create: (duration, deltaRed, deltaGreen, deltaBlue) ->
+    constructor: (duration, deltaRed, deltaGreen, deltaBlue) ->
 
+    # returns a new clone of the action
+    # @return [TintBy]
+    clone: ->
+
+    # Initializes the action.
     # @param [Number] duration
     # @param [Number] deltaRed
     # @param [Number] deltaGreen
@@ -24,12 +25,15 @@ class TintBy extends ActionInterval
     # @return [Boolean]
     initWithDuration: (duration, deltaRed, deltaGreen, deltaBlue) ->
 
-    # @return [ActionInterval]
+    # Returns a reversed action.
+    # @return [TintBy]
     reverse: ->
 
-    # @param [Sprite] target
+    # Start the action with target.
+    # @param [Node] target
     startWithTarget: (target) ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

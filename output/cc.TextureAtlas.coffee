@@ -2,30 +2,41 @@
 # A class that implements a Texture Atlas.
 class TextureAtlas extends Class
 
+    # -
+    # [Number]
+    capacity: 1
+
+    # - Indicates whether or not the array buffer of the VBO needs to be updated.
+    # [Boolean]
+    dirty: new Boolean()
+
+    # -
+    # [Array]
+    quads: []
+
+    # - Image texture for cc.TextureAtlas.
+    # [Image]
+    texture: new Image()
+
+    # -
+    # [Number]
+    totalQuads: 1
+
     # Constructor
     # @return [TextureAtlas]
     constructor: ->
 
     # Creates a TextureAtlas with an filename and with an initial capacity for Quads.
-    # @param [String] file
+    # @param [String|cc.Texture2D] fileName
     # @param [Number] capacity
     # @return [TextureAtlas|Null]
-    @create: (file, capacity) ->
+    @create: (fileName, capacity) ->
 
-    # Creates a TextureAtlas with a previously initialized Texture2D object, and with an initial capacity for n Quads.
-    # @param [Image|cc.Texture2D] texture
-    # @param [Number] capacity
-    # @return [TextureAtlas]
-    @createWithTexture: (texture, capacity) ->
+    @createWithTexture: ->
 
     # Description
     # @return [String]
     description: ->
-
-    # Draws n quads from an index (offset).
-    # @param [Number] n
-    # @param [Number] start
-    drawNumberOfQuads: (n, start) ->
 
     # Draws all the Atlas's Quads
     drawQuads: ->
@@ -68,7 +79,7 @@ class TextureAtlas extends Class
     initWithTexture: (texture, capacity) ->
 
     # Inserts a Quad (texture, vertex and color) at a certain index index must be between 0 and the atlas capacity - 1
-    # @param [V2F_C4B_T2F_Quad] quad
+    # @param [V3F_C4B_T2F_Quad] quad
     # @param [Number] index
     insertQuad: (quad, index) ->
 
@@ -100,6 +111,11 @@ class TextureAtlas extends Class
     # @param [Number] index
     removeQuadAtIndex: (index) ->
 
+    # Removes a given number of quads at a given index
+    # @param [Number] index
+    # @param [Number] amount
+    removeQuadsAtIndex: (index, amount) ->
+
     # Resize the capacity of the CCTextureAtlas.
     # @param [Number] newCapacity
     # @return [Boolean]
@@ -116,7 +132,7 @@ class TextureAtlas extends Class
     setTexture: (texture) ->
 
     # Updates a Quad (texture, vertex and color) at a certain index index must be between 0 and the atlas capacity - 1
-    # @param [V2F_C4B_T2F_Quad] quad
+    # @param [V3F_C4B_T2F_Quad] quad
     # @param [Number] index
     updateQuad: (quad, index) ->
 

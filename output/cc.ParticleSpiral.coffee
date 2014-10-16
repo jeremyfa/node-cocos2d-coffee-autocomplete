@@ -10,10 +10,6 @@ class ParticleSpiral extends ParticleSystem
     # @return [ParticleSpiral]
     @create: ->
 
-    # initialize a spiral particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a spiral particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

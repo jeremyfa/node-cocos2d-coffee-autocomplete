@@ -10,10 +10,6 @@ class ParticleMeteor extends ParticleSystem
     # @return [ParticleMeteor]
     @create: ->
 
-    # initialize a meteor particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a meteor particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

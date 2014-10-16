@@ -2,13 +2,10 @@
 # cc.FadeOutDownTiles action.
 class FadeOutDownTiles extends FadeOutUpTiles
 
+    # Please use cc.fadeOutDownTiles instead.
+    @FadeOutDownTiles.create = {}
+
     # Constructor
     # @return [FadeOutDownTiles]
     constructor: ->
-
-    # creates the action with the grid size and the duration
-    # @param [Number] duration
-    # @param [Size] gridSize
-    # @return [FadeOutDownTiles]
-    @create: (duration, gridSize) ->
 

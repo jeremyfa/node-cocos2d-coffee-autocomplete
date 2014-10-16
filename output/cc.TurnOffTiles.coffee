@@ -2,37 +2,41 @@
 # cc.TurnOffTiles action.
 class TurnOffTiles extends TiledGrid3DAction
 
-    # Constructor
-    # @return [TurnOffTiles]
-    constructor: ->
+    # Please use cc.turnOffTiles instead.
+    @TurnOffTiles.create = {}
 
-    # creates the action with a random seed, the grid size and the duration
+    # Constructor
     # @param [Number] duration
     # @param [Size] gridSize
     # @param [Number|Null] seed
     # @return [TurnOffTiles]
-    @create: (duration, gridSize, seed) ->
+    constructor: (duration, gridSize, seed) ->
 
-    # initializes the action with a random seed, the grid size and the duration
+    # Initializes the action with a random seed, the grid size and the duration.
     # @param [Number] duration
     # @param [Size] gridSize
-    # @param [Number] seed
+    # @param [Number|Null] seed
     # @return [Boolean]
     initWithDuration: (duration, gridSize, seed) ->
 
+    # Shuffle
     # @param [Array] array
     # @param [Number] len
     shuffle: (array, len) ->
 
+    # called before the action start.
     # @param [Node] target
     startWithTarget: (target) ->
 
+    # Turn off title.
     # @param [Point] pos
     turnOffTile: (pos) ->
 
+    # Turn on tile.
     # @param [Point] pos
     turnOnTile: (pos) ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

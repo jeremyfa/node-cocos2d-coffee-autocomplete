@@ -1,16 +1,15 @@
 
-# cc.SplitCols action
+# cc.SplitCols action.
 class SplitCols extends TiledGrid3DAction
 
-    # Constructor
-    # @return [SplitCols]
-    constructor: ->
+    # Please use cc.splitCols instead.
+    @SplitCols.create = {}
 
-    # creates the action with the number of columns to split and the duration
+    # Constructor
     # @param [Number] duration
     # @param [Number] cols
     # @return [SplitCols]
-    @create: (duration, cols) ->
+    constructor: (duration, cols) ->
 
     # initializes the action with the number of columns to split and the duration
     # @param [Number] duration
@@ -18,6 +17,11 @@ class SplitCols extends TiledGrid3DAction
     # @return [Boolean]
     initWithDuration: (duration, cols) ->
 
+    # called before the action start.
     # @param [Node] target
     startWithTarget: (target) ->
+
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

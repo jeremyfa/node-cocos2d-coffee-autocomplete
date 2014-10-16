@@ -1,34 +1,36 @@
 
-# Rotates a cc.Node object to a certain angle by modifying it's rotation attribute.
+# Rotates a cc.Node object to a certain angle by modifying it's.
 class RotateTo extends ActionInterval
 
+    # Please use cc.rotateTo instead Creates a RotateTo action with separate rotation angles.
+    @RotateTo.create = {}
+
     # Constructor
+    # @param [Number] duration
+    # @param [Number] deltaAngleX
+    # @param [Number] deltaAngleY
     # @return [RotateTo]
-    constructor: ->
+    constructor: (duration, deltaAngleX, deltaAngleY) ->
 
     # returns a new clone of the action
     # @return [RotateTo]
     clone: ->
 
-    # creates the action with separate rotation angles
-    # @param [Number] duration
-    # @param [Number] deltaAngleX
-    # @param [Number] deltaAngleY
-    # @return [RotateTo]
-    @create: (duration, deltaAngleX, deltaAngleY) ->
-
+    # Initializes the action.
     # @param [Number] duration
     # @param [Number] deltaAngleX
     # @param [Number] deltaAngleY
     # @return [Boolean]
     initWithDuration: (duration, deltaAngleX, deltaAngleY) ->
 
-    # RotateTo reverse not implemented
+    # RotateTo reverse not implemented.
     reverse: ->
 
+    # Start the action with target.
     # @param [Node] target
     startWithTarget: (target) ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

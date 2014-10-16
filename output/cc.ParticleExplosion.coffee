@@ -10,10 +10,6 @@ class ParticleExplosion extends ParticleSystem
     # @return [ParticleExplosion]
     @create: ->
 
-    # initialize an explosion particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize an explosion particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

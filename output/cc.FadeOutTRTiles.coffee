@@ -2,30 +2,32 @@
 # cc.FadeOutTRTiles action.
 class FadeOutTRTiles extends TiledGrid3DAction
 
+    # Please use cc.fadeOutTRTiles instead.
+    @FadeOutTRTiles.create = {}
+
     # Constructor
     # @return [FadeOutTRTiles]
     constructor: ->
 
-    # creates the action with the grid size and the duration
-    # @param duration
-    # @param gridSize
-    # @return [FadeOutTRTiles]
-    @create: (duration, gridSize) ->
-
+    # Test function
     # @param [Size] pos
     # @param [Number] time
     testFunc: (pos, time) ->
 
-    # transform tile
+    # Transform tile
     # @param [Point] pos
     # @param [Number] distance
     transformTile: (pos, distance) ->
 
-    # turn Off Tile
+    # Turn Off Tile
     # @param [Point] pos
     turnOffTile: (pos) ->
 
-    # turn on Tile
+    # Turn on Tile
     # @param [Point] pos
     turnOnTile: (pos) ->
+
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

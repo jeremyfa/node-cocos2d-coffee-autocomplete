@@ -3,8 +3,10 @@
 class TransitionFadeBL extends TransitionFadeTR
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionFadeBL]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # @param [Size] size
     # @return [*]

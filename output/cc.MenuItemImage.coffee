@@ -3,8 +3,13 @@
 class MenuItemImage extends MenuItemSprite
 
     # Constructor
+    # @param [string|null] normalImage
+    # @param [string|null] selectedImage
+    # @param [string|null] disabledImage
+    # @param [function|string|null] callback
+    # @param [Node|null] target
     # @return [MenuItemImage]
-    constructor: ->
+    constructor: (normalImage, selectedImage, disabledImage, callback, target) ->
 
     # creates a new menu item image
     # @param [String] normalImage
@@ -15,6 +20,7 @@ class MenuItemImage extends MenuItemSprite
     # @return [MenuItemImage]
     @create: (normalImage, selectedImage, three, four, five) ->
 
+    # initializes a cc.MenuItemImage
     # @param [string|null] normalImage
     # @param [string|null] selectedImage
     # @param [string|null] disabledImage

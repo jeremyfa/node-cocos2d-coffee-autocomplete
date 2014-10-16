@@ -2,6 +2,9 @@
 # Scales a cc.Node object a zoom factor by modifying it's scale attribute.
 class ScaleBy extends ScaleTo
 
+    # Please use cc.scaleBy instead.
+    @ScaleBy.create = {}
+
     # Constructor
     # @return [ScaleBy]
     constructor: ->
@@ -10,15 +13,11 @@ class ScaleBy extends ScaleTo
     # @return [ScaleBy]
     clone: ->
 
-    # @param [Number] duration
-    # @param [Number] sx
-    # @param [Number|Null] sy
+    # Returns a reversed action.
     # @return [ScaleBy]
-    @create: (duration, sx, sy) ->
-
-    # @return [ActionInterval]
     reverse: ->
 
-    # @param [Number] target
+    # Start the action with target.
+    # @param [Node] target
     startWithTarget: (target) ->
 

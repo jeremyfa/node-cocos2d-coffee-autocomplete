@@ -2,21 +2,28 @@
 # Flips the sprite vertically
 class FlipY extends ActionInstant
 
+    # Please use cc.flipY instead Create a FlipY action to flip or unflip the target
+    @FlipY.create = {}
+
     # Constructor
+    # @param [Boolean] flip
     # @return [FlipY]
-    constructor: ->
+    constructor: (flip) ->
 
-    # @param [Boolean] y
+    # to copy object with deep copy.
     # @return [FlipY]
-    @create: (y) ->
+    clone: ->
 
-    # @param [Boolean] Y
+    # initializes the action with a set flipY.
+    # @param [Boolean] flip
     # @return [Boolean]
-    initWithFlipY: (Y) ->
+    initWithFlipY: (flip) ->
 
-    # @return [FiniteTimeAction]
+    # returns a reversed action.
+    # @return [FlipY]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

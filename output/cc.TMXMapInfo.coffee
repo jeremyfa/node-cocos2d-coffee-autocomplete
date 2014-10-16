@@ -1,28 +1,73 @@
 
 # cc.TMXMapInfo contains the information about the map like: - Map orientation (hexagonal, isometric or orthogonal) - Tile size - Map size And it also contains: - Layers (an array of TMXLayerInfo objects) - Tilesets (an array of TMXTilesetInfo objects) - ObjectGroups (an array of TMXObjectGroupInfo objects) This information is obtained from the TMX file.
-class TMXMapInfo extends SAXParser
+class TMXMapInfo extends saxParser
+
+    # - Current string stored from characters stream.
+    # [String]
+    currentString: ''
+
+    # - Layer attributes.
+    # [Object]
+    layerAttrs: {}
+
+    # - Height of the map
+    # [Number]
+    mapHeight: 1
+
+    # - Width of the map
+    # [Number]
+    mapWidth: 1
+
+    # - Map orientation.
+    # [Number]
+    orientation: 1
+
+    # - Parent element.
+    # [Object]
+    parentElement: {}
+
+    # - Parent GID.
+    # [Number]
+    parentGID: 1
+
+    # - Properties of the map info.
+    # [Array]
+    properties: []
+
+    # - Is reading storing characters stream.
+    # [Boolean]
+    storingCharacters: new Boolean()
+
+    # - Height of a tile
+    # [Number]
+    tileHeight: 1
+
+    # - Width of a tile
+    # [Number]
+    tileWidth: 1
+
+    # - TMX file name.
+    # [String]
+    tmxFileName: ''
 
     # Constructor
+    # @param [String] tmxFile
+    # @param [String] resourcePath
     # @return [TMXMapInfo]
-    constructor: ->
+    constructor: (tmxFile, resourcePath) ->
 
-    # Creates a TMX Format with a tmx file
+    # Creates a TMX Format with a tmx file or content string
     # @param [String] tmxFile
     # @param [String] resourcePath
     # @return [TMXMapInfo]
     @create: (tmxFile, resourcePath) ->
 
-    # creates a TMX Format with an XML string and a TMX resource path
-    # @param [String] tmxString
-    # @param [String] resourcePath
-    # @return [TMXMapInfo]
-    @createWithXML: (tmxString, resourcePath) ->
-
+    # Gets the currentString
     # @return [String]
     getCurrentString: ->
 
-    # layer attribute
-    # @return [Number]
+    # Layer attribute
+    # @return [Object]
     getLayerAttribs: ->
 
     # Layers
@@ -37,11 +82,12 @@ class TMXMapInfo extends SAXParser
     # @return [Array]
     getObjectGroups: ->
 
+    # Gets Map orientation.
     # @return [Number]
     getOrientation: ->
 
     # parent element
-    # @return [Number]
+    # @return [Object]
     getParentElement: ->
 
     # parent GID
@@ -52,10 +98,11 @@ class TMXMapInfo extends SAXParser
     # @return [Array]
     getProperties: ->
 
-    # is string characters?
+    # Is reading storing characters stream
     # @return [Boolean]
     getStoringCharacters: ->
 
+    # Gets the tile properties.
     # @return [object]
     getTileProperties: ->
 
@@ -67,14 +114,14 @@ class TMXMapInfo extends SAXParser
     # @return [Size]
     getTileSize: ->
 
+    # Gets the tmxFileName
     # @return [String]
     getTMXFileName: ->
 
     # Initializes a TMX format with a tmx file
     # @param [String] tmxFile
-    # @param [String] resourcePath
     # @return [Element]
-    initWithTMXFile: (tmxFile, resourcePath) ->
+    initWithTMXFile: (tmxFile) ->
 
     # initializes a TMX format with an XML string and a TMX resource path
     # @param [String] tmxString
@@ -93,45 +140,59 @@ class TMXMapInfo extends SAXParser
     # @return [Boolean]
     parseXMLString: (xmlString) ->
 
+    # Set the currentString
     # @param [String] currentString
     setCurrentString: (currentString) ->
 
-    # @param [Number] Var
-    setLayerAttribs: (Var) ->
+    # Layer attribute
+    # @param [Object] value
+    setLayerAttribs: (value) ->
 
-    # @param [TMXLayerInfo] Var
-    setLayers: (Var) ->
+    # Layers
+    # @param [TMXLayerInfo] value
+    setLayers: (value) ->
 
-    # @param [Size] Var
-    setMapSize: (Var) ->
+    # Map width & height
+    # @param [Size] value
+    setMapSize: (value) ->
 
-    # @param [TMXObjectGroup] Var
-    setObjectGroups: (Var) ->
+    # ObjectGroups
+    # @param [TMXObjectGroup] value
+    setObjectGroups: (value) ->
 
-    # @param [Number] Var
-    setOrientation: (Var) ->
+    # Set the Map orientation.
+    # @param [Number] value
+    setOrientation: (value) ->
 
-    # @param [Number] Var
-    setParentElement: (Var) ->
+    # parent element
+    # @param [Object] value
+    setParentElement: (value) ->
 
-    # @param [Number] Var
-    setParentGID: (Var) ->
+    # parent GID
+    # @param [Number] value
+    setParentGID: (value) ->
 
-    # @param [object] Var
-    setProperties: (Var) ->
+    # Properties
+    # @param [object] value
+    setProperties: (value) ->
 
-    # @param [Boolean] Var
-    setStoringCharacters: (Var) ->
+    # Is reading storing characters stream
+    # @param [Boolean] value
+    setStoringCharacters: (value) ->
 
+    # Set the tile properties.
     # @param [object] tileProperties
     setTileProperties: (tileProperties) ->
 
-    # @param [TMXTilesetInfo] Var
-    setTilesets: (Var) ->
+    # tilesets
+    # @param [TMXTilesetInfo] value
+    setTilesets: (value) ->
 
-    # @param [Size] Var
-    setTileSize: (Var) ->
+    # Tiles width & height
+    # @param [Size] value
+    setTileSize: (value) ->
 
+    # Set the tmxFileName
     # @param [String] fileName
     setTMXFileName: (fileName) ->
 

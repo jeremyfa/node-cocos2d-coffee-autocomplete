@@ -1,51 +1,77 @@
 
-# A class to pre-load resources before engine start game main loop.
-class Loader extends Scene
+# Loader for resource loading process.
+class loader
 
     # Constructor
-    # @return [Loader]
+    # @return [loader]
     constructor: ->
 
-    # Returns a shared instance of the loader
-    # @return [Loader]
-    @getInstance: ->
+    # Get resource data by url.
+    # @param url
+    # @return [*]
+    getRes: (url) ->
 
-    # Get loading percentage
-    # @return [Number]
-    getPercentage: ->
+    # Get url with basePath.
+    # @param [string] basePath
+    # @param [string] url
+    # @return [*]
+    getUrl: (basePath, url) ->
 
-    # init with resources
-    # @param [Array] resources
-    # @param [Function|String] selector
-    # @param [Object] target
-    initWithResources: (resources, selector, target) ->
+    # Get XMLHttpRequest.
+    # @return [XMLHttpRequest]
+    getXMLHttpRequest: ->
 
-    # Callback when a resource file loaded.
-    onResLoaded: ->
+    # Load resources then call the callback.
+    # @param [string] resources
+    # @param [function] option
+    # @param [function|Object] cb
+    # @return [AsyncPool]
+    load: (resources, option, cb) ->
 
-    # Callback when a resource file load failed.
-    # @param name
-    onResLoadingErr: (name) ->
+    # Loads alias map from the contents of a filename.
+    # @param [String] url
+    # @param [Function] cb
+    loadAliases: (url, cb) ->
 
-    # Preload resources in the background
-    # @param [Array] resources
-    # @param [Function|String] selector
-    # @param [Object] target
-    # @return [Loader]
-    @preload: (resources, selector, target) ->
+    # Load a single image.
+    # @param [!string] url
+    # @param [object] option
+    # @param [function] cb
+    # @return [Image]
+    loadImg: (url, option, cb) ->
 
-    # Preload resources async
-    # @param [Array] resources
-    # @param [Function|String] selector
-    # @param [Object] target
-    # @return [Loader]
-    @preloadAsync: (resources, selector, target) ->
+    # Load js files.
+    # @param [string] baseDir
+    # @param [array] jsList
+    # @param [function] cb
+    # @return [*]
+    loadJs: (baseDir, jsList, cb) ->
 
-    # Release the resources from a list
-    # @param [Array] resources
-    @purgeCachedData: (resources) ->
+    # Load a single resource as json.
+    # @param [string] url
+    # @param [function] cb
+    loadJson: (url, cb) ->
 
-    # release resources from a list
-    # @param resources
-    releaseResources: (resources) ->
+    # Load js width loading image.
+    # @param [string] baseDir
+    # @param [array] jsList
+    # @param [function] cb
+    loadJsWithImg: (baseDir, jsList, cb) ->
+
+    # Load a single resource as txt.
+    # @param [string] url
+    # @param [function] cb
+    loadTxt: (url, cb) ->
+
+    # Register a resource loader into loader.
+    # @param [string] extNames
+    # @param [function] loader
+    register: (extNames, loader) ->
+
+    # Release the cache of resource by url.
+    # @param url
+    release: (url) ->
+
+    # Resource cache of all resources.
+    releaseAll: ->
 

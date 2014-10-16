@@ -3,8 +3,10 @@
 class TransitionProgressVertical extends TransitionProgress
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgressVertical]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # create a cc.TransitionProgressVertical object
     # @param [Number] t

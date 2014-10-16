@@ -3,18 +3,41 @@
 class AnimationFrame extends Class
 
     # Constructor
+    # @param spriteFrame
+    # @param delayUnits
+    # @param userInfo
     # @return [AnimationFrame]
-    constructor: ->
+    constructor: (spriteFrame, delayUnits, userInfo) ->
 
-    # how many units of time the frame takes getter
+    # Create a new animation frame and copy all contents into it
+    # @return [AnimationFrame]
+    clone: ->
+
+    # Create a new animation frame and copy all contents into it
+    # @param pZone
+    # @return [AnimationFrame]
+    copy: (pZone) ->
+
+    # Create a new animation frame and copy all contents into it
+    # @param pZone
+    # @return [AnimationFrame]
+    copyWithZone: (pZone) ->
+
+    # Creates an animation frame.
+    # @param [SpriteFrame] spriteFrame
+    # @param [Number] delayUnits
+    # @param [object] userInfo
+    @create: (spriteFrame, delayUnits, userInfo) ->
+
+    # Returns how many units of time the frame takes getter
     # @return [Number]
     getDelayUnits: ->
 
-    # cc.SpriteFrameName to be used
+    # Returns sprite frame to be used
     # @return [SpriteFrame]
     getSpriteFrame: ->
 
-    # A cc.AnimationFrameDisplayedNotification notification will be broadcasted when the frame is displayed with this dictionary as UserInfo.
+    # Returns the user custom information
     # @return [object]
     getUserInfo: ->
 
@@ -24,14 +47,15 @@ class AnimationFrame extends Class
     # @param [object] userInfo
     initWithSpriteFrame: (spriteFrame, delayUnits, userInfo) ->
 
-    # how many units of time the frame takes setter
+    # Sets how many units of time the frame takes setter
     # @param delayUnits
     setDelayUnits: (delayUnits) ->
 
-    # cc.SpriteFrameName to be used
+    # Sets sprite frame to be used
     # @param [SpriteFrame] spriteFrame
     setSpriteFrame: (spriteFrame) ->
 
+    # Sets the user custom information
     # @param [object] userInfo
     setUserInfo: (userInfo) ->
 

@@ -1,4 +1,5 @@
 
+# Create the cc.IMEDispatcher.Imp Object.
 class IMEDispatcher.Impl extends Class
 
     # Constructor

@@ -3,8 +3,11 @@
 class TransitionSceneOriented extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
+    # @param [TRANSITION_ORIENTATION_LEFT_OVER|cc.TRANSITION_ORIENTATION_RIGHT_OVER|cc.TRANSITION_ORIENTATION_UP_OVER|cc.TRANSITION_ORIENTATION_DOWN_OVER] orientation
     # @return [TransitionSceneOriented]
-    constructor: ->
+    constructor: (t, scene, orientation) ->
 
     # creates a base transition with duration and incoming scene
     # @param [Number] t

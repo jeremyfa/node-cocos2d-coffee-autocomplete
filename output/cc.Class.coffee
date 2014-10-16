@@ -7,7 +7,7 @@ class Class
     constructor: ->
 
     # Create a new Class that inherits from this Class
-    # @param [object] prop
+    # @param [object] props
     # @return [function]
-    @extend: (prop) ->
+    @extend: (props) ->
 

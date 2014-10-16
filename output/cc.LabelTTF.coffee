@@ -1,88 +1,144 @@
 
-# cc.LabelTTF is a subclass of cc.TextureNode that knows how to render text labels All features from cc.TextureNode are valid in cc.LabelTTF cc.LabelTTF objects are slow for js-binding on mobile devices.Consider using cc.LabelAtlas or cc.LabelBMFont instead.
+# cc.LabelTTF is a subclass of cc.TextureNode that knows how to render text labels with system font or a ttf font file All features from cc.Sprite are valid in cc.LabelTTF cc.LabelTTF objects are slow for js-binding on mobile devices.
 class LabelTTF extends Sprite
 
-    # initializes the CCLabelTTF with a font name, alignment, dimension and font size
+    # - Height of the bounding box of label, the real content height is limited by boundingHeight
+    # [Number]
+    boundingHeight: 1
+
+    # - Width of the bounding box of label, the real content width is limited by boundingWidth
+    # [Number]
+    boundingWidth: 1
+
+    # - The fill color
+    # [Color]
+    fillStyle: new Color()
+
+    # - The label font with a style string: e.g.
+    # [String]
+    font: ''
+
+    # - Font name of label
+    # [String]
+    fontName: ''
+
+    # - Font size of label
+    # [Number]
+    fontSize: 1
+
+    # Initializes the CCLabelTTF with a font name, alignment, dimension and font size, do not call it by yourself, you should pass the correct arguments in constructor to initialize the label.
     # [Boolean]
     initWithStringAndTextDefinition: new Boolean()
 
-    # set text tinting
-    setFontFillColor: {}
+    # - The line width for stroke
+    # [Number]
+    lineWidth: 1
+
+    # - The blur size of shadow
+    # [Number]
+    shadowBlur: 1
+
+    # - The x axis offset of shadow
+    # [Number]
+    shadowOffsetX: 1
+
+    # - The y axis offset of shadow
+    # [Number]
+    shadowOffsetY: 1
+
+    # - The opacity of shadow
+    # [Number]
+    shadowOpacity: 1
+
+    # - Content string of label
+    # [String]
+    string: ''
+
+    # - The stroke color
+    # [Color]
+    strokeStyle: new Color()
+
+    # - Horizontal Alignment of label: cc.TEXT_ALIGNMENT_LEFT|cc.TEXT_ALIGNMENT_CENTER|cc.TEXT_ALIGNMENT_RIGHT
+    # [Number]
+    textAlign: 1
+
+    # - Vertical Alignment of label: cc.VERTICAL_TEXT_ALIGNMENT_TOP|cc.VERTICAL_TEXT_ALIGNMENT_CENTER|cc.VERTICAL_TEXT_ALIGNMENT_BOTTOM
+    # [Number]
+    verticalAlign: 1
 
     # Constructor
+    # @param [String] text
+    # @param [String|cc.FontDefinition] fontName
+    # @param [Number] fontSize
+    # @param [Size] dimensions
+    # @param [Number] hAlignment
+    # @param [Number] vAlignment
     # @return [LabelTTF]
-    constructor: ->
+    constructor: (text, fontName, fontSize, dimensions, hAlignment, vAlignment) ->
 
-    # creates a cc.LabelTTF from a fontname, alignment, dimension and font size
-    # @param [String] label
-    # @param [String] fontName
+    # creates a cc.LabelTTF from a font name, alignment, dimension and font size
+    # @param [String] text
+    # @param [String|cc.FontDefinition] fontName
     # @param [Number] fontSize
     # @param [Size] dimensions
     # @param [Number] hAlignment
     # @param [Number] vAlignment
     # @return [LabelTTF|Null]
-    @create: (label, fontName, fontSize, dimensions, hAlignment, vAlignment) ->
+    @create: (text, fontName, fontSize, dimensions, hAlignment, vAlignment) ->
 
-    # Create a label with string and a font definition
-    # @param [String] text
-    # @param [FontDefinition] textDefinition
-    # @return [LabelTTF|Null]
-    @createWithFontDefinition: (text, textDefinition) ->
+    @createWithFontDefinition: ->
 
-    # Prints out a description of this class
-    # @return [String]
-    description: ->
+    # Disable shadow rendering
+    disableShadow: ->
 
-    # disable shadow rendering
-    # @param [Boolean] mustUpdateTexture
-    disableShadow: (mustUpdateTexture) ->
+    # Disable label stroke
+    disableStroke: ->
 
-    # disable stroke
-    # @param [Boolean] mustUpdateTexture
-    disableStroke: (mustUpdateTexture) ->
-
-    # enable or disable shadow for the label
-    # @param [Size] shadowOffset
+    # Enable or disable shadow for the label
+    # @param [Number] shadowOffsetX
+    # @param [Number] shadowOffsetY
     # @param [Number] shadowOpacity
     # @param [Number] shadowBlur
-    # @param [Boolean] mustUpdateTexture
-    enableShadow: (shadowOffset, shadowOpacity, shadowBlur, mustUpdateTexture) ->
+    enableShadow: (shadowOffsetX, shadowOffsetY, shadowOpacity, shadowBlur) ->
 
-    # enable or disable stroke
-    # @param [Color3B] strokeColor
+    # Enable label stroke with stroke parameters
+    # @param [Color] strokeColor
     # @param [Number] strokeSize
-    # @param [Boolean] mustUpdateTexture
-    enableStroke: (strokeColor, strokeSize, mustUpdateTexture) ->
+    enableStroke: (strokeColor, strokeSize) ->
 
-    # return Dimensions of cc.LabelTTF
+    # Returns the actual content size of the label, the content size is the real size that the label occupied while dimension is the outer bounding box of the label.
+    # @return [Size]
+    getContentSize: ->
+
+    # Returns the dimensions of cc.LabelTTF, the dimension is the maximum size of the label, set it so that label will automatically change lines when necessary.
     # @return [Size]
     getDimensions: ->
 
-    # return font name of cc.LabelTTF
+    # Returns font name of cc.LabelTTF
     # @return [String]
     getFontName: ->
 
-    # return font size of cc.LabelTTF
+    # Returns font size of cc.LabelTTF
     # @return [Number]
     getFontSize: ->
 
-    # return Horizontal Alignment of cc.LabelTTF
+    # Returns Horizontal Alignment of cc.LabelTTF
     # @return [TEXT_ALIGNMENT_LEFT|cc.TEXT_ALIGNMENT_CENTER|cc.TEXT_ALIGNMENT_RIGHT]
     getHorizontalAlignment: ->
 
-    # returns the text of the label
+    # Returns the text of the label
     # @return [String]
     getString: ->
 
-    # get the text definition used by this label
+    # Extract the text definition used by this label
     # @return [FontDefinition]
     getTextDefinition: ->
 
-    # return Vertical Alignment of cc.LabelTTF
+    # Returns Vertical Alignment of cc.LabelTTF
     # @return [VERTICAL_TEXT_ALIGNMENT_TOP|cc.VERTICAL_TEXT_ALIGNMENT_CENTER|cc.VERTICAL_TEXT_ALIGNMENT_BOTTOM]
     getVerticalAlignment: ->
 
-    # initializes the cc.LabelTTF with a font name, alignment, dimension and font size
+    # Initializes the cc.LabelTTF with a font name, alignment, dimension and font size, do not call it by yourself, you should pass the correct arguments in constructor to initialize the label.
     # @param [String] label
     # @param [String] fontName
     # @param [Number] fontSize
@@ -92,31 +148,36 @@ class LabelTTF extends Sprite
     # @return [Boolean]
     initWithString: (label, fontName, fontSize, dimensions, hAlignment, vAlignment) ->
 
-    # set Dimensions of cc.LabelTTF
-    # @param [Size] dim
-    setDimensions: (dim) ->
+    # Set Dimensions of cc.LabelTTF, the dimension is the maximum size of the label, set it so that label will automatically change lines when necessary.
+    # @param [Size|Number] dim
+    # @param [Number] height
+    setDimensions: (dim, height) ->
 
-    # set font name of cc.LabelTTF
+    # Sets the text fill color
+    # @param [Color] fillColor
+    setFontFillColor: (fillColor) ->
+
+    # Sets font name of cc.LabelTTF
     # @param [String] fontName
     setFontName: (fontName) ->
 
-    # set font size of cc.LabelTTF
+    # Sets font size of cc.LabelTTF
     # @param [Number] fontSize
     setFontSize: (fontSize) ->
 
-    # set Horizontal Alignment of cc.LabelTTF
+    # Sets Horizontal Alignment of cc.LabelTTF
     # @param [TEXT_ALIGNMENT_LEFT|cc.TEXT_ALIGNMENT_CENTER|cc.TEXT_ALIGNMENT_RIGHT] alignment
     setHorizontalAlignment: (alignment) ->
 
-    # changes the string to render
+    # Changes the text content of the label
     # @param [String] text
     setString: (text) ->
 
-    # set the text definition used by this label
+    # Sets the text definition used by this label
     # @param [FontDefinition] theDefinition
     setTextDefinition: (theDefinition) ->
 
-    # set Vertical Alignment of cc.LabelTTF
+    # Sets Vertical Alignment of cc.LabelTTF
     # @param [VERTICAL_TEXT_ALIGNMENT_TOP|cc.VERTICAL_TEXT_ALIGNMENT_CENTER|cc.VERTICAL_TEXT_ALIGNMENT_BOTTOM] verticalAlignment
     setVerticalAlignment: (verticalAlignment) ->
 

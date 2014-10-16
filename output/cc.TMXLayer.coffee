@@ -2,8 +2,41 @@
 # cc.TMXLayer represents the TMX layer.
 class TMXLayer extends SpriteBatchNode
 
-    # draw cc.SpriteBatchNode (override draw of cc.Node)
-    draw: {}
+    # - Height of the layer
+    # [Number]
+    layerHeight: 1
+
+    # - Name of the layer
+    # [String]
+    layerName: ''
+
+    # - Layer orientation
+    # [Number]
+    layerOrientation: 1
+
+    # - Width of the layer
+    # [Number]
+    layerWidth: 1
+
+    # - Properties from the layer.
+    # [Array]
+    properties: []
+
+    # - Height of a tile
+    # [Number]
+    tileHeight: 1
+
+    # - Tiles for layer
+    # [Array]
+    tiles: []
+
+    # - Tileset for layer
+    # [TMXTilesetInfo]
+    tileset: new TMXTilesetInfo()
+
+    # - Width of a tile
+    # [Number]
+    tileWidth: 1
 
     # Constructor
     # @return [TMXLayer]
@@ -22,6 +55,11 @@ class TMXLayer extends SpriteBatchNode
     # @return [TMXLayer|Null]
     @create: (tilesetInfo, layerInfo, mapInfo) ->
 
+    # draw cc.SpriteBatchNode (override draw of cc.Node)
+    # @param [CanvasRenderingContext2D] ctx
+    draw: (ctx) ->
+
+    # Gets the layer name
     # @return [String]
     getLayerName: ->
 
@@ -29,6 +67,7 @@ class TMXLayer extends SpriteBatchNode
     # @return [Number]
     getLayerOrientation: ->
 
+    # Gets layer size.
     # @return [Size]
     getLayerSize: ->
 
@@ -37,9 +76,10 @@ class TMXLayer extends SpriteBatchNode
     getMapTileSize: ->
 
     # Returns the position in pixels of a given tile coordinate
-    # @param [Point] pos
+    # @param [Point|Number] pos
+    # @param [Number] y
     # @return [Point]
-    getPositionAt: (pos) ->
+    getPositionAt: (pos, y) ->
 
     # properties from the layer.
     # @return [Array]
@@ -55,19 +95,22 @@ class TMXLayer extends SpriteBatchNode
     getTexture: ->
 
     # Returns the tile (cc.Sprite) at a given a tile coordinate.
-    # @param [Point] pos
+    # @param [Point|Number] pos
+    # @param [Number] y
     # @return [Sprite]
-    getTileAt: (pos) ->
+    getTileAt: (pos, y) ->
 
     # lipped tiles can be changed dynamically
-    # @param [Point] pos
+    # @param [Point|Number] pos
+    # @param [Number] y
     # @return [Number]
-    getTileFlagsAt: (pos) ->
+    getTileFlagsAt: (pos, y) ->
 
     # Returns the tile gid at a given tile coordinate.
-    # @param [Point] pos
+    # @param [Point|Number] pos
+    # @param [Number] y
     # @return [Number]
-    getTileGIDAt: (pos) ->
+    getTileGIDAt: (pos, y) ->
 
     # Pointer to the map of tiles
     # @return [Array]
@@ -75,7 +118,7 @@ class TMXLayer extends SpriteBatchNode
 
     # Tile set information for the layer
     # @return [TMXTilesetInfo]
-    getTileSet: ->
+    getTileset: ->
 
     # Initializes a cc.TMXLayer with a tileset info, a layer info and a map info
     # @param [TMXTilesetInfo] tilesetInfo
@@ -93,35 +136,49 @@ class TMXLayer extends SpriteBatchNode
     removeChild: (sprite, cleanup) ->
 
     # Removes a tile at given tile coordinate
-    # @param [Point] pos
-    removeTileAt: (pos) ->
+    # @param [Point|Number] pos
+    # @param [Number] y
+    removeTileAt: (pos, y) ->
 
+    # Sets the untransformed size of the TMXLayer.
+    # @param [Size|Number] size
+    # @param [Number] height
+    setContentSize: (size, height) ->
+
+    # Set the layer name
     # @param [String] layerName
     setLayerName: (layerName) ->
 
+    # Layer orientation, which is the same as the map orientation
     # @param [Number] Var
     setLayerOrientation: (Var) ->
 
+    # Set layer size
     # @param [Size] Var
     setLayerSize: (Var) ->
 
+    # Set the map tile size.
     # @param [Size] Var
     setMapTileSize: (Var) ->
 
+    # properties from the layer.
     # @param [Array] Var
     setProperties: (Var) ->
 
     # Sets the tile gid (gid = tile global id) at a given tile coordinate.
     # @param [Number] gid
-    # @param [Point] pos
+    # @param [Point|Number] posOrX
+    # @param [Number] flagsOrY
     # @param [Number] flags
-    setTileGID: (gid, pos, flags) ->
+    setTileGID: (gid, posOrX, flagsOrY, flags) ->
 
+    # Pointer to the map of tiles
     # @param [Array] Var
     setTiles: (Var) ->
 
+    # Tile set information for the layer
     # @param [TMXTilesetInfo] Var
-    setTileSet: (Var) ->
+    setTileset: (Var) ->
 
     # Creates the tiles
     setupTiles: ->

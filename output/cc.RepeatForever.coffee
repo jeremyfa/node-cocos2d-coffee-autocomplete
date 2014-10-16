@@ -2,19 +2,19 @@
 # Repeats an action for ever.
 class RepeatForever extends ActionInterval
 
+    # Please use cc.repeatForever instead Create a acton which repeat forever
+    @RepeatForever.create = {}
+
     # Constructor
+    # @param [FiniteTimeAction] action
     # @return [RepeatForever]
-    constructor: ->
+    constructor: (action) ->
 
     # returns a new clone of the action
     # @return [RepeatForever]
     clone: ->
 
-    # Repeat the acton forever
-    # @param action
-    # @return [RepeatForever]
-    @create: (action) ->
-
+    # Get inner action.
     # @return [ActionInterval]
     getInnerAction: ->
 
@@ -22,18 +22,23 @@ class RepeatForever extends ActionInterval
     # @return [Boolean]
     initWithAction: (action) ->
 
+    # Return true if the action has finished.
     # @return [Boolean]
     isDone: ->
 
-    # @return [ActionInterval]
+    # Returns a reversed action.
+    # @return [RepeatForever]
     reverse: ->
 
+    # Set inner action.
     # @param [ActionInterval] action
     setInnerAction: (action) ->
 
+    # Start the action with target.
     # @param [Node] target
     startWithTarget: (target) ->
 
+    # called every frame with it's delta time.
     # @param dt
     step: (dt) ->
 

@@ -2,20 +2,20 @@
 # Repeats an action a number of times.
 class Repeat extends ActionInterval
 
+    # Please use cc.repeat instead Creates a Repeat action.
+    @Repeat.create = {}
+
     # Constructor
+    # @param [FiniteTimeAction] action
+    # @param [Number] times
     # @return [Repeat]
-    constructor: ->
+    constructor: (action, times) ->
 
     # returns a new clone of the action
     # @return [Repeat]
     clone: ->
 
-    # creates a CCRepeat action.
-    # @param [FiniteTimeAction] action
-    # @param [Number] times
-    # @return [Repeat]
-    @create: (action, times) ->
-
+    # Get inner Action.
     # @return [FiniteTimeAction]
     getInnerAction: ->
 
@@ -24,21 +24,26 @@ class Repeat extends ActionInterval
     # @return [Boolean]
     initWithAction: (action, times) ->
 
+    # Return true if the action has finished.
     # @return [Boolean]
     isDone: ->
 
-    # @return [ActionInterval]
+    # returns a reversed action.
+    # @return [Repeat]
     reverse: ->
 
+    # Set inner Action.
     # @param [FiniteTimeAction] action
     setInnerAction: (action) ->
 
+    # Start the action with target.
     # @param [Node] target
     startWithTarget: (target) ->
 
     # stop the action
     stop: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

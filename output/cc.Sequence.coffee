@@ -1,39 +1,37 @@
 
-# Runs actions sequentially, one after another
+# Runs actions sequentially, one after another.
 class Sequence extends ActionInterval
 
+    # Please use cc.sequence instead.
+    @Sequence.create = {}
+
     # Constructor
+    # @param [Array|cc.FiniteTimeAction] tempArray
     # @return [Sequence]
-    constructor: ->
+    constructor: (tempArray) ->
 
     # returns a new clone of the action
     # @return [Sequence]
     clone: ->
 
-    # to copy object with deep copy.
-    # @return [object]
-    copy: ->
-
-    # helper constructor to create an array of sequenceable actions
-    # @param [Array|cc.FiniteTimeAction] tempArray
-    # @return [Sequence]
-    @create: (tempArray) ->
-
-    # initializes the action
+    # Initializes the action
     # @param [FiniteTimeAction] actionOne
     # @param [FiniteTimeAction] actionTwo
     # @return [Boolean]
     initWithTwoActions: (actionOne, actionTwo) ->
 
-    # @return [ActionInterval]
+    # Returns a reversed action.
+    # @return [Sequence]
     reverse: ->
 
+    # Start the action with target.
     # @param [Node] target
     startWithTarget: (target) ->
 
-    # stop the action
+    # stop the action.
     stop: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

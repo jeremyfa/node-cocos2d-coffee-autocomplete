@@ -3,15 +3,33 @@
 class SpriteFrame extends Class
 
     # Constructor
+    # @param [String|cc.Texture2D] filename
+    # @param [Rect] rect
+    # @param [Boolean] rotated
+    # @param [Point] offset
+    # @param [Size] originalSize
     # @return [SpriteFrame]
-    constructor: ->
+    constructor: (filename, rect, rotated, offset, originalSize) ->
 
-    # copy a new SpriteFrame
+    # Add a event listener for texture loaded event.
+    # @param [Function] callback
+    # @param [Object] target
+    addLoadedEventListener: (callback, target) ->
+
+    # Clone the sprite frame
+    # @return [SpriteFrame]
+    clone: ->
+
+    # Copy the sprite frame
+    # @return [SpriteFrame]
+    copy: ->
+
+    # Copy the sprite frame
     # @return [SpriteFrame]
     copyWithZone: ->
 
     # Create a cc.SpriteFrame with a texture filename, rect, rotated, offset and originalSize in pixels.
-    # @param [string] filename
+    # @param [String|cc.Texture2D] filename
     # @param [Rect] rect
     # @param [Boolean] rotated
     # @param [Point] offset
@@ -19,44 +37,38 @@ class SpriteFrame extends Class
     # @return [SpriteFrame]
     @create: (filename, rect, rotated, offset, originalSize) ->
 
-    # Create a cc.SpriteFrame with a texture, rect, rotated, offset and originalSize in pixels.
-    # @param [Texture2D] texture
-    # @param [Rect] rect
-    # @param [Boolean] rotated
-    # @param [Point] offset
-    # @param [Size] originalSize
-    # @return [SpriteFrame]
-    @createWithTexture: (texture, rect, rotated, offset, originalSize) ->
+    @createWithTexture: ->
 
-    # Offset getter
+    # Returns the offset of the frame in the texture
     # @return [Point]
     getOffset: ->
 
-    # get offset of the frame
+    # Returns the offset of the sprite frame in the texture in pixel
     # @return [Point]
     getOffsetInPixels: ->
 
-    # get original size of the trimmed image
+    # Returns the original size of the trimmed image
     # @return [Size]
     getOriginalSize: ->
 
-    # get original size of the trimmed image
+    # Returns the original size of the trimmed image
     # @return [Size]
     getOriginalSizeInPixels: ->
 
-    # get rect of the frame
+    # Returns the rect of the sprite frame in the texture
     # @return [Rect]
     getRect: ->
 
+    # Gets the rect of the frame in the texture
     # @return [Rect]
     getRectInPixels: ->
 
-    # get texture of the frame
+    # Returns the texture of the frame
     # @return [Texture2D]
     getTexture: ->
 
     # Initializes SpriteFrame with Texture, rect, rotated, offset and originalSize in pixels.
-    # @param [Texture2D] texture
+    # @param [String|cc.Texture2D] texture
     # @param [Rect] rect
     # @param [Boolean] rotated
     # @param [Point] offset
@@ -64,46 +76,43 @@ class SpriteFrame extends Class
     # @return [Boolean]
     initWithTexture: (texture, rect, rotated, offset, originalSize) ->
 
-    # Initializes a cc.SpriteFrame with a texture, rect, rotated, offset and originalSize in pixels.
-    # @param [string] filename
-    # @param [Rect] rect
-    # @param [Boolean] rotated
-    # @param [Point] offset
-    # @param [Size] originalSize
-    initWithTextureFilename: (filename, rect, rotated, offset, originalSize) ->
-
-    # return is rotated of SpriteFrame.
+    # Returns whether the sprite frame is rotated in the texture.
     # @return [Boolean]
     isRotated: ->
 
-    # offset setter
+    # Sets the offset of the frame in the texture
     # @param [Point] offsets
     setOffset: (offsets) ->
 
-    # set offset of the frame
+    # Sets the offset of the sprite frame in the texture in pixel
     # @param [Point] offsetInPixels
     setOffsetInPixels: (offsetInPixels) ->
 
-    # set original size of the trimmed image
+    # Sets the original size of the trimmed image
     # @param [Size] sizeInPixels
     setOriginalSize: (sizeInPixels) ->
 
-    # set original size of the trimmed image
+    # Sets the original size of the trimmed image
     # @param [Size] sizeInPixels
     setOriginalSizeInPixels: (sizeInPixels) ->
 
-    # set rect of the frame
+    # Sets the rect of the sprite frame in the texture
     # @param [Rect] rect
     setRect: (rect) ->
 
+    # Sets the rect of the frame in the texture
     # @param [Rect] rectInPixels
     setRectInPixels: (rectInPixels) ->
 
-    # set SpriteFrame is rotated
+    # Set whether the sprite frame is rotated in the texture.
     # @param [Boolean] bRotated
     setRotated: (bRotated) ->
 
-    # set texture of the frame, the texture is retained
+    # Sets the texture of the frame, the texture is retained automatically
     # @param [Texture2D] texture
     setTexture: (texture) ->
+
+    # Returns whether the texture have been loaded
+    # @return [boolean]
+    textureLoaded: ->
 

@@ -2,6 +2,9 @@
 # Delays the action a certain amount of seconds
 class DelayTime extends ActionInterval
 
+    # Please use cc.delayTime instead.
+    @DelayTime.create = {}
+
     # Constructor
     # @return [DelayTime]
     constructor: ->
@@ -10,13 +13,11 @@ class DelayTime extends ActionInterval
     # @return [DelayTime]
     clone: ->
 
-    # @param [Number] d
+    # Returns a reversed action.
     # @return [DelayTime]
-    @create: (d) ->
-
-    # @return [ActionInterval]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

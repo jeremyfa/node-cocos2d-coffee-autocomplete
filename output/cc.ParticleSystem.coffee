@@ -2,6 +2,214 @@
 # Particle System base class.
 class ParticleSystem extends Node
 
+    # -
+    # [Boolean]
+    active: new Boolean()
+
+    # - Angle of each particle setter.
+    # [Number]
+    angle: 1
+
+    # - Variation of angle of each particle setter.
+    # [Number]
+    angleVar: 1
+
+    # - Index of system in batch node array.
+    # [Number]
+    atlasIndex: 1
+
+    # - Indicate whether the node will be auto-removed when it has no particles left.
+    # [Boolean]
+    autoRemoveOnFinish: new Boolean()
+
+    # Ball Shape for ShapeMode of Particle
+    @ParticleSystem.BALL_SHAPE = {}
+
+    # - Weak reference to the sprite batch node.
+    # [SpriteBatchNode]
+    batchNode: new SpriteBatchNode()
+
+    # - How many seconds the emitter wil run.
+    # [Number]
+    duration: 1
+
+    # The Particle emitter lives forever
+    @ParticleSystem.DURATION_INFINITY = {}
+
+    # - Emission rate of the particles.
+    # [Number]
+    emissionRate: 1
+
+    # - Emitter modes: CCParticleSystem.MODE_GRAVITY: uses gravity, speed, radial and tangential acceleration; CCParticleSystem.MODE_RADIUS: uses radius movement + rotation.
+    # [Number]
+    emitterMode: 1
+
+    # - Ending color of each particle.
+    # [Color]
+    endColor: new Color()
+
+    # - Variation of the end color.
+    # [Color]
+    endColorVar: new Color()
+
+    # - Ending radius of the particles.
+    # [Number]
+    endRadius: 1
+
+    # - Variation of the ending radius.
+    # [Number]
+    endRadiusVar: 1
+
+    # - End size in pixels of each particle.
+    # [Number]
+    endSize: 1
+
+    # - Variation of end size in pixels.
+    # [Number]
+    endSizeVar: 1
+
+    # - End angle of each particle.
+    # [Number]
+    endSpin: 1
+
+    # - Variation of end angle.
+    # [Number]
+    endSpinVar: 1
+
+    # - Gravity of the emitter.
+    # [Point]
+    gravity: new Point()
+
+    # - Life of each particle setter.
+    # [Number]
+    life: 1
+
+    # - Variation of life.
+    # [Number]
+    lifeVar: 1
+
+    # Gravity mode (A mode)
+    @ParticleSystem.MODE_GRAVITY = {}
+
+    # Radius mode (B mode)
+    @ParticleSystem.MODE_RADIUS = {}
+
+    # - Indicate whether the alpha value modify color.
+    # [Boolean]
+    opacityModifyRGB: new Boolean()
+
+    # - Current quantity of particles that are being simulated.
+    # [Number]
+    particleCount: 1
+
+    # - Particles movement type: cc.ParticleSystem.TYPE_FREE | cc.ParticleSystem.TYPE_GROUPED.
+    # [Number]
+    positionType: 1
+
+    # - Variation of source position.
+    # [Point]
+    posVar: new Point()
+
+    # - Number of degress to rotate a particle around the source pos per second.
+    # [Number]
+    rotatePerS: 1
+
+    # - Variation of the degress to rotate a particle around the source pos per second.
+    # [Number]
+    rotatePerSVar: 1
+
+    # - Indicate whether the rotation of each particle equals to its direction.
+    # [Boolean]
+    rotationIsDir: new Boolean()
+
+    # Shape Mode of Particle Draw
+    @ParticleSystem.SHAPE_MODE = {}
+
+    # - ShapeType of ParticleSystem : cc.ParticleSystem.BALL_SHAPE | cc.ParticleSystem.STAR_SHAPE.
+    # [Number]
+    shapeType: 1
+
+    # - Source position of the emitter.
+    # [Point]
+    sourcePos: new Point()
+
+    # - Speed of the emitter.
+    # [Point]
+    speed: new Point()
+
+    # - Variation of the speed.
+    # [Point]
+    speedVar: new Point()
+
+    # Star Shape for ShapeMode of Particle
+    @ParticleSystem.STAR_SHAPE = {}
+
+    # The starting radius of the particle is equal to the ending radius
+    @ParticleSystem.START_RADIUS_EQUAL_TO_END_RADIUS = {}
+
+    # The starting size of the particle is equal to the ending size
+    @ParticleSystem.START_SIZE_EQUAL_TO_END_SIZE = {}
+
+    # - Start color of each particle.
+    # [Color]
+    startColor: new Color()
+
+    # - Variation of the start color.
+    # [Color]
+    startColorVar: new Color()
+
+    # - Starting radius of the particles.
+    # [Number]
+    startRadius: 1
+
+    # - Variation of the starting radius.
+    # [Number]
+    startRadiusVar: 1
+
+    # - Start size in pixels of each particle.
+    # [Number]
+    startSize: 1
+
+    # - Variation of start size in pixels.
+    # [Number]
+    startSizeVar: 1
+
+    # - Start angle of each particle.
+    # [Number]
+    startSpin: 1
+
+    # - Variation of start angle.
+    # [Number]
+    startSpinVar: 1
+
+    # - Tangential acceleration of each particle.
+    # [Number]
+    tangentialAccel: 1
+
+    # - Variation of the tangential acceleration.
+    # [Number]
+    tangentialAccelVar: 1
+
+    # - Texture of Particle System.
+    # [Texture2D]
+    texture: new Texture2D()
+
+    # Texture Mode of Particle Draw
+    @ParticleSystem.TEXTURE_MODE = {}
+
+    # - Maximum particles of the system.
+    # [Number]
+    totalParticles: 1
+
+    # Living particles are attached to the world and are unaffected by emitter repositioning.
+    @ParticleSystem.TYPE_FREE = {}
+
+    # Living particles are attached to the emitter and are translated along with it.
+    @ParticleSystem.TYPE_GROUPED = {}
+
+    # Living particles are attached to the world but will follow the emitter repositioning.
+    @ParticleSystem.TYPE_RELATIVE = {}
+
     # Constructor
     # @return [ParticleSystem]
     constructor: ->
@@ -10,15 +218,22 @@ class ParticleSystem extends Node
     # @return [Boolean]
     addParticle: ->
 
+    # to copy object with deep copy.
+    # @return [ParticleSystem]
+    clone: ->
+
     # return the string found by key in dict.
-    # @param [String] plistFile
+    # @param [String|Number] plistFile
     # @return [ParticleSystem]
     @create: (plistFile) ->
 
-    # create a system with a fixed number of particles
-    # @param [Number] number_of_particles
+    # return the string found by key in dict.
+    # @param [String|Number] plistFile
     # @return [ParticleSystem]
-    @createWithTotalParticles: (number_of_particles) ->
+    @createWithTotalParticles: (plistFile) ->
+
+    # Unschedules the "update" method.
+    destroyParticleSystem: ->
 
     # draw particle
     # @param [CanvasRenderingContext2D] ctx
@@ -65,11 +280,11 @@ class ParticleSystem extends Node
     getEmitterMode: ->
 
     # get end color and end color variation of each particle
-    # @return [Color4F]
+    # @return [Color]
     getEndColor: ->
 
     # get end color variance of each particle
-    # @return [Color4F]
+    # @return [Color]
     getEndColorVar: ->
 
     # Return ending radius of the particles.
@@ -107,10 +322,6 @@ class ParticleSystem extends Node
     # Return life variance of each particle
     # @return [Number]
     getLifeVar: ->
-
-    # does the alpha value modify color getter
-    # @return [Boolean]
-    getOpacityModifyRGB: ->
 
     # Quantity of particles that are being simulated at the moment
     # @return [Number]
@@ -161,11 +372,11 @@ class ParticleSystem extends Node
     getSpeedVar: ->
 
     # set start color of each particle
-    # @return [Color4F]
+    # @return [Color]
     getStartColor: ->
 
     # get start color variance of each particle
-    # @return [Color4F]
+    # @return [Color]
     getStartColorVar: ->
 
     # Return starting radius of the particles.
@@ -254,6 +465,10 @@ class ParticleSystem extends Node
     # @return [Boolean]
     isFull: ->
 
+    # does the alpha value modify color getter
+    # @return [Boolean]
+    isOpacityModifyRGB: ->
+
     # listen the event that coming to foreground on Android
     # @param [Class] obj
     listenBackToForeground: (obj) ->
@@ -309,16 +524,16 @@ class ParticleSystem extends Node
     # @param [Number] emissionRate
     setEmissionRate: (emissionRate) ->
 
-    # Switch between different kind of emitter modes: - CCPARTICLE_MODE_GRAVITY: uses gravity, speed, radial and tangential acceleration - CCPARTICLE_MODE_RADIUS: uses radius movement + rotation
+    # Switch between different kind of emitter modes: - CCParticleSystem.MODE_GRAVITY: uses gravity, speed, radial and tangential acceleration - CCParticleSystem.MODE_RADIUS: uses radius movement + rotation
     # @param [Number] emitterMode
     setEmitterMode: (emitterMode) ->
 
     # set end color and end color variation of each particle
-    # @param [Color4F] endColor
+    # @param [Color] endColor
     setEndColor: (endColor) ->
 
     # set end color variance of each particle
-    # @param [Color4F] endColorVar
+    # @param [Color] endColorVar
     setEndColorVar: (endColorVar) ->
 
     # ending radius of the particles setter.
@@ -410,11 +625,11 @@ class ParticleSystem extends Node
     setSpeedVar: (speedVar) ->
 
     # get start color of each particle
-    # @param [Color4F] startColor
+    # @param [Color] startColor
     setStartColor: (startColor) ->
 
     # set start color variance of each particle
-    # @param [Color4F] startColorVar
+    # @param [Color] startColorVar
     setStartColorVar: (startColorVar) ->
 
     # starting radius of the particles setter.
@@ -473,4 +688,7 @@ class ParticleSystem extends Node
     # @param [Particle] particle
     # @param [Point] newPosition
     updateQuadWithParticle: (particle, newPosition) ->
+
+    # update emitter's status (dt = 0)
+    updateWithNoTime: ->
 

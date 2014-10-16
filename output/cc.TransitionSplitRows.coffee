@@ -3,8 +3,10 @@
 class TransitionSplitRows extends TransitionSplitCols
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionSplitRows]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # @return [*]
     action: ->

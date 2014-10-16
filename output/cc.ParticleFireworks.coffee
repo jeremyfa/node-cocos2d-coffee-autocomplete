@@ -10,10 +10,6 @@ class ParticleFireworks extends ParticleSystem
     # @return [ParticleFireworks]
     @create: ->
 
-    # initialize a fireworks particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a fireworks particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

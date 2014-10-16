@@ -10,10 +10,6 @@ class ParticleSmoke extends ParticleSystem
     # @return [ParticleSmoke]
     @create: ->
 
-    # initialize a smoke particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a smoke particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

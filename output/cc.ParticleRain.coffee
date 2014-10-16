@@ -10,10 +10,6 @@ class ParticleRain extends ParticleSystem
     # @return [ParticleRain]
     @create: ->
 
-    # initialize a rain particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a rain particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

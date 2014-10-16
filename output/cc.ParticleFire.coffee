@@ -10,10 +10,6 @@ class ParticleFire extends ParticleSystem
     # @return [ParticleFire]
     @create: ->
 
-    # initialize a fire particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a fire particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

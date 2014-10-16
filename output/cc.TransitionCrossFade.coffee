@@ -3,8 +3,10 @@
 class TransitionCrossFade extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionCrossFade]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # Cross fades two scenes using the cc.RenderTexture object.
     # @param [Number] t

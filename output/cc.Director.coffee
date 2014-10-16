@@ -1,6 +1,30 @@
 
-# Class that creates and handle the main Window and manages how and when to execute the Scenes.
-class Director extends Class
+# ATTENTION: USE cc.director INSTEAD OF cc.Director.
+class Director
+
+    # The event after draw of cc.Director
+    @Director.EVENT_AFTER_DRAW = {}
+
+    # The event after update of cc.Director
+    @Director.EVENT_AFTER_UPDATE = {}
+
+    # The event after visit of cc.Director
+    @Director.EVENT_AFTER_VISIT = {}
+
+    # The event projection changed of cc.Director
+    @Director.EVENT_PROJECTION_CHANGED = {}
+
+    # Constant for 2D projection (orthogonal projection)
+    @Director.PROJECTION_2D = {}
+
+    # Constant for 3D projection with a fovy=60, znear=0.5f and zfar=1500.
+    @Director.PROJECTION_3D = {}
+
+    # Constant for custom projection, if cc.Director's projection set to it, it calls "updateProjection" on the projection delegate.
+    @Director.PROJECTION_CUSTOM = {}
+
+    # Constant for default projection of cc.Director, default projection is 3D projection
+    @Director.PROJECTION_DEFAULT = {}
 
     # Constructor
     # @return [Director]
@@ -9,12 +33,12 @@ class Director extends Class
     # calculates delta time since last time it was called
     calculateDeltaTime: ->
 
-    # converts a UIKit coordinate to an OpenGL coordinate Useful to convert (multi) touches coordinates to the current layout (portrait or landscape)
+    # Converts a view coordinate to an WebGL coordinate Useful to convert (multi) touches coordinates to the current layout (portrait or landscape) Implementation can be found in CCDirectorWebGL
     # @param [Point] uiPoint
     # @return [Point]
     convertToGL: (uiPoint) ->
 
-    # converts an OpenGL coordinate to a UIKit coordinate Useful to convert node points to window points for calls such as glScissor
+    # Converts an WebGL coordinate to a view coordinate Useful to convert node points to window points for calls such as glScissor Implementation can be found in CCDirectorWebGL
     # @param [Point] glPoint
     # @return [Point]
     convertToUI: (glPoint) ->
@@ -22,81 +46,97 @@ class Director extends Class
     # Draw the scene.
     drawScene: ->
 
-    # end director
+    # End the life of director in the next frame
     end: ->
 
-    # Get the FPS value
+    # Returns the cc.ActionManager associated with this director
+    # @return [ActionManager]
+    getActionManager: ->
+
+    # Returns the FPS value
     # @return [Number]
     getAnimationInterval: ->
 
-    # get the size in pixels of the surface.
+    # Returns the size in pixels of the surface.
     # @return [Number]
     getContentScaleFactor: ->
 
-    # CCDirector delegate.
+    # Returns the cc.director delegate.
     # @return [DirectorDelegate]
     getDelegate: ->
 
-    # returns a shared instance of the director
-    # @return [Director]
-    @getInstance: ->
+    # Returns the delta time since last frame
+    # @return [Number]
+    getDeltaTime: ->
 
     # This object will be visited after the main scene is visited.
     # @return [Node]
     getNotificationNode: ->
 
-    # Get the CCEGLView, where everything is rendered
-    # @return [*]
+    # Get the CCEGLView, where everything is rendered.
+    # @return [view]
     getOpenGLView: ->
 
-    # Sets an OpenGL projection
+    # Sets an OpenGL projection.
     # @return [Number]
     getProjection: ->
 
-    # Get current running Scene.
+    # Returns current running Scene.
     # @return [Scene]
     getRunningScene: ->
 
-    # (cc.Scheduler associated with this director)
+    # Returns the cc.Scheduler associated with this director
+    # @return [Scheduler]
     getScheduler: ->
 
-    # seconds per frame
+    # Returns seconds per frame
     # @return [Number]
     getSecondsPerFrame: ->
 
-    # How many frames were called since the director started
+    # Returns how many frames were called since the director started
     # @return [Number]
     getTotalFrames: ->
 
-    # returns the size of the OpenGL view in points.
+    # Returns the visible origin of the running scene
+    # @return [Point]
+    getVisibleOrigin: ->
+
+    # Returns the visible size of the running scene
+    # @return [Size]
+    getVisibleSize: ->
+
+    # Returns the size of the WebGL view in points.
     # @return [Size]
     getWinSize: ->
 
-    # returns the size of the OpenGL view in pixels.
+    # Returns the size of the OpenGL view in pixels.
     # @return [Size]
     getWinSizeInPixels: ->
 
-    # initializes cc.Director
-    # @return [Boolean]
-    init: ->
+    # Returns the z eye, only available in WebGL mode
+    # @return [Number]
+    getZEye: ->
 
-    # Whether or not to display the FPS on the bottom-left corner
+    # Returns whether or not to display the FPS informations
     # @return [Boolean]
     isDisplayStats: ->
 
-    # is next delta time zero
+    # Returns whether next delta time equals to zero
     # @return [Boolean]
     isNextDeltaTimeZero: ->
 
-    # Whether or not the Director is paused
+    # Returns whether or not the Director is paused
     # @return [Boolean]
     isPaused: ->
 
-    # Whether or not the replaced scene will receive the cleanup message.
+    # Returns whether or not the replaced scene will receive the cleanup message.
     # @return [Boolean]
     isSendCleanupToScene: ->
 
-    # pause director
+    # Run main loop of director
+    mainLoop: ->
+
+    # Pause the director's ticker
     pause: ->
 
     # Pops out a scene from the queue.
@@ -105,72 +145,88 @@ class Director extends Class
     # Pops out all scenes from the queue until the root scene in the queue.
     popToRootScene: ->
 
-    # Pops out all scenes from the queue until it reaches `level`.
+    # Pops out all scenes from the queue until it reaches "level".
     # @param [Number] level
     popToSceneStackLevel: (level) ->
 
     # Removes cached all cocos2d cached data.
     purgeCachedData: ->
 
-    # purge Director
+    # Purge the cc.director itself, including unschedule all schedule, remove all event listeners, clean up and exit the running scene, stops all animations, clear cached data.
     purgeDirector: ->
 
     # Suspends the execution of the running scene, pushing it on the stack of suspended scenes.
     # @param [Scene] scene
     pushScene: (scene) ->
 
-    # Replaces the running scene with a new one.
-    # @param [Scene] scene
-    replaceScene: (scene) ->
-
-    # resume director
+    # Resume director after pause, if the current scene is not paused, nothing will happen.
     resume: ->
 
-    # Enters the Director's main loop with the given Scene.
+    # Run a scene.
     # @param [Scene] scene
-    runWithScene: (scene) ->
+    runScene: (scene) ->
 
-    # enables/disables OpenGL alpha blending
+    # Sets the cc.ActionManager associated with this director
+    # @param [ActionManager] actionManager
+    setActionManager: (actionManager) ->
+
+    # Enables/disables OpenGL alpha blending.
     # @param [Boolean] on
     setAlphaBlending: (on_) ->
+
+    # Sets animation interval
+    # @param [Number] value
+    setAnimationInterval: (value) ->
 
     # The size in pixels of the surface.
     # @param [Number] scaleFactor
     setContentScaleFactor: (scaleFactor) ->
 
-    # sets the default values based on the CCConfiguration info
+    # Sets the default values based on the CCConfiguration info
     setDefaultValues: ->
 
-    # enables/disables OpenGL depth test
+    # Sets the cc.director delegate.
+    # @param delegate
+    # @return [DirectorDelegate]
+    setDelegate: (delegate) ->
+
+    # Enables or disables WebGL depth test.
     # @param [Boolean] on
     setDepthTest: (on_) ->
 
-    # Display the FPS on the bottom-left corner
+    # Sets whether display the FPS on the bottom-left corner
     # @param [Boolean] displayStats
     setDisplayStats: (displayStats) ->
 
-    # sets the OpenGL default values
-    setGLDefaultValues: ->
-
-    # set next delta time is zero
+    # Sets whether next delta time equals to zero
     # @param [Boolean] nextDeltaTimeZero
     setNextDeltaTimeZero: (nextDeltaTimeZero) ->
 
-    # set next scene
+    # Starts the registered next scene
     setNextScene: ->
 
-    # set Notification Node
+    # Sets Notification Node
     # @param [Node] node
     setNotificationNode: (node) ->
 
-    # Set the CCEGLView, where everything is rendered
-    # @param [*] openGLView
+    # Sets the view, where everything is rendered, do not call this function.
+    # @param [view] openGLView
     setOpenGLView: (openGLView) ->
 
-    # Sets an OpenGL projection
+    # Sets an OpenGL projection.
     # @param [Number] projection
     setProjection: (projection) ->
 
-    # Sets the glViewport
+    # Sets the cc.Scheduler associated with this director
+    # @param [Scheduler] scheduler
+    setScheduler: (scheduler) ->
+
+    # Update the view port.
     setViewport: ->
+
+    # Starts Animation
+    startAnimation: ->
+
+    # Stops animation
+    stopAnimation: ->
 

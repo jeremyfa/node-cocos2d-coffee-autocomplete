@@ -1,22 +1,24 @@
 
 # Fades In an object that implements the cc.RGBAProtocol protocol.
-class FadeIn extends ActionInterval
+class FadeIn extends FadeTo
+
+    # Please use cc.fadeIn instead.
+    @FadeIn.create = {}
 
     # Constructor
+    # @param [Number] duration
     # @return [FadeIn]
-    constructor: ->
+    constructor: (duration) ->
 
     # returns a new clone of the action
     # @return [FadeIn]
     clone: ->
 
-    # @param [Number] duration
-    # @return [FadeIn]
-    @create: (duration) ->
-
-    # @return [ActionInterval]
+    # Returns a reversed action.
+    # @return [FadeOut]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Start the action with target.
+    # @param [Node] target
+    startWithTarget: (target) ->
 

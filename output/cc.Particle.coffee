@@ -8,8 +8,8 @@ class Particle
     # Constructor
     # @param [Point] pos
     # @param [Point] startPos
-    # @param [Color4F] color
-    # @param [Color4F] deltaColor
+    # @param [Color] color
+    # @param [Color] deltaColor
     # @param [Size] size
     # @param [Size] deltaSize
     # @param [Number] rotation

@@ -10,10 +10,6 @@ class ParticleSnow extends ParticleSystem
     # @return [ParticleSnow]
     @create: ->
 
-    # initialize a snow particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a snow particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

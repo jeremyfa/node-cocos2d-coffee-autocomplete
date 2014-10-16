@@ -3,11 +3,13 @@
 class TransitionFadeUp extends TransitionFadeTR
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionFadeUp]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # @param [Size] size
-    # @return [*]
+    # @return [FadeOutUpTiles]
     actionWithSize: (size) ->
 
     # Fade the tiles of the outgoing scene from the top-right corner to the bottom-left corner.

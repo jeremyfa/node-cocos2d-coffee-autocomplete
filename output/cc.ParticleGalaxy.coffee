@@ -10,10 +10,6 @@ class ParticleGalaxy extends ParticleSystem
     # @return [ParticleGalaxy]
     @create: ->
 
-    # initialize a galaxy particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a galaxy particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

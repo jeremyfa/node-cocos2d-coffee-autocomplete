@@ -3,14 +3,17 @@
 class CardinalSplineTo extends ActionInterval
 
     # Constructor
+    # @param [Number] duration
+    # @param [Array] points
+    # @param [Number] tension
     # @return [CardinalSplineTo]
-    constructor: ->
+    constructor: (duration, points, tension) ->
 
     # returns a new clone of the action
     # @return [CardinalSplineTo]
     clone: ->
 
-    # creates an action with a Cardinal Spline array of points and tension
+    # Please use cc.cardinalSplineTo instead.
     # @param [Number] duration
     # @param [Array] points
     # @param [Number] tension
@@ -28,7 +31,7 @@ class CardinalSplineTo extends ActionInterval
     # @return [Boolean]
     initWithDuration: (duration, points, tension) ->
 
-    # reverse a new cc.CardinalSplineTo
+    # reverse a new cc.CardinalSplineTo.
     # @return [CardinalSplineTo]
     reverse: ->
 
@@ -36,11 +39,13 @@ class CardinalSplineTo extends ActionInterval
     # @param [Array] points
     setPoints: (points) ->
 
+    # called before the action start.
     # @param [Node] target
     startWithTarget: (target) ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 
     # update position of target
     # @param [Point] newPos

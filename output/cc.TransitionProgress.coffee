@@ -3,8 +3,10 @@
 class TransitionProgress extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgress]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # create a cc.TransitionProgress object
     # @param [Number] t

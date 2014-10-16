@@ -2,30 +2,36 @@
 # Moves a CCNode object x,y pixels by modifying it's position attribute.
 class MoveBy extends ActionInterval
 
+    # Please use cc.moveBy instead.
+    @MoveBy.create = {}
+
     # Constructor
+    # @param [Number] duration
+    # @param [Point|Number] deltaPos
+    # @param [Number] deltaY
     # @return [MoveBy]
-    constructor: ->
+    constructor: (duration, deltaPos, deltaY) ->
 
     # returns a new clone of the action
     # @return [MoveBy]
     clone: ->
 
-    # @param [Number] duration
-    # @param [Point] deltaPosition
-    # @return [MoveBy]
-    @create: (duration, deltaPosition) ->
-
+    # Initializes the action.
     # @param [Number] duration
     # @param [Point] position
+    # @param [Number] y
     # @return [Boolean]
-    initWithDuration: (duration, position) ->
+    initWithDuration: (duration, position, y) ->
 
     # MoveTo reverse is not implemented
+    # @return [MoveBy]
     reverse: ->
 
-    # @param [Number] target
+    # Start the action with target.
+    # @param [Node] target
     startWithTarget: (target) ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

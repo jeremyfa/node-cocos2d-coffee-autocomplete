@@ -10,10 +10,6 @@ class ParticleSun extends ParticleSystem
     # @return [ParticleSun]
     @create: ->
 
-    # initialize a sun particle system
-    # @return [Boolean]
-    init: ->
-
     # initialize a sun particle system with number Of Particles
     # @param [Number] numberOfParticles
     # @return [Boolean]

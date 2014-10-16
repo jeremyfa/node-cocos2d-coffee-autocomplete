@@ -1,8 +1,7 @@
 
-# A texcoord composed of 2 floats: u, y
+# cc.Tex2F
 class Tex2F
 
-    # Constructor
     # @param [Number] u1
     # @param [Number] v1
     # @return [Tex2F]

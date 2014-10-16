@@ -3,8 +3,10 @@
 class TransitionProgressRadialCCW extends TransitionProgress
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionProgressRadialCCW]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # create a cc.TransitionProgressRadialCCW object
     # @param [Number] t

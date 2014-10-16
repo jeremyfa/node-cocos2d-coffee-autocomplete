@@ -1,11 +1,12 @@
 
+# cc.Rect
 class Rect
 
-    # Constructor
-    # @param [Number|cc.Point|cc.Rect] x1
-    # @param [Number|cc.Size] y1
-    # @param [Number] width1
-    # @param [Number] height1
+    # cc.Rect is the class for rect object, please do not use its constructor to create rects, use cc.rect() alias function instead.
+    # @param [Number] width
+    # @param [Number] height
+    # @param width
+    # @param height
     # @return [Rect]
-    constructor: (x1, y1, width1, height1) ->
+    constructor: (width, height, width, height) ->
 

@@ -2,8 +2,10 @@
 class TransitionScene extends Scene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionScene]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # custom cleanup
     cleanup: ->
@@ -29,9 +31,9 @@ class TransitionScene extends Scene
     # @return [Boolean]
     initWithDuration: (t, scene) ->
 
-    # custom onEnter
+    # Event callback that is invoked every time when cc.TransitionScene enters the 'stage'.
     onEnter: ->
 
-    # custom onExit
+    # callback that is called every time the cc.TransitionScene leaves the 'stage'.
     onExit: ->
 

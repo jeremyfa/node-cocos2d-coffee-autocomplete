@@ -3,8 +3,10 @@
 class TransitionJumpZoom extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionJumpZoom]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # creates a scene transition that zooms then jump across the screen, the same for the incoming scene
     # @param [Number] t

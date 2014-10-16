@@ -1,8 +1,7 @@
 
-# A vertex composed of 3 floats: x, y, z
+# cc.Vertex3F
 class Vertex3F
 
-    # Constructor
     # @param [Number] x1
     # @param [Number] y1
     # @param [Number] z1

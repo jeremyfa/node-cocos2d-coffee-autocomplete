@@ -2,15 +2,18 @@
 # Base class for Easing actions with rate parameters
 class EaseRateAction extends ActionEase
 
-    # Constructor
-    # @return [EaseRateAction]
-    constructor: ->
+    # Please use cc.easeRateAction instead.
+    @EaseRateAction.create = {}
 
-    # Creates the action with the inner action and the rate parameter
+    # Constructor
     # @param [ActionInterval] action
     # @param [Number] rate
     # @return [EaseRateAction]
-    @create: (action, rate) ->
+    constructor: (action, rate) ->
+
+    # to copy object with deep copy.
+    # @return [EaseRateAction]
+    clone: ->
 
     # get rate value for the actions
     # @return [Number]
@@ -22,7 +25,8 @@ class EaseRateAction extends ActionEase
     # @return [Boolean]
     initWithAction: (action, rate) ->
 
-    # @return [ActionInterval]
+    # Create new action to original operation effect opposite.
+    # @return [EaseRateAction]
     reverse: ->
 
     # set rate value for the actions

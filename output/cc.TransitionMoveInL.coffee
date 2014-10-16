@@ -3,8 +3,10 @@
 class TransitionMoveInL extends TransitionScene
 
     # Constructor
+    # @param [Number] t
+    # @param [Scene] scene
     # @return [TransitionMoveInL]
-    constructor: ->
+    constructor: (t, scene) ->
 
     # returns the action that will be performed
     action: ->

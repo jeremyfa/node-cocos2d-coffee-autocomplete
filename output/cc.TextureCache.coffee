@@ -1,27 +1,15 @@
 
-# Implementation TextureCache
-class TextureCache extends Class
+# cc.textureCache is a singleton object, it's the global cache for cc.Texture2D
+class textureCache
 
     # Constructor
-    # @return [TextureCache]
+    # @return [textureCache]
     constructor: ->
 
     # Returns a Texture2D object given an ETC filename If the file image was not previously loaded, it will create a new CCTexture2D object and it will return it.
     # @param [String] filename
     # @return [Texture2D]
     addETCImage: (filename) ->
-
-    # Returns a Texture2D object given an file image If the file image was not previously loaded, it will create a new Texture2D object and it will return it.
-    # @param [String] path
-    # @return [Texture2D]
-    addImage: (path) ->
-
-    # Loading the images asynchronously
-    # @param [String] path
-    # @param [Node] target
-    # @param [Function] selector
-    # @return [Texture2D]
-    addImageAsync: (path, target, selector) ->
 
     # Returns a Texture2D object given an PVR filename If the file image was not previously loaded, it will create a new Texture2D object and it will return it.
     # @param [String] path
@@ -51,10 +39,6 @@ class TextureCache extends Class
     # Output to cc.log the current contents of this TextureCache This will attempt to calculate the size of each texture, and the total texture memory in use.
     dumpCachedTextureInfo: ->
 
-    # Return ths shared instance of the cache
-    # @return [TextureCache]
-    @getInstance: ->
-
     # @param [Image] texture
     # @return [String|Null]
     getKeyByTexture: (texture) ->
@@ -63,8 +47,10 @@ class TextureCache extends Class
     # @return [Array]
     getTextureColors: (texture) ->
 
-    # Purges the cache.
-    @purgeSharedTextureCache: ->
+    # Returns an already created texture.
+    # @param [String] textureKeyName
+    # @return [Texture2D|Null]
+    getTextureForKey: (textureKeyName) ->
 
     # Purges the dictionary of loaded textures.
     removeAllTextures: ->

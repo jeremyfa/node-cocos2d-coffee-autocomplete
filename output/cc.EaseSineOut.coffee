@@ -1,19 +1,25 @@
 
-# Ease Sine Out
+# Ease Sine Out.
 class EaseSineOut extends ActionEase
 
     # Constructor
     # @return [EaseSineOut]
     constructor: ->
 
-    # creates the action
+    # to copy object with deep copy.
+    # @return [EaseSineOut]
+    clone: ->
+
+    # Creates an EaseSineOut action.
     # @param [ActionInterval] action
     # @return [EaseSineOut]
     @create: (action) ->
 
-    # @return [ActionInterval]
+    # Create a cc.EaseSineIn action.
+    # @return [EaseSineIn]
     reverse: ->
 
-    # @param [Number] time1
-    update: (time1) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

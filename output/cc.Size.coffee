@@ -1,9 +1,10 @@
 
+# cc.Size
 class Size
 
-    # Constructor
-    # @param [Number] _width
-    # @param [Number] _height
+    # cc.Size is the class for size object, please do not use its constructor to create sizes, use cc.size() alias function instead.
+    # @param [Number] width
+    # @param [Number] height
     # @return [Size]
-    constructor: (_width, _height) ->
+    constructor: (width, height) ->
 

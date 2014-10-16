@@ -2,11 +2,14 @@
 # Scheduler is responsible of triggering the scheduled callbacks.
 class Scheduler extends Class
 
+    # Priority level reserved for system services.
+    @Scheduler.PRIORITY_SYSTEM = {}
+
     # Constructor
     # @return [Scheduler]
     constructor: ->
 
-    # returns time scale of scheduler
+    # Returns time scale of scheduler
     # @return [Number]
     getTimeScale: ->
 
@@ -19,7 +22,7 @@ class Scheduler extends Class
     pauseAllTargets: ->
 
     # Pause all selectors from all targets with a minimum priority.
-    # @param minPriority
+    # @param [Number] minPriority
     pauseAllTargetsWithMinPriority: (minPriority) ->
 
     # Pauses the target.
@@ -31,7 +34,7 @@ class Scheduler extends Class
     resumeTarget: (target) ->
 
     # Resume selectors on a set of targets.
-    # @param targetsToResume
+    # @param [Array] targetsToResume
     resumeTargets: (targetsToResume) ->
 
     # The scheduled method will be called every 'interval' seconds.

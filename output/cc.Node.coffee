@@ -1,36 +1,172 @@
 
-# cc.Node is the main element.
+# cc.Node is the root class of all node.
 class Node extends Class
 
-    # Returns the matrix that transform the node's (local) space coordinates into the parent's space coordinates.
-    # [AffineTransform]
-    nodeToParentTransform: new AffineTransform()
+    # - The CCActionManager object that is used by all actions.
+    # [ActionManager]
+    actionManager: new ActionManager()
 
-    # set the dirty node
-    setNodeDirty: {}
+    # - Anchor point's position on x axis
+    # [Number]
+    anchorX: 1
 
-    # cc.Node's state callback type
-    @Node.StateCallbackType = {}
+    # - Anchor point's position on y axis
+    # [Number]
+    anchorY: 1
 
-    # Performs OpenGL view-matrix transformation based on position, scale, rotation and other attributes.
-    transform: {}
+    # - The arrival order, indicates which children is added previously
+    # [Number]
+    arrivalOrder: 1
 
-    # recursive method that visit its children and draw them
-    visit: {}
+    # - Indicate whether node's color value affect its child nodes, default value is false
+    # [Boolean]
+    cascadeColor: new Boolean()
+
+    # - Indicate whether node's opacity value affect its child nodes, default value is false
+    # [Boolean]
+    cascadeOpacity: new Boolean()
+
+    # -
+    # [Array]
+    children: []
+
+    # -
+    # [Number]
+    childrenCount: 1
+
+    # - Color of node, default value is white: (255, 255, 255)
+    # [Color]
+    color: new Color()
+
+    # - The state of OpenGL server side
+    # [Number]
+    glServerState: 1
+
+    # - grid object that is used when applying effects
+    # [GridBase]
+    grid: new GridBase()
+
+    # - Height of node
+    # [Number]
+    height: 1
+
+    # - Indicate whether ignore the anchor point property for positioning
+    # [Boolean]
+    ignoreAnchor: new Boolean()
+
+    # - Opacity of node, default value is 255
+    # [Number]
+    opacity: 1
+
+    # - Indicate whether opacity affect the color value, default value is false
+    # [Boolean]
+    opacityModifyRGB: new Boolean()
+
+    # - Parent node
+    # [Node]
+    parent: new Node()
+
+    # - Rotation of node
+    # [Number]
+    rotation: 1
+
+    # - Rotation on x axis
+    # [Number]
+    rotationX: 1
+
+    # - Rotation on y axis
+    # [Number]
+    rotationY: 1
+
+    # -
+    # [Boolean]
+    running: new Boolean()
+
+    # - Scale of node
+    # [Number]
+    scale: 1
+
+    # - Scale on x axis
+    # [Number]
+    scaleX: 1
+
+    # - Scale on y axis
+    # [Number]
+    scaleY: 1
+
+    # - cc.Scheduler used to schedule all "updates" and timers.
+    # [Scheduler]
+    scheduler: new Scheduler()
+
+    # - The shader program currently used for this node
+    # [GLProgram]
+    shaderProgram: new GLProgram()
+
+    # - Skew x
+    # [Number]
+    skewX: 1
+
+    # - Skew y
+    # [Number]
+    skewY: 1
+
+    # - Tag of node
+    # [Number]
+    tag: 1
+
+    # - Custom user data
+    # [Object]
+    userData: {}
+
+    # - User assigned CCObject, similar to userData, but instead of holding a void* it holds an id
+    # [Object]
+    userObject: {}
+
+    # - WebGL Z vertex of this node, z order works OK if all the nodes uses the same openGL Z vertex
+    # [Number]
+    vertexZ: 1
+
+    # - Indicate whether node is visible or not
+    # [Boolean]
+    visible: new Boolean()
+
+    # - Width of node
+    # [Number]
+    width: 1
+
+    # - x axis position of node
+    # [Number]
+    x: 1
+
+    # - y axis position of node
+    # [Number]
+    y: 1
+
+    # - Z order in depth which stands for the drawing order
+    # [Number]
+    zIndex: 1
 
     # Constructor
     # @return [Node]
     constructor: ->
 
-    # "add" logic MUST only be on this method If the child is added to a 'running' node, then 'onEnter' and 'onEnterTransitionDidFinish' will be called immediately.
+    # "add" logic MUST only be in this method If the child is added to a 'running' node, then 'onEnter' and 'onEnterTransitionDidFinish' will be called immediately.
     # @param [Node] child
-    # @param [Number] zOrder
+    # @param [Number] localZOrder
     # @param [Number] tag
-    addChild: (child, zOrder, tag) ->
+    addChild: (child, localZOrder, tag) ->
 
-    # adds a component
+    # Adds a component to the node's component container.
     # @param [Component] component
     addComponent: (component) ->
+
+    # Properties configuration function All properties in attrs will be set to the node, when the setter of the node is available, the property will be set via setter function.
+    # @param [Object] attrs
+    attr: (attrs) ->
+
+    # Returns a "local" axis aligned bounding box of the node.
+    # @return [Rect]
+    boundingBox: ->
 
     # Stops all running actions and schedulers
     cleanup: ->
@@ -65,32 +201,28 @@ class Node extends Class
     # @return [Point]
     convertToWorldSpaceAR: (nodePoint) ->
 
-    # allocates and initializes a node.
+    # Allocates and initializes a node.
     # @return [Node]
     @create: ->
 
-    # Gets the description string.
-    # @return [String]
-    description: ->
-
-    # Override this method to draw your own node.
-    # @param [CanvasContext] ctx
+    # Render function using the canvas 2d context or WebGL context, internal usage only, please do not call this function
+    # @param [CanvasRenderingContext2D | WebGLRenderingContext] ctx
     draw: (ctx) ->
 
-    # Gets an action from the running action list by its tag.
+    # Returns an action from the running action list by its tag.
     # @param [Number] tag
     # @return [Action]
     getActionByTag: (tag) ->
 
-    # Gets the CCActionManager object that is used by all actions.
+    # Returns the CCActionManager object that is used by all actions.
     # @return [ActionManager]
     getActionManager: ->
 
-    # anchorPoint is the point around which all transformations and positioning manipulations take place.
+    # Returns a copy of the anchor point.
     # @return [Point]
     getAnchorPoint: ->
 
-    # The anchorPoint in absolute pixels.
+    # Returns a copy of the anchor point in absolute pixels.
     # @return [Point]
     getAnchorPointInPoints: ->
 
@@ -98,7 +230,7 @@ class Node extends Class
     # @return [Rect]
     getBoundingBox: ->
 
-    # returns a "world" axis aligned bounding box of the node.
+    # Returns a "world" axis aligned bounding box of the node.
     # @return [Rect]
     getBoundingBoxToWorld: ->
 
@@ -106,71 +238,118 @@ class Node extends Class
     # @return [Camera]
     getCamera: ->
 
-    # Gets a child from the container given its tag
+    # Returns a child from the container given its name
+    # @param [Number] name
+    # @return [Node]
+    getChildByName: (name) ->
+
+    # Returns a child from the container given its tag
     # @param [Number] aTag
     # @return [Node]
     getChildByTag: (aTag) ->
 
-    # Return an array of children Composing a "tree" structure is a very important feature of CCNode
+    # Returns an array of all children Composing a "tree" structure is a very important feature of CCNode
     # @return [Array]
     getChildren: ->
 
-    # Get the amount of children.
+    # Returns the amount of children.
     # @return [Number]
     getChildrenCount: ->
 
-    # gets a component by its name
+    # Returns the color of Node
+    # @return [Color]
+    getColor: ->
+
+    # Returns a component identified by the name given.
     # @param [String] name
     # @return [Component]
     getComponent: (name) ->
 
-    # The untransformed size of the node.
+    # Returns a copy the untransformed size of the node.
     # @return [Size]
     getContentSize: ->
+
+    # Returns the displayed color of Node, the difference between displayed color and color is that displayed color is calculated based on color and parent node's color when cascade color enabled.
+    # @return [Color]
+    getDisplayedColor: ->
+
+    # Returns the displayed opacity of Node, the difference between displayed opacity and opacity is that displayed opacity is calculated based on opacity and parent node's opacity when cascade opacity enabled.
+    # @return [number]
+    getDisplayedOpacity: ->
+
+    # Return the Node's Global Z Order.
+    # @return [number]
+    getGlobalZOrder: ->
 
     # Returns the state of OpenGL server side.
     # @return [Number]
     getGLServerState: ->
 
-    # Returns a grid object that is used when applying effects
+    # Returns a grid object that is used when applying effects.
     # @return [GridBase]
     getGrid: ->
+
+    # Returns the local Z order of this node.
+    # @return [Number]
+    getLocalZOrder: ->
+
+    # Returns a string that is used to identify the node.
+    # @return [string]
+    getName: ->
+
+    # Returns the matrix that transform the node's (local) space coordinates into the parent's space coordinates.
+    # @return [AffineTransform]
+    getNodeToParentTransform: ->
+
+    # Returns the world affine transform matrix.
+    # @return [AffineTransform]
+    getNodeToWorldTransform: ->
 
     # Returns the numbers of actions that are running plus the ones that are schedule to run (actions in actionsToAdd and actions arrays).
     # @return [Number]
     getNumberOfRunningActions: ->
 
-    # Returns the arrival order, indicates which children is added previously.
+    # Returns the opacity of Node
+    # @return [number]
+    getOpacity: ->
+
+    # Returns the arrival order, indicates which children should be added previously.
     # @return [Number]
     getOrderOfArrival: ->
 
-    # Returns a pointer to the parent node
+    # Returns a reference to the parent node
     # @return [Node]
     getParent: ->
 
-    # Position (x,y) of the node in OpenGL coordinates.
+    # Returns the matrix that transform parent's space coordinates to the node's (local) space coordinates.
+    # @return [AffineTransform]
+    getParentToNodeTransform: ->
+
+    # Returns a copy of the position (x,y) of the node in cocos2d coordinates.
     # @return [Point]
     getPosition: ->
 
+    # Returns the x axis position of the node in cocos2d coordinates.
     # @return [Number]
     getPositionX: ->
 
+    # Returns the y axis position of the node in cocos2d coordinates.
     # @return [Number]
     getPositionY: ->
 
-    # The rotation (angle) of the node in degrees.
+    # Returns the rotation (angle) of the node in degrees.
     # @return [Number]
     getRotation: ->
 
-    # The rotation (angle) of the node in degrees.
+    # Returns the X axis rotation (angle) which represent a horizontal rotational skew of the node in degrees.
     # @return [Number]
     getRotationX: ->
 
-    # The rotation (angle) of the node in degrees.
+    # Returns the Y axis rotation (angle) which represent a vertical rotational skew of the node in degrees.
     # @return [Number]
     getRotationY: ->
 
-    # Get the scale factor of the node.
+    # Returns the scale factor of the node.
     # @return [Number]
     getScale: ->
 
@@ -182,7 +361,7 @@ class Node extends Class
     # @return [Number]
     getScaleY: ->
 
-    # cc.Scheduler used to schedule all "updates" and timers.
+    # Returns the cc.Scheduler object used to schedule all "updates" and timers.
     # @return [Scheduler]
     getScheduler: ->
 
@@ -190,11 +369,11 @@ class Node extends Class
     # @return [GLProgram]
     getShaderProgram: ->
 
-    # get the skew degrees in X The X skew angle of the node in degrees.
+    # Returns the skew degrees in X The X skew angle of the node in degrees.
     # @return [Number]
     getSkewX: ->
 
-    # get the skew degrees in Y The Y skew angle of the node in degrees.
+    # Returns the skew degrees in Y The Y skew angle of the node in degrees.
     # @return [Number]
     getSkewY: ->
 
@@ -206,19 +385,23 @@ class Node extends Class
     # @return [object]
     getUserData: ->
 
-    # Returns a user assigned CCObject.
+    # Returns a user assigned cocos2d object.
     # @return [object]
     getUserObject: ->
 
-    # Gets WebGL Z vertex of this node.
+    # Returns WebGL Z vertex of this node.
     # @return [Number]
     getVertexZ: ->
 
-    # zOrder getter
+    # Returns the inverse world affine transform matrix.
+    # @return [AffineTransform]
+    getWorldToNodeTransform: ->
+
+    # Returns z order of this node
     # @return [Number]
     getZOrder: ->
 
-    # Sets whether the anchor point will be (0,0) when you position this node.
+    # Sets whether the anchor point will be ignored when you position this node.
     # @param [Boolean] newValue
     ignoreAnchorPointForPosition: (newValue) ->
 
@@ -226,20 +409,34 @@ class Node extends Class
     # @return [boolean]
     init: ->
 
-    # Gets whether the anchor point will be (0,0) when you position this node.
+    # Returns whether node's color value affect its child nodes.
+    # @return [boolean]
+    isCascadeColorEnabled: ->
+
+    # Returns whether node's opacity value affect its child nodes.
+    # @return [boolean]
+    isCascadeOpacityEnabled: ->
+
+    # Returns whether the anchor point will be ignored when you position this node.
     # @return [Boolean]
     isIgnoreAnchorPointForPosition: ->
+
+    # Get whether color should be changed with the opacity value
+    # @return [Boolean]
+    isOpacityModifyRGB: ->
 
     # Returns whether or not the node accepts event callbacks.
     # @return [Boolean]
     isRunning: ->
 
-    # Determines if the node is visible
+    # Returns if the node is visible
     # @return [Boolean]
     isVisible: ->
 
-    # Returns the world affine transform matrix.
+    # Returns the matrix that transform the node's (local) space coordinates into the parent's space coordinates.
     # @return [AffineTransform]
+    nodeToParentTransform: ->
+
     nodeToWorldTransform: ->
 
     # Event callback that is invoked every time when CCNode enters the 'stage'.
@@ -254,12 +451,16 @@ class Node extends Class
     # callback that is called every time the cc.Node leaves the 'stage'.
     onExitTransitionDidStart: ->
 
-    # Returns the matrix that transform parent's space coordinates to the node's (local) space coordinates.
-    # @return [AffineTransform]
     parentToNodeTransform: ->
 
     # Pauses all scheduled selectors and actions.
+    pause: ->
+
+    # Pauses all scheduled selectors and actions.
     pauseSchedulerAndActions: ->
+
+    # Currently JavaScript Bindings (JSB), in some cases, needs to use retain and release.
+    release: ->
 
     # Removes all children from the container and do a cleanup all running actions depending on the cleanup parameter.
     # @param [Boolean | null] cleanup
@@ -269,7 +470,7 @@ class Node extends Class
     # @param [Boolean | null] cleanup
     removeAllChildrenWithCleanup: (cleanup) ->
 
-    # removes all components
+    # Removes all components
     removeAllComponents: ->
 
     # Removes a child from the container.
@@ -282,9 +483,9 @@ class Node extends Class
     # @param [Boolean] cleanup
     removeChildByTag: (tag, cleanup) ->
 
-    # removes a component by its name
-    # @param [String] name
-    removeComponent: (name) ->
+    # Removes a component identified by the given name or removes the component object given
+    # @param [String|cc.Component] component
+    removeComponent: (component) ->
 
     # Remove itself from its parent node.
     # @param [Boolean] cleanup
@@ -298,6 +499,9 @@ class Node extends Class
     # @param [Node] child
     # @param [Number] zOrder
     reorderChild: (child, zOrder) ->
+
+    # Resumes all scheduled selectors and actions.
+    resume: ->
 
     # Resumes all scheduled selectors and actions.
     resumeSchedulerAndActions: ->
@@ -334,41 +538,80 @@ class Node extends Class
     setActionManager: (actionManager) ->
 
     # Sets the additional transform.
-    # @param additionalTransform
+    # @param [AffineTransform] additionalTransform
     setAdditionalTransform: (additionalTransform) ->
 
     # Sets the anchor point in percent.
-    # @param [Point] point
-    setAnchorPoint: (point) ->
+    # @param [Point|Number] point
+    # @param [Number] y
+    setAnchorPoint: (point, y) ->
+
+    # Enable or disable cascade color, if cascade enabled, child nodes' opacity will be the cascade value of parent color and its own color.
+    # @param [boolean] cascadeColorEnabled
+    setCascadeColorEnabled: (cascadeColorEnabled) ->
+
+    # Enable or disable cascade opacity, if cascade enabled, child nodes' opacity will be the multiplication of parent opacity and its own opacity.
+    # @param [boolean] cascadeOpacityEnabled
+    setCascadeOpacityEnabled: (cascadeOpacityEnabled) ->
+
+    # Sets the color of Node.
+    # @param [Color] color
+    setColor: (color) ->
 
     # Sets the untransformed size of the node.
-    # @param [Size] size
-    setContentSize: (size) ->
+    # @param [Size|Number] size
+    # @param [Number] height
+    setContentSize: (size, height) ->
+
+    # Defines the oder in which the nodes are renderer.
+    # @param [Number] globalZOrder
+    setGlobalZOrder: (globalZOrder) ->
 
     # Sets the state of OpenGL server side.
     # @param [Number] state
     setGLServerState: (state) ->
 
-    # Changes a grid object that is used when applying effects
+    # Changes a grid object that is used when applying effects This function have been deprecated, please use cc.NodeGrid to run grid actions
     # @param [GridBase] grid
     setGrid: (grid) ->
+
+    # LocalZOrder is the 'key' used to sort the node relative to its siblings.
+    # @param [Number] localZOrder
+    setLocalZOrder: (localZOrder) ->
+
+    # Changes the name that is used to identify the node easily.
+    # @param [String] name
+    setName: (name) ->
+
+    # Sets node's dirty flag to true so that it can be updated in visit function of the next frame
+    setNodeDirty: ->
+
+    # Sets the opacity of Node
+    # @param [Number] opacity
+    setOpacity: (opacity) ->
+
+    # Set whether color should be changed with the opacity value, useless in cc.Node, but this function is overrided in some class to have such behavior.
+    # @param [Boolean] value
+    setOpacityModifyRGB: (value) ->
 
     # Sets the arrival order when this node has a same ZOrder with other children.
     # @param [Number] Var
     setOrderOfArrival: (Var) ->
 
     # Sets the parent node
-    # @param [Node] Var
-    setParent: (Var) ->
+    # @param [Node] parent
+    setParent: (parent) ->
 
-    # Changes the position (x,y) of the node in OpenGL coordinates Usually we use ccp(x,y) to compose CCPoint object.
+    # Changes the position (x,y) of the node in cocos2d coordinates.
     # @param [Point|Number] newPosOrxValue
     # @param [Number] yValue
     setPosition: (newPosOrxValue, yValue) ->
 
+    # Sets the x axis position of the node in cocos2d coordinates.
     # @param [Number] x
     setPositionX: (x) ->
 
+    # Sets the y axis position of the node in cocos2d coordinates.
     # @param [Number] y
     setPositionY: (y) ->
 
@@ -384,7 +627,7 @@ class Node extends Class
     # @param rotationY
     setRotationY: (rotationY) ->
 
-    # The scale factor of the node.
+    # Sets the scale factor of the node.
     # @param [Number] scale
     # @param [Number] scaleY
     setScale: (scale, scaleY) ->
@@ -414,14 +657,14 @@ class Node extends Class
     setSkewY: (newSkewY) ->
 
     # Changes the tag that is used to identify the node easily.
-    # @param [Number] Var
-    setTag: (Var) ->
+    # @param [Number] tag
+    setTag: (tag) ->
 
-    # Sets a custom user data pointer You can set everything in UserData pointer, a data block, a structure or an object, etc.
+    # Sets a custom user data reference You can set everything in UserData reference, a data block, a structure or an object, etc.
     # @param [object] Var
     setUserData: (Var) ->
 
-    # Returns a user assigned CCObject Similar to UserData, but instead of holding a void* it holds an object.
+    # Sets a user assigned cocos2d object Similar to UserData, but instead of holding all kinds of data it can only hold a cocos2d object In JSB, the UserObject will be retained once in this method, and the previous UserObject (if existed) will be release.
     # @param [object] newValue
     setUserObject: (newValue) ->
 
@@ -429,9 +672,9 @@ class Node extends Class
     # @param [Number] Var
     setVertexZ: (Var) ->
 
-    # Sets whether the node is visible The default value is true, a node is default to visible
-    # @param [Boolean] Var
-    setVisible: (Var) ->
+    # Sets whether the node is visible The default value is true
+    # @param [Boolean] visible
+    setVisible: (visible) ->
 
     # Sets the Z order which stands for the drawing order, and reorder this node in its parent's children array.
     # @param [Number] z
@@ -451,8 +694,9 @@ class Node extends Class
     # Stops and removes all actions from the running action list .
     stopAllActions: ->
 
-    # performs OpenGL view-matrix transformation of it's ancestors.
-    transformAncestors: ->
+    # Performs view-matrix transformation based on position, scale, rotation and other attributes.
+    # @param [CanvasRenderingContext2D|WebGLRenderingContext] ctx
+    transform: (ctx) ->
 
     # unschedules a custom callback function.
     # @param [function] callback_fn
@@ -461,17 +705,27 @@ class Node extends Class
     # unschedule all scheduled callback functions: custom callback functions, and the 'update' callback function.
     unscheduleAllCallbacks: ->
 
-    # unschedules the "update" method.
+    # Unschedules the "update" method.
     unscheduleUpdate: ->
 
-    # Update will be called automatically every frame if "scheduleUpdate" is called, and the node is "live" (override me)
+    # Update will be called automatically every frame if "scheduleUpdate" is called when the node is "live".
     # @param [Number] dt
     update: (dt) ->
+
+    # Update the displayed color of Node
+    # @param [Color] parentColor
+    updateDisplayedColor: (parentColor) ->
+
+    # Update displayed opacity
+    # @param [Number] parentOpacity
+    updateDisplayedOpacity: (parentOpacity) ->
 
     # Calls children's updateTransform() method recursively.
     updateTransform: ->
 
-    # Returns the inverse world affine transform matrix.
-    # @return [AffineTransform]
+    # Recursive method that visit its children and draw them
+    # @param [CanvasRenderingContext2D|WebGLRenderingContext] ctx
+    visit: (ctx) ->
+
     worldToNodeTransform: ->
 

@@ -3,14 +3,17 @@
 class CardinalSplineBy extends CardinalSplineTo
 
     # Constructor
+    # @param [Number] duration
+    # @param [Array] points
+    # @param [Number] tension
     # @return [CardinalSplineBy]
-    constructor: ->
+    constructor: (duration, points, tension) ->
 
     # returns a new clone of the action
     # @return [CardinalSplineBy]
     clone: ->
 
-    # creates an action with a Cardinal Spline array of points and tension
+    # Please use cc.cardinalSplineBy instead.
     # @param [Number] duration
     # @param [Array] points
     # @param [Number] tension
@@ -21,6 +24,7 @@ class CardinalSplineBy extends CardinalSplineTo
     # @return [CardinalSplineBy]
     reverse: ->
 
+    # called before the action start.
     # @param [Node] target
     startWithTarget: (target) ->
 

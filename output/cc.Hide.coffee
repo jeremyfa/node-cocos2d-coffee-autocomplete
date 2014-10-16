@@ -1,17 +1,23 @@
 
-# Hide the node
+# Hide the node.
 class Hide extends ActionInstant
+
+    # Hide the node.
+    @Hide.create = {}
 
     # Constructor
     # @return [Hide]
     constructor: ->
 
+    # to copy object with deep copy.
     # @return [Hide]
-    @create: ->
+    clone: ->
 
-    # @return [FiniteTimeAction]
+    # returns a reversed action.
+    # @return [Show]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

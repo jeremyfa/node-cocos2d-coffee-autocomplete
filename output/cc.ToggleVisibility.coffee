@@ -1,17 +1,23 @@
 
-# Toggles the visibility of a node
+# Toggles the visibility of a node.
 class ToggleVisibility extends ActionInstant
+
+    # Toggles the visibility of a node.
+    @ToggleVisibility.create = {}
 
     # Constructor
     # @return [ToggleVisibility]
     constructor: ->
 
+    # to copy object with deep copy.
     # @return [ToggleVisibility]
-    @create: ->
+    clone: ->
 
+    # returns a reversed action.
     # @return [ToggleVisibility]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

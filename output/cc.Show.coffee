@@ -1,17 +1,23 @@
 
-# Show the node
+# Show the node.
 class Show extends ActionInstant
+
+    # Show the Node.
+    @Show.create = {}
 
     # Constructor
     # @return [Show]
     constructor: ->
 
-    # @return [Show]
-    @create: ->
-
+    # to copy object with deep copy.
     # @return [FiniteTimeAction]
+    clone: ->
+
+    # returns a reversed action.
+    # @return [Hide]
     reverse: ->
 
-    # @param [Number] time
-    update: (time) ->
+    # Called once per frame.
+    # @param [Number] dt
+    update: (dt) ->
 

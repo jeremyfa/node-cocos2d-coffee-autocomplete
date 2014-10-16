@@ -2,15 +2,18 @@
 # Progress to percentage
 class ProgressTo extends ActionInterval
 
-    # Constructor
-    # @return [ProgressTo]
-    constructor: ->
+    # Please use cc.progressTo instead Creates and initializes with a duration and a percent
+    @ProgressTo.create = {}
 
-    # Creates and initializes with a duration and a percent
+    # Constructor
     # @param [Number] duration
     # @param [Number] percent
     # @return [ProgressTo]
-    @create: (duration, percent) ->
+    constructor: (duration, percent) ->
+
+    # return a new cc.ProgressTo, all the configuration is the same as the original
+    # @return [ProgressTo]
+    clone: ->
 
     # Initializes with a duration and a percent
     # @param [Number] duration
@@ -18,9 +21,15 @@ class ProgressTo extends ActionInterval
     # @return [Boolean]
     initWithDuration: (duration, percent) ->
 
+    # reverse hasn't been supported
+    # @return [null]
+    reverse: ->
+
+    # start with a target
     # @param [Node] target
     startWithTarget: (target) ->
 
+    # custom update
     # @param [Number] time
     update: (time) ->
 
